@@ -1,0 +1,196 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+/* header {
+    background-color: #99b3ff;
+    height: 80px;
+    width: 100%;
+    position:relative ;
+    style="background-color: #e3f2fd;
+}   */
+/* header a{
+    text-decoration:none;
+    color: white; 
+} */
+
+/* header a:hover{
+    text-decoration: underline;
+} */
+/* header li{
+    display: inline;
+    margin-right:4vw ;
+} */
+/* header ul{
+     position: absolute; 
+    right: 10vw;
+    line-height: 20px;
+} */
+
+/* .nav.item{
+    right: 0;
+    top:0;
+} */
+
+/* .navbar-collapse {
+    border: 2px solid black;
+  } */
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: auto;
+    width: 100%;
+}
+
+.navbar-nav .nav-item {
+    margin: 15px;
+    padding: 0;
+  }
+
+section{
+    margin:20px 0;
+}
+
+.no-border{
+    border: none;
+}
+.card-header{
+    font-size: 20px;
+    font-family: "Yuji Mai", serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+/* 最新消息 */
+#latest_news1{
+    border:none;
+    box-shadow: 7px 6px 0px #e0e3e7;
+    border-radius: 10px;
+    overflow: hidden;
+}
+#latest_news1:hover{
+    box-shadow: 7px 6px 0px #9fbfdf;
+
+}
+#latest_news1 p{
+    font-weight: bold;
+    color: #9fbfdf;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+
+/* 字型 */
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap');
+
+#title_news,
+#title_diveserver,
+h4{
+    font-family: "Yuji Mai", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c&display=swap');
+
+#apple{
+    font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* @font-face {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    src: url('../M_PLUS_Rounded_1c/MPLUSRounded1c-Black.ttf');
+} */
+
+
+#snork {
+    background-image: url(../img/背景圖/藍1.png);
+    background-size: cover;
+    background-position: center;
+    /* border: 2px solid red; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* width:250px ; */
+
+}
+
+#snork img,
+#no_lic_scuba img,
+#scuba img,
+#free_dive_img img{
+    max-height: 100%;
+    height: auto; /* 確保圖片高度自適應 */
+    display: block; /*避免與行內文字基線對齊的空間 */
+    margin:0;
+    padding: 20px;
+    opacity: 0.8;
+    /* width: 100%; */
+}
+
+#no_lic_scuba{
+    background-image:url('../img/背景圖/藍2.png') ;
+    background-size: cover;
+    background-position: center;
+    /* border: 2px solid red; */
+    padding-top:20px;
+    padding-bottom: 20px;
+    /* width:250px ; */
+}
+
+#text_snork{
+    font-size: 14px;
+}
+
+#scuba{
+    background-image:url('../img/背景圖/藍3.png') ;
+    background-size: cover;
+    background-position: center;
+    /* border: 2px solid red; */
+    padding-top:20px;
+    /* width:250px ; */
+}
+
+#free_dive{
+    background-image:url('../img/背景圖/藍4.png') ;
+    background-size: cover;
+    background-position: center;
+    /* border: 2px solid red; */
+    padding-top:20px;
+    /* width:250px ; */
+}
+
+
+
+/* 圖片動畫 */
+#snork img,
+#no_lic_scuba img,
+#scuba img,
+#free_dive img{
+    transition: all 0.3s ease; 
+    /* 平滑過渡效果  */
+}
+
+#snork img:hover,
+#no_lic_scuba img:hover,
+#scuba img:hover,
+#free_dive img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+
+/* 有關rwd  */
+ /* @media (max-width: 576px) { 小於等於 576px (sm 螢幕) 
+    #snork img {
+        display: none;  隱藏圖片 
+    }
+} */
+
+
+/* 探索蔚藍綠島，潛入夢幻海底世界 */
+
