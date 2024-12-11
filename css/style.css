@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
 }
+
 /* header {
     background-color: #99b3ff;
     height: 80px;
@@ -36,7 +37,7 @@
     border: 2px solid black;
   } */
 
-.navbar{
+.navbar {
     display: flex;
     justify-content: center;
     /* align-items: center; */
@@ -47,16 +48,17 @@
 .navbar-nav .nav-item {
     margin: 15px;
     padding: 0;
-  }
-
-section{
-    margin:20px 0;
 }
 
-.no-border{
+section {
+    margin: 20px 0;
+}
+
+.no-border {
     border: none;
 }
-.card-header{
+
+.card-header {
     font-size: 20px;
     font-family: "Yuji Mai", serif;
     font-weight: 400;
@@ -65,22 +67,24 @@ section{
 }
 
 /* 最新消息 */
-#latest_news1{
-    border:none;
+/* #latest_news1 {
+    border: 4px solid #0089E1;
     box-shadow: 7px 6px 0px #e0e3e7;
     border-radius: 10px;
     overflow: hidden;
 }
-#latest_news1:hover{
+
+#latest_news1:hover {
     box-shadow: 7px 6px 0px #9fbfdf;
 
 }
-#latest_news1 p{
+
+#latest_news1 p {
     font-weight: bold;
     color: #9fbfdf;
     font-size: 15px;
     margin-bottom: 10px;
-}
+} */
 
 
 /* 字型 */
@@ -88,7 +92,7 @@ section{
 
 #title_news,
 #title_diveserver,
-h4{
+h4 {
     font-family: "Yuji Mai", serif;
     font-weight: 400;
     font-style: normal;
@@ -96,10 +100,10 @@ h4{
 
 @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c&display=swap');
 
-#apple{
+#apple {
     font-family: "M PLUS Rounded 1c", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* @font-face {
@@ -122,45 +126,47 @@ h4{
 #snork img,
 #no_lic_scuba img,
 #scuba img,
-#free_dive_img img{
+#free_dive_img img {
     max-height: 100%;
-    height: auto; /* 確保圖片高度自適應 */
-    display: block; /*避免與行內文字基線對齊的空間 */
-    margin:0;
+    height: auto;
+    /* 確保圖片高度自適應 */
+    display: block;
+    /*避免與行內文字基線對齊的空間 */
+    margin: 0;
     padding: 20px;
     opacity: 0.8;
     /* width: 100%; */
 }
 
-#no_lic_scuba{
-    background-image:url('../img/背景圖/藍2.png') ;
+#no_lic_scuba {
+    background-image: url('../img/背景圖/藍2.png');
     background-size: cover;
     background-position: center;
     /* border: 2px solid red; */
-    padding-top:20px;
+    padding-top: 20px;
     padding-bottom: 20px;
     /* width:250px ; */
 }
 
-#text_snork{
+#text_snork {
     font-size: 14px;
 }
 
-#scuba{
-    background-image:url('../img/背景圖/藍3.png') ;
+#scuba {
+    background-image: url('../img/背景圖/藍3.png');
     background-size: cover;
     background-position: center;
     /* border: 2px solid red; */
-    padding-top:20px;
+    padding-top: 20px;
     /* width:250px ; */
 }
 
-#free_dive{
-    background-image:url('../img/背景圖/藍4.png') ;
+#free_dive {
+    background-image: url('../img/背景圖/藍4.png');
     background-size: cover;
     background-position: center;
     /* border: 2px solid red; */
-    padding-top:20px;
+    padding-top: 20px;
     /* width:250px ; */
 }
 
@@ -170,8 +176,8 @@ h4{
 #snork img,
 #no_lic_scuba img,
 #scuba img,
-#free_dive img{
-    transition: all 0.3s ease; 
+#free_dive img {
+    transition: all 0.3s ease;
     /* 平滑過渡效果  */
 }
 
@@ -185,7 +191,7 @@ h4{
 
 
 /* 有關rwd  */
- /* @media (max-width: 576px) { 小於等於 576px (sm 螢幕) 
+/* @media (max-width: 576px) { 小於等於 576px (sm 螢幕) 
     #snork img {
         display: none;  隱藏圖片 
     }
@@ -194,3 +200,96 @@ h4{
 
 /* 探索蔚藍綠島，潛入夢幻海底世界 */
 
+/* 網格容器設定 */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    padding: 20px;
+    background-color: #e8f5fe;
+}
+
+/* 卡片樣式 */
+.card {
+    background: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    width: 300px;
+    padding: 30px;
+    position: relative;
+    border: 7px solid #0089E1;
+
+}
+
+/* 圖片部分 */
+.card-image {
+    position: relative; /* 確保雲朵的絕對定位基於這裡 */
+    width: 100%;
+  }
+.card-image img {
+    width: 100%;
+    height: 200px;
+    border-radius: 40px;
+    object-fit: cover;
+    border: 7px solid #0089E1;
+
+
+}
+
+/* 卡片內的文字內容 */
+.card-content {
+    margin-top: 10px;
+    z-index: 2;
+}
+    /* 泡泡字型 */
+.rubik-bubbles-regular {
+    font-family: "Rubik Bubbles", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }  
+.card-content h2 {
+    font-family: "Rubik Bubbles", system-ui;
+    font-size: 30px;
+    color: #0089E1;
+    margin: 0;
+    /* padding: 10px; */
+    font-weight: bold;
+  /* font-weight: 400; */
+    font-style: normal;
+
+}
+
+.card-content p {
+    font-family: "Rubik Bubbles", system-ui;
+    font-size: 26px;
+    color: #0089E1;
+    margin: 5px 0 0;
+}
+
+/* 雲朵部分 */
+.cloud{
+position: absolute;
+bottom: 75px; /* 雲朵的底部對齊 */
+left: 0; /* 雲朵的右側對齊 */
+width: 170px; /* 雲朵的寬度 */
+height: 100px; /* 雲朵的高度 */
+background: url('../img/截圖\ 2024-12-11\ 16.17.52-Photoroom.png') no-repeat center/contain; /* 雲朵圖片設置 */
+z-index: 1; /* 保持在圖片之上 */
+}
+/* 響應式設計 */
+@media (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* 中等螢幕顯示兩張卡片 */
+    }
+}
+
+@media (max-width: 576px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        /* 小螢幕顯示一張卡片 */
+    }
+}
