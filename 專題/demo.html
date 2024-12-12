@@ -16,15 +16,21 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- 字型 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
+    <header class="l-header">
         <!--導覽頁 -->
-        <nav class="navbar navbar-expand-lg">
+        <!-- <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <img src="../img/輪播圖/logo-2.png" width="100px">
@@ -64,41 +70,34 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> -->
+
+        <div class="l-header_inner">
+            <div class="d-header_left">
+                <a href="https://www.suewang.net">
+                    <img src="../img/背景圖/ Logo-4-Photoroom.png">
+                </a>
+            </div>
+            <nav class="l-header-nav">
+                <!-- 漢堡 -->
+                <!-- <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button> -->
+                <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+                <a href="#" class="l-nav_link">ABOUT</a>
+                <a href="#title_news" class="l-nav_link">NEWS</a>
+                <a href="#title_diveserver" class="l-nav_link">DIVING</a>
+                <a href="#" class="l-nav_link">PRICE</a>
+                <a href="#" class="l-nav_link">BOOKING</a>
+                <!-- </div> -->
+            </nav>
+        </div>
 
     </header>
 
     <main>
-        <section>
-            <!-- 輪播圖 -->
-            <div id="apple" class="carousel slide" data-bs-interval="3000" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#apple" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#apple" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#apple" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="../img/輪播圖/圖2.png" class="img-fluid">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../img/輪播圖/圖2.png" class="img-fluid">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../img/輪播圖/圖2.png" class="img-fluid">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#apple" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#apple" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </section>
         <span></span>
 
         <section>
@@ -174,12 +173,12 @@
 
         </section>
 
-        <!-- 仿canva樣式 -->
+        <!-- 最新消息 -->
         <section>
             <div class="grid-container">
                 <div class="card">
                     <div class="card-image">
-                        <img src="../img/水肺/8.JPG">
+                        <img src="../img/最新消息/2-1.png">
                     </div>
                     <div class="card-content">
                         <h2>OKINAWA</h2>
@@ -206,11 +205,11 @@
                 </div>
                 <div class="card">
                     <div class="card-image">
-                        <img src="../img/P2180002.JPG">
+                        <img src="../img/最新消息/1-1.png">
                     </div>
                     <div class="card-content">
-                        <h2>BALI</h2>
-                        <p>TRIP</p>
+                        <h2>FREE</h2>
+                        <p>DIVING</p>
                     </div>
                     <!-- 加入雲朵 -->
                     <div>
@@ -311,12 +310,113 @@
             </div>
         </section>
 
+        <section>
+            <!-- 輪播圖 -->
+            <!-- <div id="apple" class="carousel slide mt-5" data-bs-interval="3000" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#apple" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#apple" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#apple" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../img/輪播圖/輪播4.jpg" class="img-fluid">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/輪播圖/輪播4.jpg" class="img-fluid">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/輪播圖/輪播4.jpg" class="img-fluid">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#apple" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#apple" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div> -->
+
+        </section>
+
+        <!-- codepen 輪播 -->
+        <section>
+            <section class="game-section">
+                <!-- <h2 class="line-title">trending games</h2> -->
+                <div class="owl-carousel custom-carousel owl-theme">
+                    <div class="item "
+                        style="background-image: url(../img/輪播圖/輪播1.jpg);">
+                        <div class="item-desc">
+                        </div>
+                    </div>
+                    <div class="item"
+                        style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/winter-3.jpg);">
+                        <div class="item-desc">
+                        </div>
+                    </div>
+                    <div class="item"
+                        style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/rdr-2.jpg);">
+                        <div class="item-desc">
+                        </div>
+                    </div>
+                    <div class="item"
+                        style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/pubg.jpg);">
+                        <div class="item-desc">
+                        </div>
+                    </div>
+                    <div class="item"
+                        style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/fortnite.jpg);">
+                        <div class="item-desc">
+                        </div>
+                    </div>
+                    <div class="item"
+                        style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/far-cry-5.jpg);">
+                        <div class="item-desc">
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </section>
     </main>
 
 
 
 
+    <!-- JS輪播 -->
+    <!-- jQuery (Owl Carousel 需要 jQuery) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+          $('.owl-carousel').owlCarousel({
+            loop: true, // 循環播放
+            margin: 10, // 每個項目間的間距
+            nav: true, // 顯示左右導航按鈕
+            dots: true, // 顯示底部圓點導航
+            autoplay: true, // 自動播放
+            autoplayTimeout: 3000, // 自動播放的間隔時間 (毫秒)
+            responsive: {
+              0: {
+                items: 1 // 小螢幕顯示 1 個項目
+              },
+              600: {
+                items: 2 // 中螢幕顯示 2 個項目
+              },
+              1000: {
+                items: 3 // 大螢幕顯示 3 個項目
+              }
+            }
+          });
+        });
+      </script>
+      
+</body>
 
-    <footer>
-        <p> © Blue Horizon Diving All Rights Reserved. </p>
-    </footer>
+<footer>
+    <p> © Blue Horizon Diving All Rights Reserved. </p>
+</footer>

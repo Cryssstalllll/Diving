@@ -37,10 +37,84 @@
     border: 2px solid black;
   } */
 
-.navbar {
+/* 導覽頁 */
+.d-header_left img{
+    width: 140px;
+    position: absolute; 
+    top: 0px;
+    left: 20px;
+}
+/* 設置背景圖 */
+.l-header {
+    position: relative; /* 建立相對定位，讓子元素可以用絕對定位 */
+    width: 100%;
+    height: 100vh; /* 背景圖高度填滿整個視窗 */
+    background-image: url('../img/水肺/水肺50.JPG'); /* 背景圖路徑 */
+    background-size: cover; /* 背景縮放，保持比例 */
+    background-position: center; /* 背景居中顯示 */
+  }
+  
+  /* 導覽列樣式 */
+  .l-header-nav {
+    position: absolute; /* 絕對定位在背景圖的基礎上 */
+    top: 50px; 
+    left: 50%; /*水平居中 */
+    transform: translateX(-50%); /* 修正水平居中的偏移 */
+    display: flex; /* 使用 Flexbox 排列導覽項目 */
+    gap: 20px; 
+    background: rgba(255, 255, 255, 0.8); 
+    padding: 10px 20px; 
+    border-radius: 50px; 
+    z-index: 2; /* 確保導覽列顯示在背景上方 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加陰影效果 */
+  }
+  
+  /* 導覽列的連結樣式 */
+  .l-header-nav a {
+    text-decoration: none; /* 移除下劃線 */
+    color: #3f2d2d; /* 字體顏色 */
+    font-weight: 200; 
+    font-size: 18px;
+    font-family: "Rubik Bubbles", system-ui;
+    font-style: normal;
+    padding: 5px;
+  }
+
+  /* 當螢幕寬度小於 768px 時的樣式 */
+    @media (max-width: 768px) {
+    /* 調整導航條容器，使其垂直排列 */
+    .l-header-nav {
+        display: flex;
+        flex-direction: row; /* 垂直排列 */
+        align-items: center;
+        gap: 5px;
+        max-width:auto;
+        justify-content: space-between;
+        padding: 10px;
+        margin-left:90px ;
+    }
+    .l-nav_link{
+        display: inline-block;  /* 保持水平排列 */
+        padding: 3px; 
+        font-size: 5px;  
+        white-space: nowrap;  /* 避免文字換行 */
+    }
+    
+}
+  
+  
+  
+  
+  /* .logo img {
+    width: 100px; 根據需要設置圖片大小
+    height: auto;
+  } */
+  
+  /* bootstrap舊導覽頁 */
+/* .l-header-nav {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
     height: auto;
     width: 100%;
 }
@@ -56,7 +130,7 @@ section {
 
 .no-border {
     border: none;
-}
+} */
 
 .card-header {
     font-size: 20px;
@@ -276,7 +350,7 @@ bottom: 75px; /* 雲朵的底部對齊 */
 left: 0; /* 雲朵的右側對齊 */
 width: 170px; /* 雲朵的寬度 */
 height: 100px; /* 雲朵的高度 */
-background: url('../img/截圖\ 2024-12-11\ 16.17.52-Photoroom.png') no-repeat center/contain; /* 雲朵圖片設置 */
+background: url('../img/背景圖/cloud.png') no-repeat center/contain; /* 雲朵圖片設置 */
 z-index: 1; /* 保持在圖片之上 */
 }
 /* 響應式設計 */
@@ -292,4 +366,228 @@ z-index: 1; /* 保持在圖片之上 */
         grid-template-columns: 1fr;
         /* 小螢幕顯示一張卡片 */
     }
+}
+
+
+/* codepen 輪播 */
+/* @charset "utf-8"; */
+
+/******* Fonts Import Start **********/
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"); */
+/********* Fonts Face CSS End **********/
+
+/******* Common Element CSS Start ******/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+/* body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+} */
+.clear {
+  clear: both;
+}
+img {
+  max-width: 100%;
+  border: 0px;
+}
+/* ul,
+ol {
+  list-style: none;
+} */
+/* a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+} */
+a:focus,
+a:active,
+a:visited,
+a:hover {
+  text-decoration: none;
+  outline: none;
+}
+a:hover {
+  color: #e73700;
+}
+
+button {
+  outline: none !important;
+}
+/******* Common Element CSS End *********/
+
+
+/******* Middle section CSS Start ******/
+/* -------- Landing page ------- */
+.game-section {
+  padding: 20px;
+}
+.game-section {
+  margin: 15px;
+  display: flex;
+}
+
+.game-section .item{
+  margin: 0 15px 60px;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: flex-end;
+  -webkit-align-items: flex-end;
+  background: #343434 no-repeat center center / cover;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+.game-section .item.active {
+  width: 1000px;
+  box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+}
+.game-section .item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+.game-section .item-desc {
+  padding: 0 24px 12px;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transform: translateY(calc(100% - 54px));
+  -webkit-transform: translateY(calc(100% - 54px));
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+}
+.game-section .item.active .item-desc {
+  transform: none;
+  -webkit-transform: none;
+}
+.game-section .item-desc p {
+  opacity: 0;
+  -webkit-transform: translateY(32px);
+  transform: translateY(32px);
+  transition: all 0.4s ease-in-out 0.2s;
+  -webkit-transition: all 0.4s ease-in-out 0.2s;
+}
+.game-section .item.active .item-desc p {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.game-section .owl-theme.custom-carousel .owl-dots {
+  margin-top: -20px;
+  position: relative;
+  z-index: 5;
+}
+/******** Middle section CSS End *******/
+
+/***** responsive css Start ******/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  h2 {
+    margin-bottom: 32px;
+  }
+  h3 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  /* -------- Landing page ------- */
+  .game-section {
+    padding: 50px 30px;
+  }
+  .game-section .item {
+    margin: 0 12px 60px;
+    width: 260px;
+    height: 360px;
+  }
+  .game-section .item.active {
+    width: 400px;
+  }
+  .game-section .item-desc {
+    transform: translateY(calc(100% - 46px));
+    -webkit-transform: translateY(calc(100% - 46px));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  h2 {
+    margin-bottom: 32px;
+  }
+  h3 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .line-title {
+    width: 330px;
+  }
+
+  /* -------- Landing page ------- */
+  .game-section {
+    padding: 50px 30px 40px;
+  }
+  .game-section .item {
+    margin: 0 12px 60px;
+    width: 240px;
+    height: 330px;
+  }
+  .game-section .item.active {
+    width: 360px;
+  }
+  .game-section .item-desc {
+    transform: translateY(calc(100% - 42px));
+    -webkit-transform: translateY(calc(100% - 42px));
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+  h3 {
+    margin: 0 0 8px;
+    font-size: 19px;
+    line-height: 24px;
+  }
+  .line-title {
+    width: 250px;
+  }
+
+  /* -------- Landing page ------- */
+  .game-section {
+    padding: 30px 15px 20px;
+  }
+  .game-section .item {
+    margin: 0 10px 40px;
+    width: 200px;
+    height: 280px;
+  }
+  .game-section .item.active {
+    width: 270px;
+    box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
+  }
+  .game-section .item-desc {
+    padding: 0 14px 5px;
+    transform: translateY(calc(100% - 42px));
+    -webkit-transform: translateY(calc(100% - 42px));
+  }
 }
