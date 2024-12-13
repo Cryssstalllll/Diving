@@ -102,9 +102,6 @@
     
 }
   
-  
-  
-  
   /* .logo img {
     width: 100px; 根據需要設置圖片大小
     height: auto;
@@ -167,10 +164,27 @@ section {
 #title_news,
 #title_diveserver,
 h4 {
-    font-family: "Yuji Mai", serif;
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif ;
+  font-weight: 600;
+  font-size: 25px;
+  font-style: normal;
+
+/* 襯線體 */
+    /* font-family: "Yuji Mai", serif;
     font-weight: 400;
-    font-style: normal;
+    font-style: normal; */
 }
+#title_news >p{
+  /* 英文泡泡字體 */
+  font-family: "Rubik Bubbles", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  margin: 15px;
+}
+/* #title_news{
+  background-color: #e8f5fe;
+} */
 
 @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c&display=swap');
 
@@ -274,6 +288,31 @@ h4 {
 
 /* 探索蔚藍綠島，潛入夢幻海底世界 */
 
+/* 藍色波浪背景樣式 */
+.bluewave-background {
+  /* position: relative; */
+  background-image:url(../img/背景圖/bluewave.jpg);
+  background-repeat: no-repeat; /* 避免重複 */
+  background-size: cover; /* 讓背景圖片充滿整個區塊 */
+  background-position: top; /* 調整圖片位置 */
+  padding: 50px 0; /* 增加上下內邊距，確保內容不被背景擠壓 */
+  /*color: white;  設置內容字體顏色 */
+  background-attachment: fixed;
+  /* height: 500px; */
+}
+
+/* 藍色波浪背景在滑動的時候，背景可以跟著動，產生波浪背景蓋掉上面網頁的效果 */
+/* .box-news,
+.grid-container{
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 2rem;
+} */
+
+
 /* 網格容器設定 */
 .grid-container {
     display: grid;
@@ -281,7 +320,7 @@ h4 {
     gap: 20px;
     justify-items: center;
     padding: 20px;
-    background-color: #e8f5fe;
+    /* background-color: #e8f5fe; */
 }
 
 /* 卡片樣式 */
@@ -369,11 +408,33 @@ z-index: 1; /* 保持在圖片之上 */
 }
 
 
-/* codepen 輪播 */
-/* @charset "utf-8"; */
 
+/* 自動輪播 */
+/* .carousel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-card {
+  min-width: 200px;
+  padding: 20px;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+} */
+
+
+
+/* 潛水教練 */
 /******* Fonts Import Start **********/
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 /********* Fonts Face CSS End **********/
 
 /******* Common Element CSS Start ******/
@@ -396,13 +457,13 @@ img {
 ol {
   list-style: none;
 } */
-/* a {
+a {
   text-decoration: none;
   color: inherit;
   outline: none;
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
-} */
+}
 a:focus,
 a:active,
 a:visited,
@@ -413,40 +474,94 @@ a:hover {
 a:hover {
   color: #e73700;
 }
+/* h2 {
+  font-family: "Rubik Bubbles", system-ui;
+  margin-bottom: 48px;
+  padding-bottom: 16px;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  position: relative;
+  text-transform: capitalize;
+} */
+h3 {
+  font-family: "Rubik Bubbles", system-ui;
+  margin: 0 0 10px;
+  font-size: 100px;
+  line-height: 36px;
+}
+.zen-maru-gothic-regular {
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
+.item-desc p{
+  font-family: "Zen Maru Gothic", serif ;
+  font-weight: 400;
+  font-style: normal;
+
+}
 button {
   outline: none !important;
 }
 /******* Common Element CSS End *********/
 
+/* -------- title style ------- */
+/* .line-title {
+  position: relative;
+  width: 400px;
+}
+.line-title::before,
+.line-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 2px;
+}
+.line-title::before {
+  width: 100%;
+  background: #f2f2f2;
+}
+.line-title::after {
+  width: 32px;
+  background: #e73700;
+} */
 
 /******* Middle section CSS Start ******/
 /* -------- Landing page ------- */
 .game-section {
-  padding: 20px;
+  padding: 60px 50px;
 }
-.game-section {
-  margin: 15px;
+.game-section .owl-stage {
+  margin: 15px 0;
   display: flex;
 }
-
-.game-section .item{
+.game-section .item {
   margin: 0 15px 60px;
-  width: 400px;
+  width: 320px;
   height: 400px;
   display: flex;
   align-items: flex-end;
   -webkit-align-items: flex-end;
   background: #343434 no-repeat center center / cover;
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
   position: relative;
-  /* transition: all 0.4s ease-in-out; */
-  /* -webkit-transition: all 0.4s ease-in-out; */
+  transition: all 0.4s ease-in-out;
   cursor: pointer;
 }
+
+/* 確保超出部分不會顯示 */
+.game-section .owl-carousel {
+  max-width: 100%;
+  overflow: hidden; 
+}
+
 .game-section .item.active {
-  width: 500px;
+  width: 400px;
   box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
 }
@@ -487,24 +602,47 @@ button {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-.game-section .owl-theme.custom-carousel .owl-dots {
+.game-section .owl-theme.custom-carousel  {
   margin-top: -20px;
   position: relative;
   z-index: 5;
 }
+
+/* 按鈕 */
+.owl-nav {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: -50px;  
+  /* 調整按鈕位置  */
+}
+.owl-nav button {
+  background: #343434;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+
+
 /******** Middle section CSS End *******/
 
 /***** responsive css Start ******/
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* h2 {
+  h2 {
     margin-bottom: 32px;
   }
   h3 {
     margin: 0 0 8px;
     font-size: 24px;
     line-height: 32px;
-  } */
+  }
 
   /* -------- Landing page ------- */
   .game-section {
@@ -512,11 +650,11 @@ button {
   }
   .game-section .item {
     margin: 0 12px 60px;
-    width: 500px;
+    width: 260px;
     height: 360px;
   }
   .game-section .item.active {
-    width: 500px;
+    width: 400px;
   }
   .game-section .item-desc {
     transform: translateY(calc(100% - 46px));
@@ -525,17 +663,17 @@ button {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  /* h2 {
+  h2 {
     margin-bottom: 32px;
   }
   h3 {
     margin: 0 0 8px;
     font-size: 24px;
     line-height: 32px;
-  } */
-  /* .line-title {
+  }
+  .line-title {
     width: 330px;
-  } */
+  }
 
   /* -------- Landing page ------- */
   .game-section {
@@ -543,11 +681,11 @@ button {
   }
   .game-section .item {
     margin: 0 12px 60px;
-    width: 500px;
+    width: 240px;
     height: 330px;
   }
   .game-section .item.active {
-    width: 500px;
+    width: 360px;
   }
   .game-section .item-desc {
     transform: translateY(calc(100% - 42px));
@@ -559,7 +697,7 @@ button {
   body {
     font-size: 14px;
   }
-  /* h2 {
+  h2 {
     margin-bottom: 20px;
   }
   h3 {
@@ -569,7 +707,7 @@ button {
   }
   .line-title {
     width: 250px;
-  } */
+  }
 
   /* -------- Landing page ------- */
   .game-section {
@@ -577,17 +715,17 @@ button {
   }
   .game-section .item {
     margin: 0 10px 40px;
-    width: 500px;
+    width: 200px;
     height: 280px;
   }
   .game-section .item.active {
-    width: 500px;
+    width: 270px;
     box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
     -webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
   }
   .game-section .item-desc {
     padding: 0 14px 5px;
     transform: translateY(calc(100% - 42px));
-    /* -webkit-transform: translateY(calc(100% - 42px)); */
+    -webkit-transform: translateY(calc(100% - 42px));
   }
 }

@@ -13,10 +13,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
         integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
         crossorigin=“anonymous”></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css">
 
     <!-- 自己的css&JS -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css">
+    <link rel="stylesheet" href="../JS/style.js">
     <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet"
@@ -26,6 +27,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -75,7 +81,7 @@
 
         <div class="l-header_inner">
             <div class="d-header_left">
-                <a href="https://www.suewang.net">
+                <a href="./demo.html">
                     <img src="../img/背景圖/ Logo-4-Photoroom.png">
                 </a>
             </div>
@@ -87,7 +93,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button> -->
                 <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
-                <a href="#" class="l-nav_link">ABOUT</a>
+                <a href="./about_horizon.html" class="l-nav_link">ABOUT</a>
                 <a href="#title_news" class="l-nav_link">NEWS</a>
                 <a href="#title_diveserver" class="l-nav_link">DIVING</a>
                 <a href="#" class="l-nav_link">PRICE</a>
@@ -101,11 +107,13 @@
     <main>
         <span></span>
 
-        <section>
-            <!-- 潛水服務 -->
+        <!-- 潛水服務 -->
+        <section class="bluewave-background">
             <div class="title text-center mt-5">
                 <div class="box">
-                    <h3 id="title_news">最新消息</h3>
+                    <h3 id="title_news">最新消息
+                        <p>NEWS</p>
+                    </h3>
                 </div>
                 <div>
                     <span></span>
@@ -172,10 +180,7 @@
                 </div>
             </div>  -->
 
-        </section>
-
-        <!-- 最新消息 -->
-        <section>
+            <!-- 最新消息 -->
             <div class="grid-container">
                 <div class="card">
                     <div class="card-image">
@@ -340,84 +345,20 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div> -->
-
         </section>
 
         <!-- codepen 輪播 -->
-        <section>
-            <section class="game-section">
-                <!-- <h2 class="line-title">trending games</h2> -->
-                <div class="owl-carousel custom-carousel owl-theme">
-                    <div class="item "
-                        style="background-image: url(../img/輪播圖/輪播1.jpg);">
-                        <div class="item-desc">
-                        </div>
-                    </div>
-                    <div class="item"
-                        style="background-image: url(../img/輪播圖/輪播1.jpg);">
-                        <div class="item-desc">
-                        </div>
-                    </div>
-                    <div class="item"
-                        style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/rdr-2.jpg);">
-                        <div class="item-desc">
-                        </div>
-                    </div>
-                    <div class="item"
-                        style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/pubg.jpg);">
-                        <div class="item-desc">
-                        </div>
-                    </div>
-                    <div class="item"
-                        style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/fortnite.jpg);">
-                        <div class="item-desc">
-                        </div>
-                    </div>
-                    <div class="item"
-                        style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/far-cry-5.jpg);">
-                        <div class="item-desc">
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </section>
-        </section>
+
     </main>
 
 
 
 
-    <!-- JS輪播 -->
-    <!-- jQuery (Owl Carousel 需要 jQuery) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- Owl Carousel JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-        $(document).ready(function () {
-          $('.owl-carousel').owlCarousel({
-            loop: true, // 循環播放
-            margin: 10, // 每個項目間的間距
-            nav: true, // 顯示左右導航按鈕
-            dots: true, // 顯示底部圓點導航
-            autoplay: true, // 自動播放
-            autoplayTimeout: 5000, // 自動播放的間隔時間 (毫秒)
-            responsive: {
-              0: {
-                items: 1 // 小螢幕顯示 1 個項目
-              },
-              600: {
-                items: 2 // 中螢幕顯示 2 個項目
-              },
-              1000: {
-                items: 2 // 大螢幕顯示 3 個項目
-              }
-            }
-          });
-        });
-      </script>
-      
-</body>
 
-<footer>
-    <p> © Blue Horizon Diving All Rights Reserved. </p>
-</footer>
+</body >
+
+            <footer>
+                <p> © Blue Horizon Diving All Rights Reserved. </p>
+            </footer>
+
+</html >
