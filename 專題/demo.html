@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+<style>
+    .owl-carousel {
+    transition: transform 0.2s ease-out; /* Smooth transition for transform */
+    }
 
+</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -394,12 +399,14 @@
     <script>
         $(document).ready(function () {
           $('.owl-carousel').owlCarousel({
+            items: 3, // 每次顯示的項目數
             loop: true, // 循環播放
-            margin: 10, // 每個項目間的間距
-            nav: true, // 顯示左右導航按鈕
-            dots: true, // 顯示底部圓點導航
             autoplay: true, // 自動播放
-            autoplayTimeout: 3000, // 自動播放的間隔時間 (毫秒)
+            autoplayTimeout: 3000, // 自動播放間隔時間（毫秒）
+            autoplayHoverPause: true, // 鼠標懸停時暫停自動播放
+            animateOut: 'fadeOut', // 動畫效果
+            animateIn: 'fadeIn', // 動畫效果
+            smartSpeed: 4000, // 動畫速度
             responsive: {
               0: {
                 items: 1 // 小螢幕顯示 1 個項目
