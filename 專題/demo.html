@@ -19,6 +19,7 @@
         integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
         crossorigin=“anonymous”></script>
 
+    <!-- 自己的css&JS -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css">
     <!-- Owl Carousel CSS -->
@@ -358,7 +359,7 @@
                         </div>
                     </div>
                     <div class="item"
-                        style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/winter-3.jpg);">
+                        style="background-image: url(../img/輪播圖/輪播1.jpg);">
                         <div class="item-desc">
                         </div>
                     </div>
@@ -407,6 +408,7 @@
             animateOut: 'fadeOut', // 動畫效果
             animateIn: 'fadeIn', // 動畫效果
             smartSpeed: 4000, // 動畫速度
+            autoplayTimeout: 5000, // 自動播放的間隔時間 (毫秒)
             responsive: {
               0: {
                 items: 1 // 小螢幕顯示 1 個項目
@@ -415,7 +417,7 @@
                 items: 2 // 中螢幕顯示 2 個項目
               },
               1000: {
-                items: 3 // 大螢幕顯示 3 個項目
+                items: 2 // 大螢幕顯示 3 個項目
               }
             }
           });
