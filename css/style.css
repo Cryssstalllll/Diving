@@ -729,3 +729,78 @@ button {
     -webkit-transform: translateY(calc(100% - 42px));
   }
 }
+
+
+/* 潛水服務 交錯排列 */
+
+#title_diveserver>p,
+.content .text h3{
+  /* 英文泡泡字體 */
+  font-family: "Rubik Bubbles", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  margin: 15px;
+}
+.container {
+  display: grid;
+  max-width: 1000px;
+  grid-column: 2; /* 把內容放在中間那一格 */
+  margin: 0 auto;    /* 水平居中 */
+  padding: 50px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px auto;
+  
+  opacity: 0; /* 預設為隱藏 */
+  transform: translateY(50px); /* 加入位移效果 */
+  transition: all 0.6s ease;
+}
+
+.content .text{
+  width: 40%;
+  padding: 0 20px ;
+}
+.content .image{
+  width: 60%;
+}
+.content .text h2{
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif ;
+  font-weight: 600;
+  font-size: 25px;
+  font-style: normal;
+  margin-bottom: 10px;
+}
+.content .text p{
+  font-family: "Zen Maru Gothic", serif ;
+  font-weight: 580;
+  font-size: 15px;
+  font-style: normal;
+  margin-bottom: 10px;
+
+}
+
+.content .image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 偶數行圖片在左側 */
+.content:nth-child(1) {
+  flex-direction: row-reverse;
+}
+
+.content:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* 當內容進入可視範圍時，顯示動畫 */
+.content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
