@@ -1256,3 +1256,144 @@ td {
   color: #99d2d2;
   font-weight: bold;
 } */
+
+
+/* booking網頁 */
+/* 基本樣式設定 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* body {
+  background: linear-gradient(135deg, #ff9a5b, #ffbf8b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+} */
+
+/* 表單容器 */
+.form-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background: white;
+  width: 1000px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+}
+
+/* 步驟指示器 */
+.steps {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0 20px;
+}
+
+.step {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  background: #e0e0e0;
+  color: #fff;
+}
+
+.step.active {
+  background: #ff9a5b;
+}
+input[type="tel"]:invalid{
+  background-color: rgb(229, 155, 155);
+
+}
+input[type="tel"]:invalid+ span::after{
+  content: "✖ 請填寫正確格式的行動電話";
+  color: rgb(197, 80, 80);
+}
+
+/* 欄位樣式 */
+.section {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* 性別選項 */
+.gender-options {
+  display: flex;
+  gap: 20px;
+}
+
+.gender-options label {
+  font-weight: normal;
+  color: #555;
+}
+
+/* 教育背景 */
+.education-section h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.education-row {
+  display: flex;
+  gap: 10px;
+}
+
+.education-row input {
+  flex: 1;
+}
+
+.add-btn {
+  background: transparent;
+  border: none;
+  color: #ff9a5b;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* 按鈕 */
+.btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.save-btn {
+  background: #ff9a5b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.save-btn:hover {
+  background: #e88a4b;
+}
