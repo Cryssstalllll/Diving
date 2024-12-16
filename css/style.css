@@ -1,6 +1,6 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 /* header {
@@ -38,76 +38,95 @@
   } */
 
 /* 導覽頁 */
-.d-header_left img{
-    width: 140px;
-    position: absolute; 
-    top: 0px;
-    left: 20px;
+.d-header_left img {
+  width: 140px;
+  position: absolute;
+  top: 0px;
+  left: 20px;
 }
+
 /* 設置背景圖 */
 .l-header {
-    position: relative; /* 建立相對定位，讓子元素可以用絕對定位 */
-    width: 100%;
-    height: 100vh; /* 背景圖高度填滿整個視窗 */
-    background-image: url('../img/水肺/水肺50.JPG'); /* 背景圖路徑 */
-    background-size: cover; /* 背景縮放，保持比例 */
-    background-position: center; /* 背景居中顯示 */
-  }
-  
-  /* 導覽列樣式 */
+  position: relative;
+  /* 建立相對定位，讓子元素可以用絕對定位 */
+  width: 100%;
+  height: 100vh;
+  /* 背景圖高度填滿整個視窗 */
+  background-image: url('../img/水肺/水肺50.JPG');
+  /* 背景圖路徑 */
+  background-size: cover;
+  /* 背景縮放，保持比例 */
+  background-position: center;
+  /* 背景居中顯示 */
+}
+
+/* 導覽列樣式 */
+.l-header-nav {
+  position: absolute;
+  /* 絕對定位在背景圖的基礎上 */
+  top: 50px;
+  left: 50%;
+  /*水平居中 */
+  transform: translateX(-50%);
+  /* 修正水平居中的偏移 */
+  display: flex;
+  /* 使用 Flexbox 排列導覽項目 */
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 50px;
+  z-index: 2;
+  /* 確保導覽列顯示在背景上方 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* 添加陰影效果 */
+}
+
+/* 導覽列的連結樣式 */
+.l-header-nav a {
+  text-decoration: none;
+  /* 移除下劃線 */
+  color: #3f2d2d;
+  /* 字體顏色 */
+  font-weight: 200;
+  font-size: 18px;
+  font-family: "Rubik Bubbles", system-ui;
+  font-style: normal;
+  padding: 5px;
+}
+
+/* 當螢幕寬度小於 768px 時的樣式 */
+@media (max-width: 768px) {
+
+  /* 調整導航條容器，使其垂直排列 */
   .l-header-nav {
-    position: absolute; /* 絕對定位在背景圖的基礎上 */
-    top: 50px; 
-    left: 50%; /*水平居中 */
-    transform: translateX(-50%); /* 修正水平居中的偏移 */
-    display: flex; /* 使用 Flexbox 排列導覽項目 */
-    gap: 20px; 
-    background: rgba(255, 255, 255, 0.8); 
-    padding: 10px 20px; 
-    border-radius: 50px; 
-    z-index: 2; /* 確保導覽列顯示在背景上方 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加陰影效果 */
-  }
-  
-  /* 導覽列的連結樣式 */
-  .l-header-nav a {
-    text-decoration: none; /* 移除下劃線 */
-    color: #3f2d2d; /* 字體顏色 */
-    font-weight: 200; 
-    font-size: 18px;
-    font-family: "Rubik Bubbles", system-ui;
-    font-style: normal;
-    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    /* 垂直排列 */
+    align-items: center;
+    gap: 5px;
+    max-width: auto;
+    justify-content: space-between;
+    padding: 10px;
+    margin-left: 90px;
   }
 
-  /* 當螢幕寬度小於 768px 時的樣式 */
-    @media (max-width: 768px) {
-    /* 調整導航條容器，使其垂直排列 */
-    .l-header-nav {
-        display: flex;
-        flex-direction: row; /* 垂直排列 */
-        align-items: center;
-        gap: 5px;
-        max-width:auto;
-        justify-content: space-between;
-        padding: 10px;
-        margin-left:90px ;
-    }
-    .l-nav_link{
-        display: inline-block;  /* 保持水平排列 */
-        padding: 3px; 
-        font-size: 5px;  
-        white-space: nowrap;  /* 避免文字換行 */
-    }
-    
+  .l-nav_link {
+    display: inline-block;
+    /* 保持水平排列 */
+    padding: 3px;
+    font-size: 5px;
+    white-space: nowrap;
+    /* 避免文字換行 */
+  }
+
 }
-  
-  /* .logo img {
+
+/* .logo img {
     width: 100px; 根據需要設置圖片大小
     height: auto;
   } */
-  
-  /* bootstrap舊導覽頁 */
+
+/* bootstrap舊導覽頁 */
 /* .l-header-nav {
     display: flex;
     justify-content: center;
@@ -130,10 +149,10 @@ section {
 } */
 
 .card-header {
-    font-size: 20px;
-    font-family: "Yuji Mai", serif;
-    font-weight: 400;
-    font-style: normal;
+  font-size: 20px;
+  font-family: "Yuji Mai", serif;
+  font-weight: 400;
+  font-style: normal;
 
 }
 
@@ -165,23 +184,28 @@ section {
 #title_diveserver,
 h4 {
   /* 中文字體 */
-  font-family: "Zen Maru Gothic", serif ;
+  font-family: "Zen Maru Gothic", serif;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 35px;
   font-style: normal;
+  padding-bottom: 5px;
 
-/* 襯線體 */
-    /* font-family: "Yuji Mai", serif;
+  /* 襯線體 */
+  /* font-family: "Yuji Mai", serif;
     font-weight: 400;
     font-style: normal; */
 }
-#title_news >p{
+
+#title_news+p {
   /* 英文泡泡字體 */
   font-family: "Rubik Bubbles", system-ui;
   font-weight: 400;
   font-style: normal;
   margin: 15px;
+  font-size: 30px;
+
 }
+
 /* #title_news{
   background-color: #e8f5fe;
 } */
@@ -189,9 +213,9 @@ h4 {
 @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c&display=swap');
 
 #apple {
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* @font-face {
@@ -201,13 +225,13 @@ h4 {
 
 
 #snork {
-    background-image: url(../img/背景圖/藍1.png);
-    background-size: cover;
-    background-position: center;
-    /* border: 2px solid red; */
-    padding-top: 20px;
-    padding-bottom: 20px;
-    /* width:250px ; */
+  background-image: url(../img/背景圖/藍1.png);
+  background-size: cover;
+  background-position: center;
+  /* border: 2px solid red; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* width:250px ; */
 
 }
 
@@ -215,47 +239,47 @@ h4 {
 #no_lic_scuba img,
 #scuba img,
 #free_dive_img img {
-    max-height: 100%;
-    height: auto;
-    /* 確保圖片高度自適應 */
-    display: block;
-    /*避免與行內文字基線對齊的空間 */
-    margin: 0;
-    padding: 20px;
-    opacity: 0.8;
-    /* width: 100%; */
+  max-height: 100%;
+  height: auto;
+  /* 確保圖片高度自適應 */
+  display: block;
+  /*避免與行內文字基線對齊的空間 */
+  margin: 0;
+  padding: 20px;
+  opacity: 0.8;
+  /* width: 100%; */
 }
 
 #no_lic_scuba {
-    background-image: url('../img/背景圖/藍2.png');
-    background-size: cover;
-    background-position: center;
-    /* border: 2px solid red; */
-    padding-top: 20px;
-    padding-bottom: 20px;
-    /* width:250px ; */
+  background-image: url('../img/背景圖/藍2.png');
+  background-size: cover;
+  background-position: center;
+  /* border: 2px solid red; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* width:250px ; */
 }
 
 #text_snork {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 #scuba {
-    background-image: url('../img/背景圖/藍3.png');
-    background-size: cover;
-    background-position: center;
-    /* border: 2px solid red; */
-    padding-top: 20px;
-    /* width:250px ; */
+  background-image: url('../img/背景圖/藍3.png');
+  background-size: cover;
+  background-position: center;
+  /* border: 2px solid red; */
+  padding-top: 20px;
+  /* width:250px ; */
 }
 
 #free_dive {
-    background-image: url('../img/背景圖/藍4.png');
-    background-size: cover;
-    background-position: center;
-    /* border: 2px solid red; */
-    padding-top: 20px;
-    /* width:250px ; */
+  background-image: url('../img/背景圖/藍4.png');
+  background-size: cover;
+  background-position: center;
+  /* border: 2px solid red; */
+  padding-top: 20px;
+  /* width:250px ; */
 }
 
 
@@ -265,16 +289,16 @@ h4 {
 #no_lic_scuba img,
 #scuba img,
 #free_dive img {
-    transition: all 0.3s ease;
-    /* 平滑過渡效果  */
+  transition: all 0.3s ease;
+  /* 平滑過渡效果  */
 }
 
 #snork img:hover,
 #no_lic_scuba img:hover,
 #scuba img:hover,
 #free_dive img:hover {
-    transform: scale(1.1);
-    opacity: 1;
+  transform: scale(1.1);
+  opacity: 1;
 }
 
 
@@ -291,11 +315,15 @@ h4 {
 /* 藍色波浪背景樣式 */
 .bluewave-background {
   /* position: relative; */
-  background-image:url(../img/背景圖/bluewave.jpg);
-  background-repeat: no-repeat; /* 避免重複 */
-  background-size: cover; /* 讓背景圖片充滿整個區塊 */
-  background-position: top; /* 調整圖片位置 */
-  padding: 50px 0; /* 增加上下內邊距，確保內容不被背景擠壓 */
+  background-image: url(../img/背景圖/bluewave.jpg);
+  background-repeat: no-repeat;
+  /* 避免重複 */
+  background-size: cover;
+  /* 讓背景圖片充滿整個區塊 */
+  background-position: top;
+  /* 調整圖片位置 */
+  padding: 50px 0;
+  /* 增加上下內邊距，確保內容不被背景擠壓 */
   /*color: white;  設置內容字體顏色 */
   background-attachment: fixed;
   /* height: 500px; */
@@ -315,96 +343,109 @@ h4 {
 
 /* 網格容器設定 */
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    justify-items: center;
-    padding: 20px;
-    /* background-color: #e8f5fe; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+  /* background-color: #e8f5fe; */
 }
 
 /* 卡片樣式 */
 .card {
-    background: #ffffff;
-    border-radius: 30px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    text-align: center;
-    width: 300px;
-    padding: 30px;
-    position: relative;
-    border: 7px solid #0089E1;
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-align: center;
+  width: 300px;
+  padding: 30px;
+  position: relative;
+  border: 7px solid #0089E1;
 
 }
 
+.card:hover {}
+
 /* 圖片部分 */
 .card-image {
-    position: relative; /* 確保雲朵的絕對定位基於這裡 */
-    width: 100%;
-  }
+  position: relative;
+  /* 確保雲朵的絕對定位基於這裡 */
+  width: 100%;
+}
+
 .card-image img {
-    width: 100%;
-    height: 200px;
-    border-radius: 40px;
-    object-fit: cover;
-    border: 7px solid #0089E1;
+  width: 100%;
+  height: 200px;
+  border-radius: 40px;
+  object-fit: cover;
+  border: 7px solid #0089E1;
 
 
 }
 
 /* 卡片內的文字內容 */
 .card-content {
-    margin-top: 10px;
-    z-index: 2;
+  margin-top: 10px;
+  z-index: 2;
 }
-    /* 泡泡字型 */
+
+/* 泡泡字型 */
 .rubik-bubbles-regular {
-    font-family: "Rubik Bubbles", system-ui;
-    font-weight: 400;
-    font-style: normal;
-  }  
+  font-family: "Rubik Bubbles", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .card-content h2 {
-    font-family: "Rubik Bubbles", system-ui;
-    font-size: 30px;
-    color: #0089E1;
-    margin: 0;
-    /* padding: 10px; */
-    font-weight: bold;
+  font-family: "Rubik Bubbles", system-ui;
+  font-size: 30px;
+  color: #0089E1;
+  margin: 0;
+  /* padding: 10px; */
+  font-weight: bold;
   /* font-weight: 400; */
-    font-style: normal;
+  font-style: normal;
 
 }
 
 .card-content p {
-    font-family: "Rubik Bubbles", system-ui;
-    font-size: 26px;
-    color: #0089E1;
-    margin: 5px 0 0;
+  font-family: "Rubik Bubbles", system-ui;
+  font-size: 26px;
+  color: #0089E1;
+  margin: 5px 0 0;
 }
 
 /* 雲朵部分 */
-.cloud{
-position: absolute;
-bottom: 75px; /* 雲朵的底部對齊 */
-left: 0; /* 雲朵的右側對齊 */
-width: 170px; /* 雲朵的寬度 */
-height: 100px; /* 雲朵的高度 */
-background: url('../img/背景圖/cloud.png') no-repeat center/contain; /* 雲朵圖片設置 */
-z-index: 1; /* 保持在圖片之上 */
+.cloud {
+  position: absolute;
+  bottom: 75px;
+  /* 雲朵的底部對齊 */
+  left: 0;
+  /* 雲朵的右側對齊 */
+  width: 170px;
+  /* 雲朵的寬度 */
+  height: 100px;
+  /* 雲朵的高度 */
+  background: url('../img/背景圖/cloud.png') no-repeat center/contain;
+  /* 雲朵圖片設置 */
+  z-index: 1;
+  /* 保持在圖片之上 */
 }
+
 /* 響應式設計 */
 @media (max-width: 992px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-        /* 中等螢幕顯示兩張卡片 */
-    }
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    /* 中等螢幕顯示兩張卡片 */
+  }
 }
 
 @media (max-width: 576px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-        /* 小螢幕顯示一張卡片 */
-    }
+  .grid-container {
+    grid-template-columns: 1fr;
+    /* 小螢幕顯示一張卡片 */
+  }
 }
 
 
@@ -442,6 +483,7 @@ z-index: 1; /* 保持在圖片之上 */
   margin: 0px;
   padding: 0px;
 }
+
 /* body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -449,10 +491,12 @@ z-index: 1; /* 保持在圖片之上 */
 .clear {
   clear: both;
 }
+
 img {
   max-width: 100%;
   border: 0px;
 }
+
 /* ul,
 ol {
   list-style: none;
@@ -464,6 +508,7 @@ a {
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
 }
+
 a:focus,
 a:active,
 a:visited,
@@ -471,9 +516,11 @@ a:hover {
   text-decoration: none;
   outline: none;
 }
+
 a:hover {
   color: #e73700;
 }
+
 /* h2 {
   font-family: "Rubik Bubbles", system-ui;
   margin-bottom: 48px;
@@ -490,21 +537,24 @@ h3 {
   font-size: 100px;
   line-height: 36px;
 }
+
 .zen-maru-gothic-regular {
   font-family: "Zen Maru Gothic", serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.item-desc p{
-  font-family: "Zen Maru Gothic", serif ;
+.item-desc p {
+  font-family: "Zen Maru Gothic", serif;
   font-weight: 400;
   font-style: normal;
 
 }
+
 button {
   outline: none !important;
 }
+
 /******* Common Element CSS End *********/
 
 /* -------- title style ------- */
@@ -535,10 +585,12 @@ button {
 .game-section {
   padding: 60px 50px;
 }
+
 .game-section .owl-stage {
   margin: 15px 0;
   display: flex;
 }
+
 .game-section .item {
   margin: 0 15px 60px;
   width: 320px;
@@ -557,7 +609,7 @@ button {
 /* 確保超出部分不會顯示 */
 .game-section .owl-carousel {
   max-width: 100%;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .game-section .item.active {
@@ -565,6 +617,7 @@ button {
   box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
 }
+
 .game-section .item:after {
   content: "";
   display: block;
@@ -575,6 +628,7 @@ button {
   top: 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 }
+
 .game-section .item-desc {
   padding: 0 24px 12px;
   color: #fff;
@@ -586,10 +640,12 @@ button {
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
 }
+
 .game-section .item.active .item-desc {
   transform: none;
   -webkit-transform: none;
 }
+
 .game-section .item-desc p {
   opacity: 0;
   -webkit-transform: translateY(32px);
@@ -597,12 +653,14 @@ button {
   transition: all 0.4s ease-in-out 0.2s;
   -webkit-transition: all 0.4s ease-in-out 0.2s;
 }
+
 .game-section .item.active .item-desc p {
   opacity: 1;
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-.game-section .owl-theme.custom-carousel  {
+
+.game-section .owl-theme.custom-carousel {
   margin-top: -20px;
   position: relative;
   z-index: 5;
@@ -613,9 +671,10 @@ button {
   display: flex;
   justify-content: space-between;
   position: relative;
-  top: -50px;  
+  top: -50px;
   /* 調整按鈕位置  */
 }
+
 .owl-nav button {
   background: #343434;
   color: white;
@@ -638,6 +697,7 @@ button {
   h2 {
     margin-bottom: 32px;
   }
+
   h3 {
     margin: 0 0 8px;
     font-size: 24px;
@@ -648,14 +708,17 @@ button {
   .game-section {
     padding: 50px 30px;
   }
+
   .game-section .item {
     margin: 0 12px 60px;
     width: 260px;
     height: 360px;
   }
+
   .game-section .item.active {
     width: 400px;
   }
+
   .game-section .item-desc {
     transform: translateY(calc(100% - 46px));
     -webkit-transform: translateY(calc(100% - 46px));
@@ -666,11 +729,13 @@ button {
   h2 {
     margin-bottom: 32px;
   }
+
   h3 {
     margin: 0 0 8px;
     font-size: 24px;
     line-height: 32px;
   }
+
   .line-title {
     width: 330px;
   }
@@ -679,14 +744,17 @@ button {
   .game-section {
     padding: 50px 30px 40px;
   }
+
   .game-section .item {
     margin: 0 12px 60px;
     width: 240px;
     height: 330px;
   }
+
   .game-section .item.active {
     width: 360px;
   }
+
   .game-section .item-desc {
     transform: translateY(calc(100% - 42px));
     -webkit-transform: translateY(calc(100% - 42px));
@@ -697,14 +765,17 @@ button {
   body {
     font-size: 14px;
   }
+
   h2 {
     margin-bottom: 20px;
   }
+
   h3 {
     margin: 0 0 8px;
     font-size: 19px;
     line-height: 24px;
   }
+
   .line-title {
     width: 250px;
   }
@@ -713,16 +784,19 @@ button {
   .game-section {
     padding: 30px 15px 20px;
   }
+
   .game-section .item {
     margin: 0 10px 40px;
     width: 200px;
     height: 280px;
   }
+
   .game-section .item.active {
     width: 270px;
     box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
     -webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
   }
+
   .game-section .item-desc {
     padding: 0 14px 5px;
     transform: translateY(calc(100% - 42px));
@@ -733,19 +807,35 @@ button {
 
 /* 潛水服務 交錯排列 */
 
-#title_diveserver>p,
-.content .text h3{
+
+#title_diveserver+p {
   /* 英文泡泡字體 */
   font-family: "Rubik Bubbles", system-ui;
   font-weight: 400;
   font-style: normal;
   margin: 15px;
+  font-size: 30px;
 }
+
+.content .text h3 {
+  /* border: 2px solid red; */
+  text-align: left;
+  margin-left: 0px;
+  font-size: 25px;
+
+}
+
+.content .image img {
+  border-radius: 15px;
+}
+
 .container {
   display: grid;
   max-width: 1000px;
-  grid-column: 2; /* 把內容放在中間那一格 */
-  margin: 0 auto;    /* 水平居中 */
+  grid-column: 2;
+  /* 把內容放在中間那一格 */
+  margin: 0 auto;
+  /* 水平居中 */
   padding: 50px;
 }
 
@@ -754,29 +844,34 @@ button {
   align-items: center;
   justify-content: space-between;
   margin: 50px auto;
-  
-  opacity: 0; /* 預設為隱藏 */
-  transform: translateY(50px); /* 加入位移效果 */
+
+  opacity: 0;
+  /* 預設為隱藏 */
+  transform: translateY(50px);
+  /* 加入位移效果 */
   transition: all 0.6s ease;
 }
 
-.content .text{
+.content .text {
   width: 40%;
-  padding: 0 20px ;
+  padding: 0 20px;
 }
-.content .image{
+
+.content .image {
   width: 60%;
 }
-.content .text h2{
+
+.content .text h2 {
   /* 中文字體 */
-  font-family: "Zen Maru Gothic", serif ;
+  font-family: "Zen Maru Gothic", serif;
   font-weight: 600;
   font-size: 25px;
   font-style: normal;
   margin-bottom: 10px;
 }
-.content .text p{
-  font-family: "Zen Maru Gothic", serif ;
+
+.content .text p {
+  font-family: "Zen Maru Gothic", serif;
   font-weight: 580;
   font-size: 15px;
   font-style: normal;
@@ -804,3 +899,360 @@ button {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/* footer */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Footer Styling */
+footer {
+  /* background-color: #6767ec;  */
+  color: #000000;
+  padding: 2rem;
+  background-image: url(../img/背景圖/footer1.png);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.footer-section h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  /* 英文泡泡字體 */
+  font-family: "Rubik Bubbles", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  margin: 15px;
+  font-size: 23px;
+
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+
+}
+
+.footer-section ul li a {
+  color: black;
+  text-decoration: none;
+  /* 英文泡泡字體 */
+  font-family: "Rubik Bubbles", system-ui;
+  /* font-weight: 400; */
+  font-style: normal;
+  /* margin: 15px; */
+  font-size: 18px;
+}
+
+.footer-section ul li a:hover {
+  color: #e73700;
+}
+
+.footer-section form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+}
+
+.footer-section form button {
+  background-color: #FFAAB4;
+  border: none;
+  padding: 0.7rem;
+  color: #192687;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.footer-section p {
+  margin-bottom: 0.5rem;
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: bold;
+  font-size: 16px;
+
+  font-style: normal;
+  padding-bottom: 5px;
+
+}
+
+.footer-section a.message-link {
+  color: #1F4BA4;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+}
+
+.footer-bottom a {
+  margin-left: 1rem;
+  color: #1F4BA4;
+  text-decoration: none;
+}
+
+
+/* open water 網頁 */
+/* 整體佈局 */
+/* body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9; 
+}  */
+
+.product-container {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* 左側輪播圖 */
+.carousel {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+}
+
+.main-image img {
+  position: relative;
+  width: 100%;
+  display: none;
+  border-radius: 10px;
+}
+
+.main-image img.active {
+  display: block;
+}
+
+.main-image img {
+  width: 100%;
+  /* display: none; */
+  display: block;
+  border-radius: 10px;
+}
+
+.main-image img.active {
+  display: block;
+}
+
+
+/* 左右按鈕 */
+button.prev,
+button.next {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+
+/* 小圖預覽 */
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  overflow-x: auto;
+  /* 若有太多圖片，可左右滾動 */
+}
+
+.thumbnails img {
+  width: 80px;
+  height: 60px;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, border 0.3s ease;
+}
+
+.thumbnails img.active {
+  opacity: 1;
+  border: 2px solid #4CAF50;
+}
+
+/* 右側商品資訊 */
+.product-info {
+  width: 50%;
+
+}
+
+
+.product-info h2 {
+  color: #c56969;
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: bold;
+  font-size: 30px;
+  font-style: normal;
+  margin-bottom: 13px;
+
+}
+
+.product-info h3 {
+  font-size: 23px;
+  color: #c56969;
+  margin-bottom: 13px;
+  /* 英文泡泡 */
+  font-family: "Rubik Bubbles", system-ui;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+.product-info p {
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 400;
+  font-size: 17px;
+  font-style: normal;
+  margin-bottom: 13px;
+
+}
+
+
+table {
+  width: 100%;
+  margin-top: 10px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 500;
+  font-size: 17px;
+  font-style: normal;
+  margin-bottom: 13px;
+}
+
+
+.signup-button {
+  background-color: #c56969;
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: bold;
+  font-style: normal;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.signup-button:hover {
+  background-color: #45a049;
+}
+
+
+/* open water注意事項 */
+/* 整體設計 */
+/* body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+} */
+
+.button-container {
+  display: block;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.button-container ul,li,p {
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 500;
+  font-size: 17px;
+  font-style: normal;
+  margin-bottom: 1px;
+
+}
+
+/* 自訂按鈕樣式 */
+.custom-button {
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: bold;
+  font-size: 20px;
+  font-style: normal;
+  display: inline-block;
+  align-items: center;
+  border: 3px solid #c56969;
+  color: #c56969;
+  border-radius: 50px;
+  padding: 1px 20px;
+  margin: 15px -5px;
+  /* color: #99d2d2; */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  white-space: nowrap;
+}
+
+.custom-button:hover {
+  background-color: #c56969;
+  color: white;
+}
+
+.custom-button .icon {
+  width: 60px;
+  /* border: 2px solid red; */
+  margin-right: 8px;
+  /* padding: 2px; */
+  max-width: 100%;
+}
+
+/* 強調文字 */
+/* .custom-button strong {
+  color: #99d2d2;
+  font-weight: bold;
+} */
