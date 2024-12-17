@@ -85,7 +85,7 @@
 
             <!-- 右側商品資訊 -->
             <div class="product-info">
-                <h2>水肺潛水 <br></h2>
+                <h2 id="title_openwater">水肺潛水 <br></h2>
                 <h3>Open Water </h3>
                 <p>考到水肺證照，想好好參加旅遊潛水，來場FUN DIVE嗎? <br>
                     快來報名岸潛享受綠島的世界級潛點吧<hr>
@@ -109,7 +109,11 @@
                 </table>
 
                 <!-- 報名按鈕 -->
-                <button class="signup-button" onclick="alert('報名成功！')">點我報名</button>
+                <button class="signup-button" onclick="location.href='./booking.html#title_booking'">點我報名  
+                </button>
+                <!-- <a href="./booking.html" class="signup-button">點我報名</a> -->
+                
+
             </div>
         </div>
 
@@ -118,7 +122,7 @@
         <!-- 按鈕區塊 -->
         <div class="button-container">
             <div class="custom-button">
-                <img src="../img/背景圖/魚.png" class="icon">
+                <img src="../img/背景圖/魚2.png" class="icon">
                 <span>潛點
                     <!-- <strong>價目表</strong> --></span>
             </div>
@@ -136,7 +140,7 @@
 
         <div class="button-container">
             <div class="custom-button">
-                <img src="../img/背景圖/魚.png" class="icon">
+                <img src="../img/背景圖/魚2.png" class="icon">
                 <span>活動費用</span>
             </div>
 
@@ -151,7 +155,7 @@
 
         <div class="button-container">
             <div class="custom-button">
-                <img src="../img/背景圖/魚.png" class="icon">
+                <img src="../img/背景圖/魚2.png" class="icon">
                 <span>注意事項 </span>
             </div>
             <div>
@@ -183,30 +187,31 @@
     </section>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const images = document.querySelectorAll(".carousel img");
-            const prevButton = document.querySelector(".prev");
-            const nextButton = document.querySelector(".next");
-            let currentIndex = 0;
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     const images = document.querySelectorAll(".carousel img");
+        //     const prevButton = document.querySelector(".prev");
+        //     const nextButton = document.querySelector(".next");
+        //     let currentIndex = 0;
 
-            function showImage(index) {
-                images.forEach((img, i) => {
-                    img.classList.toggle("active", i === index);
-                });
-            }
+        //     function showImage(index) {
+        //         images.forEach((img, i) => {
+        //             img.classList.toggle("active", i === index);
+        //         });
+        //     }
 
-            prevButton.addEventListener("click", () => {
-                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-                showImage(currentIndex);
-            });
+        //     prevButton.addEventListener("click", () => {
+        //         currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        //         showImage(currentIndex);
+        //     });
 
-            nextButton.addEventListener("click", () => {
-                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-                showImage(currentIndex);
-            });
+        //     nextButton.addEventListener("click", () => {
+        //         currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        //         showImage(currentIndex);
+        //     });
 
-            showImage(currentIndex);
-        });
+        //     showImage(currentIndex);
+        //     event.preventDefault()
+        // });
 
 
     </script>

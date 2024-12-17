@@ -347,6 +347,7 @@ h4 {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   justify-items: center;
+  /* text-align: center; */
   padding: 20px;
   /* background-color: #e8f5fe; */
 }
@@ -365,7 +366,6 @@ h4 {
 
 }
 
-.card:hover {}
 
 /* 圖片部分 */
 .card-image {
@@ -431,6 +431,16 @@ h4 {
   /* 雲朵圖片設置 */
   z-index: 1;
   /* 保持在圖片之上 */
+}
+.cloud img{
+  /* border: 2px solid red; */
+  width: 50px;
+  padding-top: 20px;
+  padding-right: 5px;
+  animation-duration: 6000s ;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;  /* 動畫無限循環 */
+
 }
 
 /* 響應式設計 */
@@ -903,12 +913,12 @@ button {
 
 /* footer */
 /* Reset */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
-}
+} */
 
 /* Footer Styling */
 footer {
@@ -1179,6 +1189,7 @@ td {
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
+  text-align: center;
   margin-top: 20px;
 }
 
@@ -1207,7 +1218,9 @@ td {
   margin: 0 auto;
 }
 
-.button-container ul,li,p {
+.button-container ul,
+li,
+.button-container p {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: 500;
@@ -1219,12 +1232,12 @@ td {
 
 /* 自訂按鈕樣式 */
 .custom-button {
+  display: inline-flex; 
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: bold;
   font-size: 20px;
   font-style: normal;
-  display: inline-block;
   align-items: center;
   border: 3px solid #c56969;
   color: #c56969;
@@ -1251,149 +1264,205 @@ td {
   max-width: 100%;
 }
 
-/* 強調文字 */
-/* .custom-button strong {
-  color: #99d2d2;
-  font-weight: bold;
-} */
-
 
 /* booking網頁 */
-/* 基本樣式設定 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-/* body {
-  background: linear-gradient(135deg, #ff9a5b, #ffbf8b);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-} */
 
 /* 表單容器 */
-.form-container {
+/* .form-container {
   justify-content: center;
   align-items: center;
   display: flex;
   background: white;
-  width: 1000px;
   border-radius: 15px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   padding: 20px 30px;
+  border: 2px solid red;
+  grid-column: 2;
+  /* 把內容放在中間那一格 */
+/* margin: 0 auto; */
+/* 水平居中
+} */
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+/* body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+} */
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px 15px rgba(24, 2, 2, 0.1);
+  /* border: 2px solid red; */
 }
 
-/* 步驟指示器 */
-.steps {
-  display: flex;
-  justify-content: space-around;
-  margin: 10px 0 20px;
-}
-
-.step {
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
+h1 {
   text-align: center;
-  border-radius: 50%;
-  background: #e0e0e0;
-  color: #fff;
+  margin-bottom: 0.5rem;
+  /* color: #333; */
+  color:#c56969;
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: bold;
+  font-size: 30px;
+  font-style: normal;
+  margin-bottom: 40px;
+
 }
 
-.step.active {
-  background: #ff9a5b;
-}
-input[type="tel"]:invalid{
-  background-color: rgb(229, 155, 155);
 
-}
-input[type="tel"]:invalid+ span::after{
-  content: "✖ 請填寫正確格式的行動電話";
-  color: rgb(197, 80, 80);
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* 定義兩欄 */
+  gap: 1.5rem;
 }
 
-/* 欄位樣式 */
-.section {
-  margin-bottom: 15px;
+.form-group {
+  display: flex;
+  flex-direction: column;
 }
 
 label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+  margin-bottom: 0.5rem;
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 600;
+  font-size: 17px;
+  font-style: normal;
+  margin-bottom: 10px;
   color: #333;
+
 }
 
 input,
 select,
 textarea {
-  width: 100%;
-  padding: 10px;
+  padding: 0.8rem;
   border: 1px solid #ddd;
   border-radius: 5px;
+  /* font-size: 1rem; */
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 500;
+  font-size: 15px;
+  font-style: normal;
+  margin-bottom: 10px;
 }
+input[ type="tel"]:valid {
+  border: 2px solid green;
+}
+/* input[ type="tel"]:invalid {
+  border: 2px solid red;
+} */
+
 
 textarea {
-  height: 100px;
   resize: none;
 }
 
-/* 性別選項 */
-.gender-options {
+.description {
+  grid-column: 1 / -1;
+  /* 讓這個元素橫跨所有列  */
+}
+
+.packages {
+  grid-column: 1 / -1;
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
 }
 
-.gender-options label {
-  font-weight: normal;
-  color: #555;
-}
-
-/* 教育背景 */
-.education-section h3 {
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.education-row {
-  display: flex;
-  gap: 10px;
-}
-
-.education-row input {
+.package {
   flex: 1;
-}
-
-.add-btn {
-  background: transparent;
-  border: none;
-  color: #ff9a5b;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-/* 按鈕 */
-.btn-container {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
   text-align: center;
-  margin-top: 20px;
+  margin-right: 1rem;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+
 }
 
-.save-btn {
-  background: #ff9a5b;
+.package:last-child {
+  margin-right: 0;
+}
+
+button {
+  margin: 15px auto;  /* 水平置中 */
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  /* grid-column: 1 / -1;  */
+  padding:0.8rem;
+  background-color: #c56969;
   color: white;
   border: none;
-  padding: 10px 20px;
   border-radius: 5px;
+  /* font-size: 1rem; */
   cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 600;
+  font-size: 18px;
+  font-style: normal;
+  /* margin-bottom: 10px; */
+
 }
 
-.save-btn:hover {
-  background: #e88a4b;
+button:hover {
+  background-color: #45a049;
+}
+
+/* background-color: .packages {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+} */
+
+.package.selected {
+  transform: scale(1.05) translateY(-5px);
+  /* 卡片浮起且放大 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  background-color: #007BFF;
+  /* 浮起時背景變色 */
+  color: white;
+}
+
+.package.selected span {
+  color: #e0e0e0;
+}
+
+/* .package:active {
+  transform: scale(1.05) translateY(-5px); /* 點擊後稍微浮起放大 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+} */
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .packages {
+    flex-direction: column;
+  }
+
+  .package {
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
 }
