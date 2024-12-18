@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .marquee-wrapper {
+            position: relative;
+            width: 100%;
+            /* 容器寬度 */
+            overflow: hidden;
+            /* 隱藏溢出的內容 */
+        }
+
+        .marquee {
+            display: flex;
+            /* 圖片橫向排列 */
+            will-change: transform;
+            /* 優化動畫性能 */
+        }
+
+        .marquee-item {
+            flex-shrink: 0;
+            /* 圖片不縮小 */
+            width: 500px;
+            height: auto;
+            /* 單張圖片寬度 */
+            margin-right: 10px;
+            /* 間距 */
+        }
+
+        .marquee img {
+            width: 100%;
+            /* 圖片填滿 */
+            height: auto;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="marquee-wrapper">
+        <div class="marquee" id="marquee">
+            <div class="marquee-item">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../img/最新消息/2-2.png">
+                    </div>
+                    <div class="card-content">
+                        <h2>OKINAWA</h2>
+                        <p>TRIP</p>
+                        <a href="https://ww.google.com" class="stretched-link"></a>
+                    </div>
+                    <!-- 加入雲朵 -->
+                    <div>
+                        <div class="cloud">
+                            <img class="ld ld-move-rtl" src="../img/背景圖/魚2.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div>
+        <div class="marquee-item"><img src="../img/水肺/水肺19.JPG" alt="Image 2" /></div>
+        <div class="marquee-item"><img src="../img/水肺/水肺19.JPG" alt="Image 3" /></div>
+        <div class="marquee-item"><img src="../img/水肺/水肺19.JPG" alt="Image 4" /></div>
+        <div class="marquee-item"><img src="../img/水肺/水肺19.JPG" alt="Image 5" /></div>
+
+    </div>
+        </div>
+    </div> -->
+
+        <!-- 圖片自動輪播 -->
+        <script>
+            const marquee = document.getElementById('marquee');
+            const items = document.querySelectorAll('.marquee-item');
+            const totalItems = items.length;
+            const copyCount = 5; // 控制每組圖片的複製次數，確保圖片足夠以無縫輪播
+
+            // 複製圖片
+            for (let i = 0; i < copyCount; i++) {
+                for (let j = 0; j < totalItems; j++) {
+                    const clone = items[j].cloneNode(true);
+                    marquee.appendChild(clone); // 添加複製的元素
+                }
+            }
+
+            // 滾動圖片
+            let offset = 0;
+            const itemWidth = items[0].offsetWidth + 10; // 單張圖片的寬度（包含間距）
+
+            function slide() {
+                offset -= 1; // 每次向左移動 1px
+                if (Math.abs(offset) >= itemWidth * totalItems) {
+                    // 當圖片完全滾動一圈後，重置 offset，達到無縫效果
+                    offset = 0;
+                }
+                marquee.style.transform = `translateX(${offset}px)`; // 更新位置
+                requestAnimationFrame(slide); // 持續更新
+            }
+
+            slide(); // 啟動輪播
+        </script>
+</body>
+
+</html>
+
+
+<!-- 最新消息原版 -->
+<!-- 最新消息 -->
+<div class="grid-container">
+    <div class="card">
+        <div class="card-image">
+            <img src="../img/最新消息/2-2.png">
+        </div>
+        <div class="card-content">
+            <h2>OKINAWA</h2>
+            <p>TRIP</p>
+            <a href="https://ww.google.com" class="stretched-link"></a>
+        </div>
+        <!-- 加入雲朵 -->
+        <div>
+            <div class="cloud">
+                <img class="ld ld-move-rtl" src="../img/背景圖/魚2.png">
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-image">
+            <img src="../img/最新消息/3.png">
+        </div>
+        <div class="card-content">
+            <h2>BOHOL</h2>
+            <p>TRIP</p>
+        </div>
+        <!-- 加入雲朵 -->
+        <div>
+            <div class="cloud">
+                <img class="ld ld-move-rtl" src="../img/背景圖/魚2.png">
+
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-image">
+            <img src="../img/最新消息/1-2.png">
+        </div>
+        <div class="card-content">
+            <h2>FREE</h2>
+            <p>DIVING</p>
+        </div>
+        <!-- 加入雲朵 -->
+        <div>
+            <div class="cloud">
+                <img class="ld ld-move-rtl" src="../img/背景圖/魚2.png">
+
+            </div>
+        </div>
+    </div>
+</div>
