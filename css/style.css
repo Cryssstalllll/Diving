@@ -95,19 +95,21 @@
 }
 
 /* 當螢幕寬度小於 768px 時的樣式 */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
 
   /* 調整導航條容器，使其垂直排列 */
   .l-header-nav {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
+    flex-wrap: wrap; /* 允許換行 */
+    /* right: -10px; */
     /* 垂直排列 */
     align-items: center;
+    justify-content: space-between;
     gap: 5px;
     max-width: auto;
-    justify-content: space-between;
     padding: 10px;
-    margin-left: 90px;
+    margin-left: 150px;
   }
 
   .l-nav_link {
@@ -115,8 +117,10 @@
     /* 保持水平排列 */
     padding: 3px;
     font-size: 5px;
-    white-space: nowrap;
-    /* 避免文字換行 */
+    white-space: nowrap;/* 避免文字換行 */
+    flex: 1 1 calc(50% - 5px); /* 每列分配一半空間，並考慮間距 */
+    text-align: center; /* 文字置中 */
+    box-sizing: border-box; /* 確保 padding 不影響寬度計算 */
   }
 
 }
@@ -126,27 +130,6 @@
     height: auto;
   } */
 
-/* bootstrap舊導覽頁 */
-/* .l-header-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    width: 100%;
-}
-
-.navbar-nav .nav-item {
-    margin: 15px;
-    padding: 0;
-}
-
-section {
-    margin: 20px 0;
-}
-
-.no-border {
-    border: none;
-} */
 
 .card-header {
   font-size: 20px;
@@ -182,6 +165,7 @@ section {
 
 #title_news,
 #title_diveserver,
+#title_transport,
 h4 {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
@@ -196,13 +180,31 @@ h4 {
     font-style: normal; */
 }
 
-#title_news+p {
+#title_news+p,
+#title_transport+p {
   /* 英文泡泡字體 */
   font-family: "Rubik Bubbles", system-ui;
   font-weight: 400;
   font-style: normal;
   margin: 15px;
   font-size: 30px;
+}
+
+#title_airplane {
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 600;
+  font-size: 25px;
+  font-style: normal;
+  padding-bottom: 5px;
+}
+#title_airplane+p{
+  /* 英文泡泡字體 */
+  font-family: "Rubik Bubbles", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  margin: 15px;
+  font-size: 25px;
 
 }
 
@@ -354,16 +356,21 @@ h4 {
 .marquee {
   display: flex;
   /* 圖片橫向排列 */
-  will-change: transform;/* 優化動畫性能 */
-  /* animation: marquee-scroll 800s linear infinite; */
-  animation-duration:5000s;
+  will-change: transform;
+  /* 優化動畫性能 */
+  animation: marquee-scroll 5000s linear infinite;
+  /* animation-duration:5000s; */
+  /* animation-play-state: running;  */
+  /* 預設動畫啟動 */
 }
 
 .marquee-item {
-  flex-shrink: 0;/* 圖片不縮小 */
+  flex-shrink: 0;
+  /* 圖片不縮小 */
   width: 500px;
   height: auto;
-  width: calc(100% / 4);/* 單張圖片寬度 */
+  width: calc(100% / 4);
+  /* 單張圖片寬度 */
   margin: 0 30px;
 }
 
@@ -372,18 +379,28 @@ h4 {
   /* 圖片填滿 */
   height: auto;
 }
+
+/* 當滑鼠停留在 .marquee 上時，暫停動畫 */
+.marquee:hover {
+  animation-play-state: paused;
+  /* 暫停動畫 */
+}
+
 /* 響應式設計 */
 @media (max-width: 992px) {
   .marquee-item {
-      width: calc(100% / 2); /* 中等螢幕顯示兩張卡片 */
+    width: calc(100% / 2);
+    /* 中等螢幕顯示兩張卡片 */
   }
 }
 
 @media (max-width: 576px) {
   .marquee-item {
-      width: 50%; /* 確保小螢幕仍顯示兩張卡片 */
+    width: 50%;
+    /* 確保小螢幕仍顯示兩張卡片 */
   }
 }
+
 .grid-container {
   /* display: grid; */
   display: flex;
@@ -469,7 +486,8 @@ h4 {
   width: 170px;
   height: 100px;
   background: url('../img/背景圖/cloud.png') no-repeat center/contain;
-  z-index: 1;/* 保持在圖片之上 */
+  z-index: 1;
+  /* 保持在圖片之上 */
 }
 
 .cloud img {
@@ -484,31 +502,42 @@ h4 {
   /* 動畫無限循環 */
 
 }
-.ld { transform-origin: 50% 50%; transform-box: fill-box; }
-@keyframes ld-move-rtl
-{
+
+.ld {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+
+@keyframes ld-move-rtl {
   0% {
-    transform: translate(0%,0%);
+    transform: translate(0%, 0%);
   }
+
   40% {
-    transform: translate(-80%,0%);
+    transform: translate(-80%, 0%);
   }
+
   49.99999% {
-    transform: translate(-99.99998%,0%);
+    transform: translate(-99.99998%, 0%);
   }
+
   50% {
-    transform: translate(100%,0%);
+    transform: translate(100%, 0%);
   }
+
   50.00001% {
-    transform: translate(99.99998%,0%);
+    transform: translate(99.99998%, 0%);
   }
+
   60% {
-    transform: translate(80%,0%);
+    transform: translate(80%, 0%);
   }
+
   100% {
-    transform: translate(0%,0%);
+    transform: translate(0%, 0%);
   }
 }
+
 /* .ld.ld-move-rtl {
   animation: ld-move-rtl 10s infinite linear; 
 } */
@@ -528,21 +557,60 @@ h4 {
 }
 
 
-/* 潛水教練 */
+/* about 潛水教練 */
 /******* Fonts Import Start **********/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 /********* Fonts Face CSS End **********/
 
 /******* Common Element CSS Start ******/
+.container-about {
+  display: grid;
+  max-width: 800px;
+  grid-column: 2;
+  /* 把內容放在中間那一格 */
+  margin: 0 auto;
+  /* 水平居中 */
+  padding: 50px;
+}
+
+.container-about #title_about {
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: bold;
+  font-size: 35px;
+  font-style: normal;
+  margin-bottom: 10px;
+  /* align-items: center;
+  justify-content: center;  */
+  text-align: center;
+  /* color: #1F4BA4; */
+}
+
+.container-about span {
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 500;
+  font-size: 20px;
+  font-style: normal;
+  margin-bottom: 10px;
+
+}
+
+.container-about h4 {
+  font-family: "Rubik Bubbles", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  margin: 15px;
+  font-size: 30px;
+  text-align: center;
+  /* color: #1F4BA4; */
+}
+
 * {
   margin: 0px;
   padding: 0px;
 }
 
-/* body {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-} */
 .clear {
   clear: both;
 }
@@ -1088,19 +1156,23 @@ footer {
   height: 20%;
   /* position: fixed; */
   /* bottom: 0; */
-  position: absolute; /* 絕對定位 */
-  top: 0; 
-  right: 0; 
+  position: absolute;
+  /* 絕對定位 */
+  top: 0;
+  right: 0;
   /* bottom: 350px; */
   top: -100px;
   /* margin-left: 0; */
 }
-.top-text{
+
+.top-text {
   display: none;
 }
-.top:hover{
+
+.top:hover {
   transform: scale(1.1) translateY(-5px);
 }
+
 /* .top:hover .top-text{
   display: block; 
   border: 2px solid red;
@@ -1738,4 +1810,147 @@ button:hover {
     width: 100%;
     text-align: center;
   }
+}
+
+
+/* transport 首頁交通 */
+.transport-container {
+  display: flex;
+  gap: 5px;
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 2px solid red;
+}
+
+/* 左側對話圖 */
+.conversation {
+  width: 50%;
+  border: 2px solid red;
+
+}
+
+/* 右側飛機圖 */
+.plane {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+}
+
+.plane-img {
+  border: 2px solid red;
+  width: 40%;
+  /* padding-top:50px ; */
+  margin-top: 50px;
+}
+
+
+/* 交通step */
+.timeline-container-all {
+  position: relative;
+  display: flex; /* 啟用 Flex 排版 */
+  justify-content: space-between; /* 讓兩個子容器均分空間 */
+  max-width: 800px;
+  /* margin-left: 10px; */
+  padding: 10px;
+  /* border-left: 10px solid #c56969; */
+  /* 主時間軸 */
+  gap: 5px;
+  padding: 30px;
+  margin: 0 auto;
+}
+.timeline-container-plane{
+  width: 50%;
+  /* border: 2px solid red; */
+
+}
+.timeline-container-boat{
+  width: 50%;
+}
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  /* 主時間軸的水平位置 */
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #c56969;
+  /* 時間軸顏色 */
+  z-index: -1;
+  /* 放在內容後面 */
+}
+
+.timeline-item:hover {
+  background-color: #f1f1f1;
+}
+
+.timeline-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border: 2px solid #d3d3d3;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+.timeline-content {
+  background-color: #fff;
+  padding: 15px 20px;
+  margin-left: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.1);
+  /* border-left: 4px solid #007BFF; */
+  width: 100%;
+  position: relative;
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 500;
+  font-size: 18px;
+  font-style: normal;
+  margin-bottom: 10px;
+
+}
+
+.timeline-content h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #007BFF;
+}
+
+.timeline-content p {
+  margin: 5px 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* 隱藏詳細資訊 */
+.details {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* 顯示詳細資訊時 */
+.timeline-item.active .details {
+  display: block;
 }
