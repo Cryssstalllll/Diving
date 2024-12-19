@@ -53,11 +53,9 @@
   height: 100vh;
   /* 背景圖高度填滿整個視窗 */
   background-image: url('../img/水肺/水肺50.JPG');
-  /* 背景圖路徑 */
   background-size: cover;
   /* 背景縮放，保持比例 */
   background-position: center;
-  /* 背景居中顯示 */
 }
 
 /* 導覽列樣式 */
@@ -78,7 +76,6 @@
   z-index: 2;
   /* 確保導覽列顯示在背景上方 */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* 添加陰影效果 */
 }
 
 /* 導覽列的連結樣式 */
@@ -86,7 +83,6 @@
   text-decoration: none;
   /* 移除下劃線 */
   color: #3f2d2d;
-  /* 字體顏色 */
   font-weight: 200;
   font-size: 18px;
   font-family: "Rubik Bubbles", system-ui;
@@ -100,25 +96,23 @@
   /* 調整導航條容器，使其垂直排列 */
   .l-header-nav {
     display: flex;
-    /* flex-direction: row; */
-    flex-wrap: wrap; /* 允許換行 */
-    /* right: -10px; */
-    /* 垂直排列 */
+    flex-direction: column;
+    flex-wrap: wrap; /* 允許子項目換行 */
+    /* right: -10px; */ /* 垂直排列 */
     align-items: center;
-    justify-content: space-between;
-    gap: 5px;
-    max-width: auto;
+    justify-content: space-between; /* 水平分佈空間 */
+    gap: 3px;
+    /* max-width: auto; */
     padding: 10px;
-    margin-left: 150px;
+    margin-left: 180px;/* 移除過多偏移，適應小螢幕 */
   }
 
   .l-nav_link {
     display: inline-block;
     /* 保持水平排列 */
     padding: 3px;
-    font-size: 5px;
     white-space: nowrap;/* 避免文字換行 */
-    flex: 1 1 calc(50% - 5px); /* 每列分配一半空間，並考慮間距 */
+    flex: 1 1 calc(50% - 3px); /* 每列分配一半空間，並考慮間距 */
     text-align: center; /* 文字置中 */
     box-sizing: border-box; /* 確保 padding 不影響寬度計算 */
   }
@@ -190,21 +184,28 @@ h4 {
   font-size: 30px;
 }
 
-#title_airplane {
+#title_airplane,
+#title_ferry {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: 600;
   font-size: 25px;
   font-style: normal;
   padding-bottom: 5px;
+  margin-top: 5px; /* 縮小與下一行文字的間距 */
+  line-height: 1.2; /* 調整行高以縮短文字間距 */
 }
-#title_airplane+p{
+#title_airplane+p,
+#title_ferry+p{
   /* 英文泡泡字體 */
   font-family: "Rubik Bubbles", system-ui;
   font-weight: 400;
   font-style: normal;
-  margin: 15px;
+
   font-size: 25px;
+  margin-top: 0; /* 縮小與上一行文字的間距 */
+  margin-bottom: 20px; /* 確保段落下方沒有多餘間距 */
+  line-height: 1.2; /* 調整行高與上一行對齊 */
 
 }
 
@@ -1813,39 +1814,11 @@ button:hover {
 }
 
 
-/* transport 首頁交通 */
-.transport-container {
-  display: flex;
-  gap: 5px;
-  padding: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
-  border: 2px solid red;
-}
-
-/* 左側對話圖 */
-.conversation {
-  width: 50%;
-  border: 2px solid red;
-
-}
-
-/* 右側飛機圖 */
-.plane {
-  position: relative;
-  width: 50%;
-  overflow: hidden;
-}
-
-.plane-img {
-  border: 2px solid red;
-  width: 40%;
-  /* padding-top:50px ; */
-  margin-top: 50px;
-}
-
-
 /* 交通step */
+/* .transport-back{
+  background-image: url(../img/背景圖/w-2.jpg);
+  background-repeat: no-repeat;
+} */
 .timeline-container-all {
   position: relative;
   display: flex; /* 啟用 Flex 排版 */
@@ -1866,6 +1839,7 @@ button:hover {
 }
 .timeline-container-boat{
   width: 50%;
+  margin-left: 20px;
 }
 .timeline-item {
   display: flex;
@@ -1950,7 +1924,29 @@ button:hover {
   color: #777;
 }
 
+#title-plane-img,
+#title-ferry-img{
+  background-image: url(../img/背景圖/cloo.png);
+  background-size: 140px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+    border: 2px solid white;
+  margin-bottom: 10px;
+
+}
 /* 顯示詳細資訊時 */
 .timeline-item.active .details {
   display: block;
+}
+
+@media (max-width: 992px) {
+  .timeline-container-all {
+    flex-direction: column; /* 父容器變為垂直方向排列 */
+    gap: 20px; /* 設置垂直間距 */
+  }
+  .timeline-container-plane,
+  .timeline-container-boat {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
