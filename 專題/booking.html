@@ -59,15 +59,15 @@
 
     <div class="container">
         <h1 id="title_booking">預約表單</h1>
-        <form>
+        <form onsubmit="handleSubmit(event)">
             <div class="form-group">
                 <label>姓名</label>
-                <input type="text" placeholder="請輸入您的姓名" required>
+                <input type="text" id="name" placeholder="請輸入您的姓名" required>
 
             </div>
             <div class="form-group">
                 <label>性別</label>
-                <select>
+                <select id="gender">
                     <option>- 請選擇性別 -</option>
                     <option>男</option>
                     <option>女</option>
@@ -76,12 +76,12 @@
 
             <div class="form-group">
                 <label>行動電話</label>
-                <input type="tel" placeholder="請輸入您的行動電話" pattern="[0-9]{10}" required>
+                <input type="tel" id="phone" placeholder="請輸入您的行動電話" pattern="[0-9]{10}" required>
                 <span></span>
             </div>
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" placeholder="請輸入您的電子郵件" pattern="[A-Za-z0-9]{0,}" required>
+                <input type="email" id="email" placeholder="請輸入您的電子郵件" pattern="[A-Za-z0-9]{0,}" required>
             </div>
             <div class="form-group">
                 <label>生日</label>
@@ -89,7 +89,7 @@
             </div>
             <div class="form-group">
                 <label>希望預定的潛水活動時段？</label>
-                <select>
+                <select id="timeSlot">
                     <option>- 請選擇時段 -</option>
                     <option>梯次1 08:00~10:00</option>
                     <option>梯次2 14:00~16:00</option>
@@ -101,12 +101,12 @@
                   </div> -->
             <div class="form-group">
                 <label>人數</label>
-                <input type="number" min="1" max="10" placeholder="至多10位，若超過請來電團體預定">
+                <input type="number"  id="people" min="1" max="10" placeholder="至多10位，若超過請來電團體預定">
             </div>
 
             <div class="form-group">
                 <label>潛水活動預定</label>
-                <select>
+                <select id="activity">
                     <option>- 請選擇活動 -</option>
                     <option>浮潛Snorkeling</option>
                     <option>體驗潛水Discover Scuba Diving</option>
@@ -115,10 +115,10 @@
                 </select>
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <input type="checkbox" placeholder="至多10位，若超過請來電團體預定">
                 <label>裝備</label>
-            </div>
+            </div> -->
 
             <!-- <div class="form-group">
                 <label>潛水活動預定</label> <span></span>
@@ -130,41 +130,14 @@
                 <label>備註</label>
                 <input type="text" placeholder="若有任何疑問歡迎填寫在此">
             </div> -->
-            <!-- <div class="packages">
-                <button class="package" onclick="selectCard(this)">
-                    <p>Birthday package 01</p>
-                    <span>USD $100</span>
-                </button>
-                <button class="package" onclick="selectCard(this)">
-                    <p>Birthday package 02</p>
-                    <span>USD $200</span>
-                </button>
-                <button class="package" onclick="selectCard(this)">
-                    <p>Birthday package 03</p>
-                    <span>USD $300</span>
-                </button>
-                <button class="package" onclick="selectCard(this)">
-                    <p>Birthday package 04</p>
-                    <span>USD $400</span>
-                </button>
-            </div> -->
+
             <div class="form-group description">
                 <label>備註</label>
-                <textarea placeholder="若有任何疑問歡迎填寫在此" rows="4"></textarea>
+                <textarea id="notes" placeholder="若有任何疑問歡迎填寫在此" rows="4"></textarea>
             </div>
         </form>
         <button type="submit" onclick="alert('報名成功！')">確認送出</button>
     </div>
-    <script>
-        function selectCard(selectedCard) {
-            // 移除其他卡片的 "selected" 類別
-            const cards = document.querySelectorAll('.package');
-            cards.forEach(card => card.classList.remove('selected'));
-
-            // 為被點擊的卡片添加 "selected" 類別
-            selectedCard.classList.add('selected');
-        }
-    </script>
     <footer>
         <!-- 回到最上層 -->
         <a href="#">
@@ -187,13 +160,12 @@
             </div>
 
 
-            <div class="footer-section contact">
+            <!-- <div class="footer-section contact">
                 <h4>Contact</h4>
                 <hr>
                 <p>0928-061502</p>
                 <p> No. 15-6號, 漁港路, 綠島鄉台東縣951<br></p>
-                <!-- <a href="#" class="message-link">Send Us A <span>Message</span> →</a> -->
-            </div>
+            </div> -->
 
             <div class="footer-section newsletter">
                 <h4>Updates News</h4>
@@ -210,10 +182,49 @@
 
         <div class="footer-bottom">
             <p>© Blue Horizon Diving All Rights Reserved.</p>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Website By 829 Studios</a>
+            <a href="#">No. 15-6號, 漁港路, 綠島鄉台東縣951</a>
         </div>
     </footer>
+    <script>
+        function selectCard(selectedCard) {
+            // 移除其他卡片的 "selected" 類別
+            const cards = document.querySelectorAll('.package');
+            cards.forEach(card => card.classList.remove('selected'));
+
+            // 為被點擊的卡片添加 "selected" 類別
+            selectedCard.classList.add('selected');
+        }
+
+
+        // 跳轉到receipt.html
+        function handleSubmit(event) {
+            event.preventDefault();  // 阻止表單提交，防止頁面刷新
+
+            // 獲取表單數據
+            const name = document.getElementById('name').value;
+            const gender = document.getElementById('gender').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const timeSlot = document.getElementById('timeSlot').value;
+            const people = document.getElementById('people').value;
+            const activity = document.getElementById('activity').value;
+            const notes = document.getElementById('notes').value;
+            
+            // 彈出報名成功的提示
+            console.log({ name, gender, phone, email, timeSlot, people, activity, notes });
+            // alert('報名成功喔喔！');
+
+            // 跳轉到收據頁面，並將資料通過查詢參數傳遞
+            // window.location.href = `receipt.html?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`;
+        
+            // 將資料存入 URL
+            const url = `receipt.html?name=${encodeURIComponent(name)}&gender=${encodeURIComponent(gender)}&phone=${encodeURIComponent(phone)}&email=${encodeURIComponent(email)}&timeSlot=${encodeURIComponent(timeSlot)}&people=${encodeURIComponent(people)}&activity=${encodeURIComponent(activity)}&notes=${encodeURIComponent(notes)}`;
+            window.location.href = url;
+
+        }
+
+    </script>
+
 </body>
 
 </html>

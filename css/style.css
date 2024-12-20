@@ -97,24 +97,32 @@
   .l-header-nav {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap; /* 允許子項目換行 */
-    /* right: -10px; */ /* 垂直排列 */
+    flex-wrap: wrap;
+    /* 允許子項目換行 */
+    /* right: -10px; */
+    /* 垂直排列 */
     align-items: center;
-    justify-content: space-between; /* 水平分佈空間 */
+    justify-content: space-between;
+    /* 水平分佈空間 */
     gap: 3px;
     /* max-width: auto; */
     padding: 10px;
-    margin-left: 180px;/* 移除過多偏移，適應小螢幕 */
+    margin-left: 180px;
+    /* 移除過多偏移，適應小螢幕 */
   }
 
   .l-nav_link {
     display: inline-block;
     /* 保持水平排列 */
     padding: 3px;
-    white-space: nowrap;/* 避免文字換行 */
-    flex: 1 1 calc(50% - 3px); /* 每列分配一半空間，並考慮間距 */
-    text-align: center; /* 文字置中 */
-    box-sizing: border-box; /* 確保 padding 不影響寬度計算 */
+    white-space: nowrap;
+    /* 避免文字換行 */
+    flex: 1 1 calc(50% - 3px);
+    /* 每列分配一半空間，並考慮間距 */
+    text-align: center;
+    /* 文字置中 */
+    box-sizing: border-box;
+    /* 確保 padding 不影響寬度計算 */
   }
 
 }
@@ -192,20 +200,26 @@ h4 {
   font-size: 25px;
   font-style: normal;
   padding-bottom: 5px;
-  margin-top: 5px; /* 縮小與下一行文字的間距 */
-  line-height: 1.2; /* 調整行高以縮短文字間距 */
+  margin-top: 5px;
+  /* 縮小與下一行文字的間距 */
+  line-height: 1.2;
+  /* 調整行高以縮短文字間距 */
 }
+
 #title_airplane+p,
-#title_ferry+p{
+#title_ferry+p {
   /* 英文泡泡字體 */
   font-family: "Rubik Bubbles", system-ui;
   font-weight: 400;
   font-style: normal;
 
   font-size: 25px;
-  margin-top: 0; /* 縮小與上一行文字的間距 */
-  margin-bottom: 20px; /* 確保段落下方沒有多餘間距 */
-  line-height: 1.2; /* 調整行高與上一行對齊 */
+  margin-top: 0;
+  /* 縮小與上一行文字的間距 */
+  margin-bottom: 20px;
+  /* 確保段落下方沒有多餘間距 */
+  line-height: 1.2;
+  /* 調整行高與上一行對齊 */
 
 }
 
@@ -1027,13 +1041,6 @@ button {
 
 
 /* footer */
-/* Reset */
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-} */
 
 /* Footer Styling */
 footer {
@@ -1041,7 +1048,7 @@ footer {
   /* position: relative; */
   color: #000000;
   padding: 2rem;
-  background-image: url(../img/背景圖/footer3.jpg);
+  background-image: url(../img/背景圖/w-2.jpg);
   position: relative;
   background-repeat: no-repeat;
   /* border: 2px solid red; */
@@ -1056,7 +1063,12 @@ footer {
 
 .footer-section {
   flex: 1;
-  margin: 0 1rem;
+  /* flex: 1 1 100%;  */
+  /* 每個項目佔 100% 的寬度，確保各佔一行 */
+  /* flex: 0 1 auto; 寬度根據內容自適應 */
+  /* margin: 1rem auto; 加一些垂直間距 */
+  margin: 0 25px;
+  text-align: center;
 }
 
 .footer-section h4 {
@@ -1066,13 +1078,32 @@ footer {
   font-family: "Rubik Bubbles", system-ui;
   font-weight: 400;
   font-style: normal;
-  margin: 15px;
+  /* margin: 15px; */
   font-size: 23px;
-
+  text-align: center;
+  padding-right: 50px;
 }
 
 .footer-section ul {
   list-style: none;
+  /* display: flex;/*將 ul 設為 Flex 容器，讓子項目 (li) 自動排成水平行。 */
+  /* flex-direction: row; 
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;  */
+  /* width: 80%; */
+  /* top: 50px;
+  left: 50%; */
+  /* position: absolute; */
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  z-index: 2;
+  /* 確保導覽列顯示在背景上方 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  /* 自動寬度，剛好容納內容 */
+  padding: 10px;
+  margin: auto;
 }
 
 .footer-section ul li {
@@ -1085,19 +1116,42 @@ footer {
   text-decoration: none;
   /* 英文泡泡字體 */
   font-family: "Rubik Bubbles", system-ui;
-  /* font-weight: 400; */
   font-style: normal;
-  /* margin: 15px; */
   font-size: 18px;
+  /* font-weight: 400; */
+  /* margin: 15px; */
 }
 
 .footer-section ul li a:hover {
   color: #e73700;
 }
 
+.footer-section form {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  /* 垂直排列所有子元素 */
+
+}
+
+.footer-section .input-group {
+  display: flex;
+  /* 讓兩個輸入框水平排列 */
+  gap: 1rem;
+  /* 控制輸入框之間的間距 */
+  width: auto;
+  /* 讓容器自適應寬度 */
+  justify-content: center;
+}
+
 .footer-section form input {
-  display: block;
-  width: 100%;
+  /* display: block; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  width: 40%;
   margin-bottom: 0.5rem;
   padding: 0.5rem;
   border: none;
@@ -1105,12 +1159,24 @@ footer {
 }
 
 .footer-section form button {
+  /* margin: 15px 10px; */
+  margin-top: 1rem;
+  /* 與輸入框分隔 */
+  display: block;
+  flex-direction: column;
+  /* 垂直排列所有子元素 */
+  /* display: inline-block; */
+  /* display: flex; */
+  /* flex-direction: column; */
+
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   background-color: #FFAAB4;
   border: none;
   padding: 0.7rem;
   color: #192687;
   font-weight: bold;
-  cursor: pointer;
   border-radius: 4px;
 }
 
@@ -1143,6 +1209,25 @@ footer {
   margin-left: 1rem;
   color: #1F4BA4;
   text-decoration: none;
+}
+
+/* 響應式設計：當寬度小於992px時，輸入框改為垂直排列 */
+@media (max-width: 992px) {
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-section {
+    flex-direction: column;
+    /* 輸入框改為垂直排列 */
+    margin-bottom: 20px;
+
+  }
+
+  .footer-section form input {
+    width: 100%;
+    /* 輸入框占滿容器 */
+  }
 }
 
 /* top回到最上面 */
@@ -1477,13 +1562,6 @@ li,
   box-sizing: border-box;
 } */
 
-/* body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
-} */
-
 .container {
   max-width: 800px;
   margin: 2rem auto;
@@ -1590,7 +1668,7 @@ textarea {
   margin-right: 0;
 }
 
-button {
+.booking-btn {
   margin: 15px auto;
   /* 水平置中 */
   display: inline-block;
@@ -1613,7 +1691,7 @@ button {
 
 }
 
-button:hover {
+.booking-btn:hover {
   background-color: #45a049;
 }
 
@@ -1821,8 +1899,10 @@ button:hover {
 } */
 .timeline-container-all {
   position: relative;
-  display: flex; /* 啟用 Flex 排版 */
-  justify-content: space-between; /* 讓兩個子容器均分空間 */
+  display: flex;
+  /* 啟用 Flex 排版 */
+  justify-content: space-between;
+  /* 讓兩個子容器均分空間 */
   max-width: 800px;
   /* margin-left: 10px; */
   padding: 10px;
@@ -1832,15 +1912,18 @@ button:hover {
   padding: 30px;
   margin: 0 auto;
 }
-.timeline-container-plane{
+
+.timeline-container-plane {
   width: 50%;
   /* border: 2px solid red; */
 
 }
-.timeline-container-boat{
+
+.timeline-container-boat {
   width: 50%;
   margin-left: 20px;
 }
+
 .timeline-item {
   display: flex;
   align-items: center;
@@ -1925,15 +2008,16 @@ button:hover {
 }
 
 #title-plane-img,
-#title-ferry-img{
+#title-ferry-img {
   background-image: url(../img/背景圖/cloo.png);
   background-size: 140px;
   background-repeat: no-repeat;
   background-position: center bottom;
-    border: 2px solid white;
+  border: 2px solid white;
   margin-bottom: 10px;
 
 }
+
 /* 顯示詳細資訊時 */
 .timeline-item.active .details {
   display: block;
@@ -1941,12 +2025,66 @@ button:hover {
 
 @media (max-width: 992px) {
   .timeline-container-all {
-    flex-direction: column; /* 父容器變為垂直方向排列 */
-    gap: 20px; /* 設置垂直間距 */
+    flex-direction: column;
+    /* 父容器變為垂直方向排列 */
+    gap: 20px;
+    /* 設置垂直間距 */
   }
+
   .timeline-container-plane,
   .timeline-container-boat {
     width: 100%;
     margin: 0 auto;
   }
+}
+
+
+/* booking success預約成功 */
+.container-book-success {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* opacity: 0.5; */
+  color: #333;
+}
+
+.details {
+  margin: 1rem 0;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.receipt-btn {
+  background-color: #c56969;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.receipt-btn:hover {
+  background-color: #45a049;
+}
+
+.details-book {
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 500;
+  font-size: 20px;
+  font-style: normal;
+  padding: 5px;
+  margin: 1px;/* 縮小與下一行文字的間距 */
+  /* line-height: 1.2;調整行高以縮短文字間距 */
+}
+.details-book p{
+  padding: 5px;
+
 }
