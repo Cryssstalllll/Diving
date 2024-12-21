@@ -45,7 +45,7 @@
             </div>
             <nav class="l-header-nav">
                 <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
-                <a href="./about_horizon.html#horizon_team" class="l-nav_link">ABOUT</a>
+                <a href="./about_horizon.html#title_about" class="l-nav_link">ABOUT</a>
                 <a href="./demo.html#title_news" class="l-nav_link">NEWS</a>
                 <a href="./demo.html#title_diveserver" class="l-nav_link">DIVING</a>
                 <a href="./demo.html#title_transport">TRANSPORT</a>
@@ -59,94 +59,91 @@
 
     <div class="container">
         <h1 id="title_booking">預約表單</h1>
-        <form onsubmit="handleSubmit(event)">
-            <div class="form-group">
-                <label>姓名</label>
-                <input type="text" id="name" placeholder="請輸入您的姓名" required>
+        <form  id="bookingForm" onsubmit="handleSubmit(event)">
+            <div class="booo">
+                <div class="form-group">
+                    <label>姓名</label>
+                    <input type="text" id="name" placeholder="請輸入您的姓名" pattern="[\u4e00-\u9fa5A-Za-z\s]+" required>
+                </div>
+                <div class="form-group">
+                    <label>性別</label>
+                    <select id="gender" required>
+                        <option>- 請選擇性別 -</option>
+                        <option>男</option>
+                        <option>女</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>行動電話</label>
+                    <input type="tel" id="phone" placeholder="請輸入您的行動電話" pattern="09[0-9]{8}" required>
+                    <span></span>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email" placeholder="請輸入您的電子郵件"
+                        pattern="[A-Za-z0-9]{0,}+@[a-zA-Z]+.[a-zA-z]{2,}" required>
+                </div>
+                <div class="form-group">
+                    <label>生日</label>
+                    <input type="date" id="birthday" required>
+                </div>
+                <div class="form-group">
+                    <label>希望預定的潛水活動時段？</label>
+                    <select id="timeSlot" required>
+                        <option value="">- 請選擇時段 -</option>
+                        <option>梯次1 08:00~10:00</option>
+                        <option>梯次2 14:00~16:00</option>
+                    </select>
+                </div>
+                <!-- <div class="form-group">
+                        <label>End Time</label>
+                        <input type="time">
+                    </div> -->
+                <div class="form-group">
+                    <label>人數</label>
+                    <input type="number" id="people" min="1" max="10" placeholder="至多10位，若超過請來電團體預定" required>
+                </div>
+                <div class="form-group">
+                    <label>潛水活動預定</label>
+                    <select id="activity" required>
+                        <option value="">- 請選擇活動 -</option>
+                        <option>浮潛Snorkeling</option>
+                        <option>體驗潛水Discover Scuba Diving</option>
+                        <option>水肺潛水Open Water</option>
+                        <option>自由潛水Free Diving</option>
+                    </select>
+                </div>
+                <!-- <div class="form-group">
+                    <input type="checkbox" placeholder="至多10位，若超過請來電團體預定">
+                    <label>裝備</label>
+                </div> -->
 
-            </div>
-            <div class="form-group">
-                <label>性別</label>
-                <select id="gender">
-                    <option>- 請選擇性別 -</option>
-                    <option>男</option>
-                    <option>女</option>
-                </select>
-            </div>
+                <!-- <div class="form-group">
+                    <label>潛水活動預定</label> <span></span>
+                    <input type="radio" style="border:2px solid red">浮潛
+                    <label>潛水活動預定</label>
+                    <input type="radio">浮潛
+                </div> -->
 
-            <div class="form-group">
-                <label>行動電話</label>
-                <input type="tel" id="phone" placeholder="請輸入您的行動電話" pattern="[0-9]{10}" required>
-                <span></span>
+                <div class="form-group description">
+                    <label>備註</label>
+                    <textarea id="notes" placeholder="若有任何疑問歡迎填寫在此" rows="4"></textarea>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" id="email" placeholder="請輸入您的電子郵件" pattern="[A-Za-z0-9]{0,}" required>
-            </div>
-            <div class="form-group">
-                <label>生日</label>
-                <input type="date">
-            </div>
-            <div class="form-group">
-                <label>希望預定的潛水活動時段？</label>
-                <select id="timeSlot">
-                    <option>- 請選擇時段 -</option>
-                    <option>梯次1 08:00~10:00</option>
-                    <option>梯次2 14:00~16:00</option>
-                </select>
-            </div>
-            <!-- <div class="form-group">
-                    <label>End Time</label>
-                    <input type="time">
-                  </div> -->
-            <div class="form-group">
-                <label>人數</label>
-                <input type="number"  id="people" min="1" max="10" placeholder="至多10位，若超過請來電團體預定">
-            </div>
-
-            <div class="form-group">
-                <label>潛水活動預定</label>
-                <select id="activity">
-                    <option>- 請選擇活動 -</option>
-                    <option>浮潛Snorkeling</option>
-                    <option>體驗潛水Discover Scuba Diving</option>
-                    <option>水肺潛水Open Water</option>
-                    <option>自由潛水Free Diving</option>
-                </select>
-            </div>
-
-            <!-- <div class="form-group">
-                <input type="checkbox" placeholder="至多10位，若超過請來電團體預定">
-                <label>裝備</label>
-            </div> -->
-
-            <!-- <div class="form-group">
-                <label>潛水活動預定</label> <span></span>
-                <input type="radio" style="border:2px solid red">浮潛
-                <label>潛水活動預定</label>
-                <input type="radio">浮潛
-            </div> -->
-            <!-- <div class="form-group">
-                <label>備註</label>
-                <input type="text" placeholder="若有任何疑問歡迎填寫在此">
-            </div> -->
-
-            <div class="form-group description">
-                <label>備註</label>
-                <textarea id="notes" placeholder="若有任何疑問歡迎填寫在此" rows="4"></textarea>
+            <div class="booking-btnn">
+                <button class="booking-btn" type="submit">確認送出</button>
             </div>
         </form>
-        <button type="submit" onclick="alert('報名成功！')">確認送出</button>
     </div>
-    <footer>
-        <!-- 回到最上層 -->
-        <a href="#">
-            <div class="top">
-                <span class="top-text">TOP</span>
-            </div>
-        </a>
 
+    <footer>
         <div class="footer-container">
+            <!-- 回到最上層 -->
+            <a href="#">
+                <div class="top">
+                    <span class="top-text">TOP</span>
+                </div>
+            </a>
             <div class="footer-section about">
                 <h4>Horizon Diving</h4>
                 <hr>
@@ -158,26 +155,20 @@
                     <li><a href="#">Booking</a></li>
                 </ul>
             </div>
-
-
-            <!-- <div class="footer-section contact">
-                <h4>Contact</h4>
-                <hr>
-                <p>0928-061502</p>
-                <p> No. 15-6號, 漁港路, 綠島鄉台東縣951<br></p>
-            </div> -->
-
             <div class="footer-section newsletter">
                 <h4>Updates News</h4>
                 <hr>
                 <!-- <p>Subscribe to our newsletter to receive updates and special announcements.</p> -->
                 <form action="#" method="POST">
-                    <input type="email" placeholder="*Email" required>
-                    <input type="text" placeholder="*姓名" required>
+                    <div class="input-group">
+                        <input type="email" placeholder="*Email" required>
+                        <input type="text" placeholder="*姓名" required>
+                    </div>
                     <button type="submit">送出</button>
                 </form>
             </div>
 
+        </div>
         </div>
 
         <div class="footer-bottom">
@@ -194,34 +185,89 @@
             // 為被點擊的卡片添加 "selected" 類別
             selectedCard.classList.add('selected');
         }
+        
+        document.getElementById('bookingForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // 防止表單預設送出行為
 
-
-        // 跳轉到receipt.html
-        function handleSubmit(event) {
-            event.preventDefault();  // 阻止表單提交，防止頁面刷新
-
-            // 獲取表單數據
-            const name = document.getElementById('name').value;
+            // 取得所有輸入框
+            const name = document.getElementById('name').value.trim();
             const gender = document.getElementById('gender').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const birthday = document.getElementById('birthday').value;
             const timeSlot = document.getElementById('timeSlot').value;
             const people = document.getElementById('people').value;
             const activity = document.getElementById('activity').value;
-            const notes = document.getElementById('notes').value;
-            
+            const notes = document.getElementById('notes').value.trim();
+
+            // 驗證條件
+            if (!/^[\u4e00-\u9fa5A-Za-z\s]+$/.test(name)) {
+                alert('姓名只能輸入中文或英文');
+                return;
+            }
+            if (!gender) {
+                alert('請選擇性別');
+                return;
+            }
+            if (!/^09[0-9]{8}$/.test(phone)) {
+                alert('請輸入有效的手機號碼，例如：0912345678');
+                return;
+            }
+            if (!email) {
+                alert('請輸入有效的電子郵件');
+                return;
+            }
+            if (!birthday) {
+                alert('請選擇生日');
+                return;
+            }
+            if (!timeSlot) {
+                alert('請選擇希望的時段');
+                return;
+            }
+            if (!people || people < 1 || people > 10) {
+                alert('人數必須在1至10之間');
+                return;
+            }
+            if (!activity) {
+                alert('請選擇潛水活動');
+                return;
+            }
+
+            // 如果所有條件符合，送出表單
+            alert('報名成功！');
+            // this.submit();
+
+
+        // 跳轉到receipt.html
+        // function handleSubmit(event) {
+        //     event.preventDefault();  // 阻止表單提交，防止頁面刷新
+
+            // 獲取表單數據
+            // const name = document.getElementById('name').value;
+            // const gender = document.getElementById('gender').value;
+            // const phone = document.getElementById('phone').value;
+            // const email = document.getElementById('email').value;
+            // const birthday = document.getElementById('birthday').value;
+            // const timeSlot = document.getElementById('timeSlot').value;
+            // const people = document.getElementById('people').value;
+            // const activity = document.getElementById('activity').value;
+            // const notes = document.getElementById('notes').value;
+
             // 彈出報名成功的提示
             console.log({ name, gender, phone, email, timeSlot, people, activity, notes });
             // alert('報名成功喔喔！');
 
             // 跳轉到收據頁面，並將資料通過查詢參數傳遞
             // window.location.href = `receipt.html?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`;
-        
+
             // 將資料存入 URL
-            const url = `receipt.html?name=${encodeURIComponent(name)}&gender=${encodeURIComponent(gender)}&phone=${encodeURIComponent(phone)}&email=${encodeURIComponent(email)}&timeSlot=${encodeURIComponent(timeSlot)}&people=${encodeURIComponent(people)}&activity=${encodeURIComponent(activity)}&notes=${encodeURIComponent(notes)}`;
+            // const url = `receipt.html?name=${encodeURIComponent(name)}&gender=${encodeURIComponent(gender)}&phone=${encodeURIComponent(phone)}&email=${encodeURIComponent(email)}&timeSlot=${encodeURIComponent(timeSlot)}&people=${encodeURIComponent(people)}&activity=${encodeURIComponent(activity)}&notes=${encodeURIComponent(notes)}`;
+            const url = `receipt.html?name=${encodeURIComponent(name)}&gender=${encodeURIComponent(gender)}&phone=${encodeURIComponent(phone)}&email=${encodeURIComponent(email)}&birthday=${encodeURIComponent(birthday)}&timeSlot=${encodeURIComponent(timeSlot)}&people=${encodeURIComponent(people)}&activity=${encodeURIComponent(activity)}&notes=${encodeURIComponent(notes)}`;
             window.location.href = url;
 
-        }
+        });
+
 
     </script>
 

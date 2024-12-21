@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>逐藍潛水Blue Horizon Diving</title>
@@ -27,11 +25,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <!-- favicon -->
+    <link rel="icon" href="../img/背景圖/魚2.png" type="image/x-icon">
 </head>
+
 <body>
     <!-- 導覽頁 -->
     <header class="l-header">
@@ -43,64 +44,211 @@
             </div>
             <nav class="l-header-nav">
                 <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
-                <a href="./about_horizon.html#horizon_team" class="l-nav_link">ABOUT</a>
+                <a href="./about_horizon.html#title_about" class="l-nav_link">ABOUT</a>
                 <a href="./demo.html#title_news" class="l-nav_link">NEWS</a>
                 <a href="./demo.html#title_diveserver" class="l-nav_link">DIVING</a>
-                <a href="#" class="l-nav_link">PRICE</a>
-                <a href="#" class="l-nav_link">BOOKING</a>
+                <a href="./demo.html#title_transport">TRANSPORT</a>
+                <a href="./price.html" class="l-nav_link">PRICE</a>
+                <a href="./booking.html#title_booking" class="l-nav_link">BOOKING</a>
                 <!-- </div> -->
             </nav>
         </div>
 
     </header>
 
+    <section>
+        <div class="product-container">
+            <!-- 左側輪播圖 -->
+            <div class="carousel">
+                <!-- 大圖顯示區 -->
+                <div class="main-image">
+                    <img id="largeImage" src="../img/水肺/水肺13.JPG" alt="商品大圖">
+                </div>
+
+                <!-- 小圖預覽區 -->
+                <div class="thumbnails">
+                    <img src="../img/水肺/水肺15.JPG" class="thumbnail active" onclick="changeImage(this)" data-large="image1.jpg">
+                    <img src="../img/水肺/水肺20.JPG" class="thumbnail" onclick="changeImage(this)" data-large="image2.jpg">
+                    <img src="../img/水肺/水肺26.JPG" class="thumbnail" onclick="changeImage(this)" data-large="image3.jpg">
+                    <img src="../img/水肺/水肺35.JPG" class="thumbnail" onclick="changeImage(this)" data-large="image4.jpg">
+                    <img src="../img/水肺/水肺43.JPG" class="thumbnail" onclick="changeImage(this)" data-large="image5.jpg">
+                </div>
+            </div>
+
+            <!-- 右側商品資訊 -->
+            <div class="product-info">
+                <h2 id="title_openwater">體驗潛水<br></h2>
+                <h3>Discover Scuba Diving</h3>
+                <p>考到水肺證照，想好好參加旅遊潛水，來場FUN DIVE嗎? <br>
+                    快來報名岸潛享受綠島的世界級潛點吧<hr>
+                    </p>
+                <h2></h2>
+
+                <!-- 商品資訊表格 -->
+                <table>
+                    <tr>
+                        <th>報名價格</th>
+                        <td>$1600元/兩支<br> 另有多人同行優惠</td>
+                    </tr>
+                    <tr>
+                        <th>時段</th>
+                        <td>梯次1 08:00~10:00<br>梯次2 14:00~16:00</td>
+                    </tr>
+                    <tr>
+                        <th>注意事項</th>
+                        <td>請詳閱以下說明</td>
+                    </tr>
+                </table>
+
+                <!-- 報名按鈕 -->
+                <button class="signup-button" onclick="location.href='./booking.html#title_booking'">點我報名  
+                </button>
+                <!-- <a href="./booking.html" class="signup-button">點我報名</a> -->
+                
+
+            </div>
+        </div>
+
+        <!-- 注意事項 -->
+
+        <!-- 按鈕區塊 -->
+        <div class="button-container">
+            <div class="custom-button">
+                <img src="../img/背景圖/魚2.png" class="icon">
+                <span>潛點
+                    <!-- <strong>價目表</strong> --></span>
+            </div>
+
+            <div>
+                <p>
+                    <ul>視當日海況由教練決定以下潛水地點。
+                        <li>柴口潛水區</li>
+                        <li>大白沙潛水區</li>
+                        <li>將軍岩</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <div class="custom-button">
+                <img src="../img/背景圖/魚2.png" class="icon">
+                <span>活動費用</span>
+            </div>
+
+            <div>
+                <p>
+                   $1600元/兩支 <br>
+                   ＊兩人同行，每人可現金折抵500元。(限當場使用) <br>
+                   ＊四人同行，每人可現金折抵1000元。(限當場使用)               
+                </p>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <div class="custom-button">
+                <img src="../img/背景圖/魚2.png" class="icon">
+                <span>注意事項 </span>
+            </div>
+            <div>
+                <p>
+                    年齡需滿10歲以上，健康狀況良好。<br>
+                    若有任何身體狀況，請先通過醫師的批准後，再進行潛水課程。 <br>
+                   <br>
+                    <ul> 需自備: 
+                        <li>泳衣及證件照一張（不限尺寸，電子檔亦可）</li>
+                        <li>在潛水前8小時千萬不能喝含有酒精的飲料</li>
+                        <li>水肺潛水後的24小時內禁止搭乘飛機</li>
+                        <li>有近視者可選擇配戴隱形眼鏡,店內也有提供有度數的面鏡</li>
+                    </ul>
+                    
+                </p>
+            </div>
+        </div>
+
+        <!-- <div class="button-container">
+            <div class="custom-button">
+                <img src="padi-icon.png" class="icon">
+                <span>活動流程</span>
+            </div>
+        </div> -->
+
+
+        </div>
+
+    </section>
+
+    <script>
+         function changeImage(clickedThumbnail) {
+            // 取得大圖的 img 元素
+            const mainImage = document.getElementById('largeImage');
+
+            // 取得點擊縮圖的 src
+            const newImageSrc = clickedThumbnail.src;
+
+            // 將大圖的 src 更換為點擊縮圖的 src
+            mainImage.src = newImageSrc;
+
+            // 移除其他縮圖的 active 類別
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+
+            // 給當前點擊的縮圖加上 active 類別
+            clickedThumbnail.classList.add('active');
+        }
+
+    </script>
+
+    <footer>
+        <div class="footer-container">
+            <!-- 回到最上層 -->
+            <a href="#">
+                <div class="top">
+                    <span class="top-text">TOP</span>
+                </div>
+            </a>
+            <div class="footer-section about">
+                <h4>Horizon Diving</h4>
+                <hr>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Diving</a></li>
+                    <li><a href="#">Price</a></li>
+                    <li><a href="#">Booking</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-section contact">
+                <h4>Contact</h4>
+                <hr>
+                <p>0928-061502</p>
+                <p> No. 15-6號, 漁港路, 綠島鄉台東縣951<br></p>
+                <!-- <a href="#" class="message-link">Send Us A <span>Message</span> →</a> -->
+            </div>
+
+            <div class="footer-section newsletter">
+                <h4>Updates News</h4>
+                <hr>
+                <!-- <p>Subscribe to our newsletter to receive updates and special announcements.</p> -->
+                <form action="#" method="POST">
+                    <input type="email" placeholder="*Email" required>
+                    <input type="text" placeholder="*姓名" required>
+                    <button type="submit">SIGN UP</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© Blue Horizon Diving All Rights Reserved.</p>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Website By 829 Studios</a>
+        </div>
+    </footer>
+
+
 </body>
-<footer>
-    <p>  </p>
-    <div class="footer-container">
-
-    </div>
-
-    <div class="footer-container">
-        <div class="footer-section about">
-          <h4>Horizon Diving</h4>
-          <hr>
-          <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Diving</a></li>
-            <li><a href="#">Price</a></li>
-            <li><a href="#">Booking</a></li>
-          </ul>
-        </div>
-  
-
-        <div class="footer-section contact">
-            <h4>Contact</h4>
-            <hr>
-            <p>0928-061502</p>
-            <p> No. 15-6號, 漁港路, 綠島鄉台東縣951<br></p>
-            <!-- <a href="#" class="message-link">Send Us A <span>Message</span> →</a> -->
-        </div>
-  
-        <div class="footer-section newsletter">
-          <h4>Updates News</h4>
-          <hr>
-          <!-- <p>Subscribe to our newsletter to receive updates and special announcements.</p> -->
-          <form action="#" method="POST">
-            <input type="email" placeholder="*Email" required>
-            <input type="text" placeholder="*First Name" required>
-            <button type="submit">SIGN UP</button>
-          </form>
-        </div>
-  
-      </div>
-  
-      <div class="footer-bottom">
-        <p>© Blue Horizon Diving All Rights Reserved.</p>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Website By 829 Studios</a>
-      </div>
-</footer>
 
 </html>

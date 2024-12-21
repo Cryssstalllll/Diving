@@ -3,39 +3,6 @@
   margin: 0;
 }
 
-/* header {
-    background-color: #99b3ff;
-    height: 80px;
-    width: 100%;
-    position:relative ;
-    style="background-color: #e3f2fd;
-}   */
-/* header a{
-    text-decoration:none;
-    color: white; 
-} */
-
-/* header a:hover{
-    text-decoration: underline;
-} */
-/* header li{
-    display: inline;
-    margin-right:4vw ;
-} */
-/* header ul{
-     position: absolute; 
-    right: 10vw;
-    line-height: 20px;
-} */
-
-/* .nav.item{
-    right: 0;
-    top:0;
-} */
-
-/* .navbar-collapse {
-    border: 2px solid black;
-  } */
 
 /* 導覽頁 */
 .d-header_left img {
@@ -89,7 +56,6 @@
   font-style: normal;
   padding: 5px;
 }
-
 /* 當螢幕寬度小於 768px 時的樣式 */
 @media (max-width: 992px) {
 
@@ -97,69 +63,39 @@
   .l-header-nav {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    /* 允許子項目換行 */
+    flex-wrap: wrap;/* 允許子項目換行 */
     /* right: -10px; */
-    /* 垂直排列 */
-    align-items: center;
-    justify-content: space-between;
-    /* 水平分佈空間 */
+    align-items: center;/* 垂直排列 */
+    justify-content: space-between; /* 水平分佈空間 */
     gap: 3px;
     /* max-width: auto; */
     padding: 10px;
     margin-left: 180px;
     /* 移除過多偏移，適應小螢幕 */
   }
-
+  .nav-links{
+    text-align: center;/* 文字置中 */
+  }
   .l-nav_link {
-    display: inline-block;
-    /* 保持水平排列 */
+    display: inline-block; /* 保持水平排列 */
     padding: 3px;
-    white-space: nowrap;
-    /* 避免文字換行 */
+    white-space: nowrap;/* 避免文字換行 */
     flex: 1 1 calc(50% - 3px);
     /* 每列分配一半空間，並考慮間距 */
-    text-align: center;
-    /* 文字置中 */
+    text-align: center;/* 文字置中 */
+    align-items: center;
+    justify-content: space-between;
     box-sizing: border-box;
     /* 確保 padding 不影響寬度計算 */
   }
-
 }
-
-/* .logo img {
-    width: 100px; 根據需要設置圖片大小
-    height: auto;
-  } */
-
 
 .card-header {
   font-size: 20px;
   font-family: "Yuji Mai", serif;
   font-weight: 400;
   font-style: normal;
-
 }
-
-/* 最新消息 */
-/* #latest_news1 {
-    border: 4px solid #0089E1;
-    box-shadow: 7px 6px 0px #e0e3e7;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-#latest_news1:hover {
-    box-shadow: 7px 6px 0px #9fbfdf;
-
-}
-
-#latest_news1 p {
-    font-weight: bold;
-    color: #9fbfdf;
-    font-size: 15px;
-    margin-bottom: 10px;
-} */
 
 
 /* 字型 */
@@ -334,11 +270,9 @@ h4 {
   /* position: relative; */
   background-image: url(../img/背景圖/bluewave.jpg);
   background-repeat: no-repeat;
-  /* 避免重複 */
   background-size: cover;
   /* 讓背景圖片充滿整個區塊 */
   background-position: top;
-  /* 調整圖片位置 */
   padding: 50px 0;
   /* 增加上下內邊距，確保內容不被背景擠壓 */
   /*color: white;  設置內容字體顏色 */
@@ -373,7 +307,7 @@ h4 {
   /* 圖片橫向排列 */
   will-change: transform;
   /* 優化動畫性能 */
-  animation: marquee-scroll 5000s linear infinite;
+  animation: marquee-scroll 6000s linear infinite;
   /* animation-duration:5000s; */
   /* animation-play-state: running;  */
   /* 預設動畫啟動 */
@@ -384,9 +318,9 @@ h4 {
   /* 圖片不縮小 */
   width: 500px;
   height: auto;
-  width: calc(100% / 4);
+  width: calc(100% / 5);
   /* 單張圖片寬度 */
-  margin: 0 30px;
+  margin: 0 5px;
 }
 
 .marquee img {
@@ -402,17 +336,34 @@ h4 {
 }
 
 /* 響應式設計 */
-@media (max-width: 992px) {
+/* 桌機樣式 */
+@media (min-width: 1200px) {
   .marquee-item {
-    width: calc(100% / 2);
-    /* 中等螢幕顯示兩張卡片 */
+    width: calc(100% / 5);
+    /* 大螢幕顯示五張卡片 */
+    margin: 0 60px;
+  }
+}
+/* 平板橫向、筆電樣式 */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .marquee-item {
+    width: calc(100% / 3);
+    margin: 0 5px;
   }
 }
 
-@media (max-width: 576px) {
+/* 平板直立樣式 */
+@media (min-width: 768px) and (max-width: 1023px) {
   .marquee-item {
-    width: 50%;
-    /* 確保小螢幕仍顯示兩張卡片 */
+    width: calc(100% / 3);
+    margin: 0 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .marquee-item {
+    width: 50%;/* 確保小螢幕仍顯示兩張卡片 */
+    margin: 0 10px;
   }
 }
 
@@ -672,7 +623,7 @@ a:hover {
 h3 {
   font-family: "Rubik Bubbles", system-ui;
   margin: 0 0 10px;
-  font-size: 100px;
+  /* font-size: 100px; */
   line-height: 36px;
 }
 
@@ -1160,24 +1111,23 @@ footer {
 
 .footer-section form button {
   /* margin: 15px 10px; */
-  margin-top: 1rem;
-  /* 與輸入框分隔 */
+  margin-top: 1rem;/* 與輸入框分隔 */
   display: block;
   flex-direction: column;
   /* 垂直排列所有子元素 */
   /* display: inline-block; */
   /* display: flex; */
   /* flex-direction: column; */
-
   text-align: center;
   align-items: center;
   justify-content: center;
   background-color: #FFAAB4;
   border: none;
-  padding: 0.7rem;
+  padding: 13px 30px;
   color: #192687;
   font-weight: bold;
   border-radius: 4px;
+  font-size: 18px;
 }
 
 .footer-section p {
@@ -1186,7 +1136,6 @@ footer {
   font-family: "Zen Maru Gothic", serif;
   font-weight: bold;
   font-size: 16px;
-
   font-style: normal;
   padding-bottom: 5px;
 
@@ -1472,15 +1421,6 @@ td {
 
 
 /* open water注意事項 */
-/* 整體設計 */
-/* body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-  background-color: #f9f9f9;
-  display: flex;
-  justify-content: center;
-} */
 
 .button-container {
   display: block;
@@ -1550,17 +1490,10 @@ li,
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   padding: 20px 30px;
   border: 2px solid red;
-  grid-column: 2;
-  /* 把內容放在中間那一格 */
-/* margin: 0 auto; */
-/* 水平居中
+  grid-column: 2;把內容放在中間那一格 
+ margin: 0 auto; 
 } */
 
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
 
 .container {
   max-width: 800px;
@@ -1586,12 +1519,9 @@ h1 {
 
 }
 
-
-
-form {
+.booo {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* 定義兩欄 */
+  grid-template-columns: 1fr 1fr; /* 定義兩欄 */
   gap: 1.5rem;
 }
 
@@ -1627,14 +1557,16 @@ textarea {
   margin-bottom: 10px;
 }
 
-input[ type="tel"]:valid {
+/* input[ type="tel"]:valid {
   border: 2px solid green;
 }
+input[ type="email"]:valid {
+  border: 2px solid green;
+} */
 
 /* input[ type="tel"]:invalid {
   border: 2px solid red;
 } */
-
 
 textarea {
   resize: none;
@@ -1667,10 +1599,16 @@ textarea {
 .package:last-child {
   margin-right: 0;
 }
-
+.booking-btnn {
+  display: flex; /* 啟用 Flexbox */
+  justify-content: center; /* 水平置中 */
+  align-items: center; /* 垂直置中 */
+  text-align: center;
+}
 .booking-btn {
-  margin: 15px auto;
-  /* 水平置中 */
+  margin: 15px auto;/* 水平置中 */
+  justify-content: center;
+  align-items: center;
   display: inline-block;
   width: 200px;
   text-align: center;
@@ -1695,12 +1633,6 @@ textarea {
   background-color: #45a049;
 }
 
-/* background-color: .packages {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-} */
-
 .package.selected {
   transform: scale(1.05) translateY(-5px);
   /* 卡片浮起且放大 */
@@ -1721,8 +1653,8 @@ textarea {
 
 
 /* Responsive Design */
-@media (max-width: 600px) {
-  form {
+@media (max-width: 768px) {
+  .booo {
     grid-template-columns: 1fr;
   }
 
@@ -2039,7 +1971,7 @@ textarea {
 }
 
 
-/* booking success預約成功 */
+/* booking success預約成功 跳轉到receipt.html */
 .container-book-success {
   max-width: 600px;
   margin: 40px auto;
@@ -2055,7 +1987,7 @@ textarea {
   margin: 1rem 0;
 }
 
-.button-container {
+.button-container-receipt {
   text-align: center;
   margin-top: 2rem;
 }

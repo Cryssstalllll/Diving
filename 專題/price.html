@@ -47,7 +47,7 @@
             </div>
             <nav class="l-header-nav">
                 <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
-                <a href="./about_horizon.html#horizon_team" class="l-nav_link">ABOUT</a>
+                <a href="./about_horizon.html#title_about" class="l-nav_link">ABOUT</a>
                 <a href="./demo.html#title_news" class="l-nav_link">NEWS</a>
                 <a href="./demo.html#title_diveserver" class="l-nav_link">DIVING</a>
                 <a href="./demo.html#title_transport">TRANSPORT</a>
@@ -118,13 +118,16 @@
             <ul>
                 <li>
                     <p class="bi bi-star-fill">
-                        <span class="priceitem">浮潛(1人)</span>
+                        <span class="priceitem"><a href="./Snorkeling.html">浮潛(1人)</a>
+                        </span>
                     </p>
                     <span class="price">NT.1,200</span>
                 </li>
                 <li>
                     <p class="bi bi-star-fill">
-                        <span class="priceitem">體驗潛水</span>
+                        <span class="priceitem">
+                            <a href="./Discover.html">體驗潛水</a>
+                        </span>
                     </p>
                     <span class="price special">NT.2,000</span>
                 </li>
@@ -138,7 +141,8 @@
                 </li>
                 <li>
                     <p class="bi bi-star-fill">
-                        <span class="priceitem">自由潛水</span>
+                        <span class="priceitem"><a href="./freediving.html">自由潛水</a>
+                        </span>
                     </p>
                     <span class="price">NT.1,600</span>
                 </li>
@@ -208,14 +212,14 @@
         </div>
     </div>
     <footer>
-        <!-- 回到最上層 -->
-        <a href="#">
-            <div class="top">
-                <span class="top-text">TOP</span>
-            </div>
-        </a>
-
         <div class="footer-container">
+            <!-- 回到最上層 -->
+            <a href="#">
+                <div class="top">
+                    <span class="top-text">TOP</span>
+                </div>
+            </a>
+
             <div class="footer-section about">
                 <h4>Horizon Diving</h4>
                 <hr>
@@ -241,8 +245,10 @@
                 <hr>
                 <!-- <p>Subscribe to our newsletter to receive updates and special announcements.</p> -->
                 <form action="#" method="POST">
-                    <input type="email" placeholder="*Email" required>
-                    <input type="text" placeholder="*姓名" required>
+                    <div class="input-group">
+                        <input type="email" placeholder="*Email" required>
+                        <input type="text" placeholder="*姓名" required>    
+                    </div>
                     <button type="submit">送出</button>
                 </form>
             </div>
