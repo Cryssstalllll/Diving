@@ -89,6 +89,89 @@
     /* 確保 padding 不影響寬度計算 */
   }
 }
+@media (min-width: 576px)and (max-width: 799px) {
+  .l-header {
+    position: relative;
+    /* 建立相對定位，讓子元素可以用絕對定位 */
+    width: 100%;
+    height: 100vh;/* 背景圖高度填滿整個視窗 */
+    background-image: url('../img/水肺/水肺50.JPG');
+    background-size: cover; /* 背景縮放，保持比例 */
+    background-position:  30% 20%;
+  }
+}
+/* 手機樣式 */
+@media (max-width: 575px){
+  .l-header {
+    position: relative;
+    /* 建立相對定位，讓子元素可以用絕對定位 */
+    width: 100%;
+    height: 100vh;/* 背景圖高度填滿整個視窗 */
+    background-image: url('../img/水肺/水肺50.JPG');
+    background-size: cover; /* 背景縮放，保持比例 */
+    background-position:  30% 20%;
+    /* 水平偏移 50%，垂直偏移 20% */
+  }
+
+  .l-header-nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;/* 允許子項目換行 */
+    /* right: -10px; */
+    align-items: center;/* 垂直排列 */
+    justify-content: space-between; /* 水平分佈空間 */
+    gap: 3px;
+    /* max-width: auto; */
+    padding: 10px;
+    margin-left: 130px;/* 移除過多偏移，適應小螢幕 */
+  }
+  .nav-links{
+    text-align: center;/* 文字置中 */
+  }
+  .l-nav_link {
+    display: inline-block; /* 保持水平排列 */
+    padding: 3px;
+    white-space: nowrap;/* 避免文字換行 */
+    flex: 1 1 calc(50% - 3px);
+    /* 每列分配一半空間，並考慮間距 */
+    text-align: center;/* 文字置中 */
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    /* 確保 padding 不影響寬度計算 */
+  }
+
+}
+@media (max-width: 450px){
+  .l-header-nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;/* 允許子項目換行 */
+    /* right: -10px; */
+    align-items: center;/* 垂直排列 */
+    justify-content: space-between; /* 水平分佈空間 */
+    gap: 3px;
+    /* max-width: auto; */
+    padding: 10px;
+    margin-left: 90px;
+    /* 移除過多偏移，適應小螢幕 */
+  }
+  .nav-links{
+    text-align: center;/* 文字置中 */
+  }
+  .l-nav_link {
+    display: inline-block; /* 保持水平排列 */
+    padding: 3px;
+    white-space: nowrap;/* 避免文字換行 */
+    flex: 1 1 calc(50% - 3px);
+    /* 每列分配一半空間，並考慮間距 */
+    text-align: center;/* 文字置中 */
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    /* 確保 padding 不影響寬度計算 */
+  }
+}
 
 .card-header {
   font-size: 20px;
@@ -353,17 +436,31 @@ h4 {
 }
 
 /* 平板直立樣式 */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 800px) and (max-width: 1023px) {
   .marquee-item {
     width: calc(100% / 3);
-    margin: 0 30px;
+    margin: 0 40px;
   }
 }
 
-@media (max-width: 767px) {
+@media (min-width: 576px)and (max-width: 799px) {
+  /* 最小尺寸576px，最大尺寸799px */
   .marquee-item {
     width: 50%;/* 確保小螢幕仍顯示兩張卡片 */
     margin: 0 10px;
+  }
+} 
+/* 手機樣式 */
+@media (max-width: 575px){
+  .marquee-item {
+    width: 65%;/* 確保小螢幕仍顯示兩張卡片 */
+    margin: 0 15px;
+  }
+}
+@media (max-width: 450px){
+  .marquee-item {
+    width: 100%;/* 確保小螢幕仍顯示兩張卡片 */
+    margin: 0 5px;
   }
 }
 
@@ -531,15 +628,18 @@ h4 {
 /******* Common Element CSS Start ******/
 .container-about {
   display: grid;
-  max-width: 800px;
-  grid-column: 2;
-  /* 把內容放在中間那一格 */
-  margin: 0 auto;
+  grid-template-columns: 1fr 1fr; /* 左右兩欄 */
+  grid-template-rows: auto auto; /* 上下兩行自動排列 */
+  column-gap: 50px; /* 欄之間的間距 */
+  max-width: 1200px; 
+  /* grid-column: 2;把內容放在中間那一格 */
+  /* margin: 0 auto; */
   /* 水平居中 */
   padding: 50px;
 }
 
 .container-about #title_about {
+  grid-column: span 2; /* 標題佔據整個上方 */
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: bold;
@@ -548,11 +648,12 @@ h4 {
   margin-bottom: 10px;
   /* align-items: center;
   justify-content: center;  */
-  text-align: center;
+  text-align: left;
   /* color: #1F4BA4; */
 }
 
 .container-about span {
+  grid-column: 1; /* 文字在第一欄 */
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: 500;
@@ -563,13 +664,53 @@ h4 {
 }
 
 .container-about h4 {
+  grid-column: span 2; /* 標題佔據整個上方 */
+  /* 英文泡泡字體 */
   font-family: "Rubik Bubbles", system-ui;
   font-weight: 400;
   font-style: normal;
   margin: 15px;
   font-size: 30px;
-  text-align: center;
+  text-align: left;
   /* color: #1F4BA4; */
+}
+.main-image-about{
+  grid-column: 2; /* 大圖在第二欄 */
+  grid-row: 1; /* 第一行 */
+  justify-self: center; 
+  align-self: start; /* 垂直對齊到上方 */
+  max-width: 100%; /* 避免圖片超出容器 */
+  width: 85%;
+  /* height:250px; */
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  border: 7px solid #0089E1;
+  object-fit: cover;
+}
+.thumbnails-carousel-about {
+  grid-column: 1; /* 小圖跟文字對齊，放在左側 */
+  grid-row: 4; /* 第二行，位於文字的下方 */
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  overflow-x: auto; /* 小圖過多時可以橫向滾動 */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 0 ;
+  border-radius: 15px;
+}
+/* .thumbnail.active {
+  border: 2px solid #1F4BA4;
+} */
+
+.thumbnails-carousel-about img {
+  width: 100px; /* 根據需要設置縮圖寬度 */
+  height: auto;
+  cursor: pointer; /* 鼠標指向顯示為點擊樣式 */
 }
 
 * {
@@ -645,29 +786,6 @@ button {
 }
 
 /******* Common Element CSS End *********/
-
-/* -------- title style ------- */
-/* .line-title {
-  position: relative;
-  width: 400px;
-}
-.line-title::before,
-.line-title::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 4px;
-  border-radius: 2px;
-}
-.line-title::before {
-  width: 100%;
-  background: #f2f2f2;
-}
-.line-title::after {
-  width: 32px;
-  background: #e73700;
-} */
 
 /******* Middle section CSS Start ******/
 /* -------- Landing page ------- */
@@ -774,10 +892,6 @@ button {
   cursor: pointer;
   font-size: 20px;
 }
-
-
-
-
 /******** Middle section CSS End *******/
 
 /***** responsive css Start ******/
@@ -895,8 +1009,6 @@ button {
 
 
 /* 潛水服務 交錯排列 */
-
-
 #title_diveserver+p {
   /* 英文泡泡字體 */
   font-family: "Rubik Bubbles", system-ui;
@@ -918,14 +1030,15 @@ button {
   border-radius: 15px;
 }
 
-.container {
+.container-dive {
   display: grid;
   max-width: 1000px;
-  grid-column: 2;
-  /* 把內容放在中間那一格 */
-  margin: 0 auto;
-  /* 水平居中 */
+  grid-column: 2;/* 把內容放在中間那一格 */
+  margin: 0 auto; /* 水平居中 */
   padding: 50px;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px 15px rgba(24, 2, 2, 0.1);
 }
 
 .content {
@@ -933,9 +1046,7 @@ button {
   align-items: center;
   justify-content: space-between;
   margin: 50px auto;
-
-  opacity: 0;
-  /* 預設為隱藏 */
+  opacity: 0; /* 預設為隱藏 */
   transform: translateY(50px);
   /* 加入位移效果 */
   transition: all 0.6s ease;
@@ -965,7 +1076,6 @@ button {
   font-size: 15px;
   font-style: normal;
   margin-bottom: 10px;
-
 }
 
 .content .image img {
@@ -988,6 +1098,89 @@ button {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* 響應式設計 */
+@media (min-width: 1200px) {
+  .container-dive{
+    max-width: 1200px;
+    padding: 40px; 
+    margin: 0 auto;/* 水平居中 */
+  }
+}
+/* 平板橫向、筆電樣式 */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .text{
+    display: grid;
+    max-width: 1200px;
+    grid-column: 3;
+    /* 把內容放在中間那一格 */
+    margin: 0 auto;/* 水平居中 */
+    padding: 50px;
+  }
+}
+
+/* 平板直立樣式 */
+@media (min-width: 800px) and (max-width: 1023px) {
+  .text{
+    display: grid;
+    max-width: 1200px;
+    grid-column: 3;
+    /* 把內容放在中間那一格 */
+    margin: 0 auto;/* 水平居中 */
+    padding: 50px;
+  }
+}
+
+@media (min-width: 576px)and (max-width: 799px) {
+  /* 最小尺寸576px，最大尺寸799px */
+  .text{
+    display: grid;
+    max-width: 1200px;
+    grid-column: 3;
+    /* 把內容放在中間那一格 */
+    margin: 0 auto;/* 水平居中 */
+    padding: 50px;
+  }
+} 
+/* 手機樣式 */
+@media (max-width: 575px){
+  .text{
+    display: grid;
+    max-width: 1200px;
+    grid-column: 3;
+    /* 把內容放在中間那一格 */
+    margin: 0 auto;/* 水平居中 */
+    padding: 50px;
+  }
+}
+@media (max-width: 450px){
+  .text{
+    display: grid;
+    max-width: 1200px;
+    grid-column: 3;
+    /* 把內容放在中間那一格 */
+    margin: 0 auto;/* 水平居中 */
+    padding: 50px;
+  }
+  .content .text h3 {
+    /* border: 2px solid red; */
+    text-align: left;
+    margin-left: 0px;
+    font-size: 10px;
+  }
+  .content .text h2 {
+    /* 中文字體 */
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 600;
+    font-size: 15px;
+    font-style: normal;
+    margin-bottom: 10px;
+  }
+  .content .text p {
+    display: none;
+  }
+}
+
 
 
 
@@ -1479,22 +1672,6 @@ li,
 
 
 /* booking網頁 */
-
-/* 表單容器 */
-/* .form-container {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  padding: 20px 30px;
-  border: 2px solid red;
-  grid-column: 2;把內容放在中間那一格 
- margin: 0 auto; 
-} */
-
-
 .container {
   max-width: 800px;
   margin: 2rem auto;
@@ -1539,7 +1716,6 @@ label {
   font-style: normal;
   margin-bottom: 10px;
   color: #333;
-
 }
 
 input,
@@ -1652,26 +1828,46 @@ textarea {
 } */
 
 
-/* Responsive Design */
+/* booking網頁 響應式Responsive Design */
 @media (max-width: 768px) {
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }  
   .booo {
     grid-template-columns: 1fr;
   }
-
-  .packages {
-    flex-direction: column;
+}
+@media (max-width: 576px){
+  .container {
+    max-width: 500px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px 15px rgba(24, 2, 2, 0.1);
   }
-
-  .package {
-    margin-bottom: 1rem;
-    margin-right: 0;
-  }
+  input,
+select,
+textarea {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  /* font-size: 1rem; */
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 500;
+  font-size: 15px;
+  font-style: normal;
+  margin-bottom: 10px;
+  width: 100%;
+}
 }
 
 
-/* price網頁 */
-/* 通用樣式 */
 
+/* price網頁 */
 .container-price {
   display: flex;
   /* flex-direction: row; */

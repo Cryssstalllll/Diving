@@ -64,7 +64,28 @@
             <span>
                 「逐藍潛水」的名稱蘊含著追逐大海藍色夢想的意涵，也象徵著探索海洋深處未知的勇氣。潛店不僅提供專業的潛水課程與導覽服務，更致力於推廣永續潛水與海洋保育，例如珊瑚復育、清除海底垃圾等活動，讓每位潛客在享受海底世界的同時，也能成為守護海洋的一份子。
             </span>
+
+            <!-- <div class="product-container-about"> -->
+            <div class="thumbnails-carousel-about">
+                <!-- 小圖預覽區 -->
+                <img src="../img/水肺/水肺15.JPG" class="thumbnail active" onclick="changeImage(this)"
+                    data-large="image1.jpg">
+                <img src="../img/水肺/水肺20.JPG" class="thumbnail" onclick="changeImage(this)" data-large="image2.jpg">
+                <img src="../img/水肺/水肺26.JPG" class="thumbnail" onclick="changeImage(this)" data-large="image3.jpg">
+                <img src="../img/水肺/水肺35.JPG" class="thumbnail" onclick="changeImage(this)" data-large="image4.jpg">
+                <img src="../img/水肺/水肺43.JPG" class="thumbnail" onclick="changeImage(this)" data-large="image5.jpg">
+            </div>
+
+            <div class="main-carousel-about">
+                <!-- 大圖顯示區 -->
+                <div class="main-image-about">
+                    <img id="largeImage" src="../img/水肺/水肺13.JPG" alt="商品大圖">
+                </div>
+            </div>
         </div>
+
+        <!-- </div> -->
+
         <!-- codepen輪播 -->
         <section class="game-section">
             <h3 id="horizon_team" style="text-align: center; font-size: 35px; margin: 20px 0 50px 0;">HORIZON TEAM</h3>
@@ -142,6 +163,29 @@
         <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
 
         <script>
+            //關於我們
+            
+            function changeImage(clickedThumbnail) {
+            // 取得大圖的 img 元素
+            const mainImage = document.getElementById('largeImage');
+
+            // 取得點擊縮圖的 src
+            const newImageSrc = clickedThumbnail.src;
+
+            // 將大圖的 src 更換為點擊縮圖的 src
+            mainImage.src = newImageSrc;
+
+            // 移除其他縮圖的 active 類別
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+
+            // 給當前點擊的縮圖加上 active 類別
+            clickedThumbnail.classList.add('active');
+        }
+
+
+
+            //教練輪播
             $(document).ready(function () {
                 $(".custom-carousel").owlCarousel({
                     autoWidth: true,
