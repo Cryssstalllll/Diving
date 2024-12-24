@@ -2940,7 +2940,7 @@ textarea {
 }
 
 /* 響應式設計 */
-@media (max-width: 1160px){
+@media (max-width: 1790px){
   .container-choose {
     justify-content: space-between; /* 每行平分空間 */
     /* gap: 10px; */
