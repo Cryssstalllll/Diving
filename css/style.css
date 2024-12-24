@@ -23,7 +23,7 @@ canvas {
 }
 
 .d-header_left img {
-  width: 140px;
+  width: 170px;
   position: absolute;
   top: 0px;
   left: 20px;
@@ -56,7 +56,7 @@ canvas {
   /* 使用 Flexbox 排列導覽項目 */
   gap: 20px;
   background: rgba(255, 255, 255, 0.8);
-  padding: 10px 20px;
+  padding: 15px 20px;
   border-radius: 50px;
   z-index: 2;
   /* 確保導覽列顯示在背景上方 */
@@ -69,15 +69,52 @@ canvas {
   /* 移除下劃線 */
   color: #3f2d2d;
   font-weight: 200;
-  font-size: 18px;
+  font-size: 28px;
   font-family: "Rubik Bubbles", system-ui;
   font-style: normal;
   padding: 5px;
 }
 
-/* 當螢幕寬度小於 768px 時的樣式 */
-@media (max-width: 992px) {
 
+/* 當螢幕寬度小於 768px 時的樣式 */
+@media (max-width: 1280px){
+  .l-header-nav a {
+    text-decoration: none;
+    color: #3f2d2d;
+    font-weight: 200;
+    font-size: 23px;
+    font-family: "Rubik Bubbles", system-ui;
+    font-style: normal;
+    padding: 5px;
+  }
+  .l-header-nav {
+    position: absolute;
+    /* 絕對定位在背景圖的基礎上 */
+    top: 50px;
+    left: 50%;
+    transform: translateX(-40%);
+    display: flex;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 50px;
+    z-index: 2;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }  
+
+}
+@media (max-width: 992px) {
+  .l-header-nav a {
+    text-decoration: none;
+    /* 移除下劃線 */
+    color: #3f2d2d;
+    font-weight: 200;
+    font-size: 20px;
+    font-family: "Rubik Bubbles", system-ui;
+    font-style: normal;
+    padding: 5px;
+  }
+  
   /* 調整導航條容器，使其垂直排列 */
   .l-header-nav {
     display: flex;
@@ -119,6 +156,17 @@ canvas {
 }
 
 @media (min-width: 576px)and (max-width: 799px) {
+  .l-header-nav a {
+    text-decoration: none;
+    /* 移除下劃線 */
+    color: #3f2d2d;
+    font-weight: 200;
+    font-size: 20px;
+    font-family: "Rubik Bubbles", system-ui;
+    font-style: normal;
+    padding: 5px;
+  }
+  
   .l-header {
     position: relative;
     /* 建立相對定位，讓子元素可以用絕對定位 */
@@ -134,6 +182,17 @@ canvas {
 
 /* 手機樣式 */
 @media (max-width: 575px) {
+  .l-header-nav a {
+    text-decoration: none;
+    /* 移除下劃線 */
+    color: #3f2d2d;
+    font-weight: 200;
+    font-size: 18px;
+    font-family: "Rubik Bubbles", system-ui;
+    font-style: normal;
+    padding: 5px;
+  }
+  
   .l-header {
     position: relative;
     /* 建立相對定位，讓子元素可以用絕對定位 */
@@ -151,10 +210,7 @@ canvas {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    /* 允許子項目換行 */
-    /* right: -10px; */
     align-items: center;
-    /* 垂直排列 */
     justify-content: space-between;
     /* 水平分佈空間 */
     gap: 3px;
@@ -188,6 +244,17 @@ canvas {
 }
 
 @media (max-width: 450px) {
+  .l-header-nav a {
+    text-decoration: none;
+    /* 移除下劃線 */
+    color: #3f2d2d;
+    font-weight: 200;
+    font-size: 18px;
+    font-family: "Rubik Bubbles", system-ui;
+    font-style: normal;
+    padding: 5px;
+  }
+  
   .l-header-nav {
     display: flex;
     flex-direction: column;
@@ -245,7 +312,7 @@ h4 {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: 600;
-  font-size: 35px;
+  font-size: 40px;
   font-style: normal;
   padding-bottom: 5px;
 
@@ -262,7 +329,7 @@ h4 {
   font-weight: 400;
   font-style: normal;
   margin: 15px;
-  font-size: 30px;
+  font-size: 33px;
 }
 
 #title_airplane,
@@ -458,6 +525,7 @@ h4 {
   width: calc(100% / 5);
   /* 單張圖片寬度 */
   margin: 0 5px;
+  padding: 0 5px;
 }
 
 .marquee img {
@@ -474,16 +542,16 @@ h4 {
 
 /* 響應式設計 */
 /* 桌機樣式 */
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
   .marquee-item {
     width: calc(100% / 5);
     /* 大螢幕顯示五張卡片 */
-    margin: 0 60px;
+    margin: 0 30px;
   }
 }
 
 /* 平板橫向、筆電樣式 */
-@media (min-width: 1024px) and (max-width: 1199px) {
+@media (min-width: 1024px) and (max-width: 1299px) {
   .marquee-item {
     width: calc(100% / 3);
     margin: 0 5px;
@@ -696,8 +764,9 @@ h4 {
   column-gap: 50px;
   /* 欄之間的間距 */
   max-width: 1200px;
-  /* grid-column: 2;把內容放在中間那一格 */
-  /* margin: 0 auto; */
+  /* grid-column: 2; */
+  /* 把內容放在中間那一格 */
+  margin: 0 auto;
   /* 水平居中 */
   padding: 50px;
 }
@@ -708,7 +777,7 @@ h4 {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 40px;
   font-style: normal;
   margin-bottom: 10px;
   /* align-items: center;
@@ -723,10 +792,12 @@ h4 {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 25px;
   font-style: normal;
-  margin-bottom: 10px;
-
+  display: block; /* 確保段落占滿一行 */
+  line-height: 1.7; /* 增加段落的可讀性 */
+  margin-bottom: 40px;
+  padding: 20px;
 }
 
 .container-about h4 {
@@ -737,7 +808,7 @@ h4 {
   font-weight: 400;
   font-style: normal;
   margin: 15px;
-  font-size: 30px;
+  font-size: 33px;
   text-align: left;
   color: #1F4BA4;
 }
@@ -784,8 +855,9 @@ h4 {
   /* overflow: hidden; */
   max-width: 1000px;
   margin: 0 auto;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   border-radius: 15px;
+  justify-content: center;
 }
 
 /* .thumbnail.active {
@@ -898,7 +970,7 @@ a:hover {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 40px;
   font-style: normal;
   margin-bottom: 10px;
   /* align-items: center;
@@ -1162,14 +1234,14 @@ button {
   font-weight: 400;
   font-style: normal;
   margin: 15px;
-  font-size: 30px;
+  font-size: 33px;
 }
 
 .content .text h3 {
   /* border: 2px solid red; */
   text-align: left;
   margin-left: 0px;
-  font-size: 25px;
+  font-size: 30px;
 
 }
 
@@ -1215,7 +1287,7 @@ button {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 30px;
   font-style: normal;
   margin-bottom: 10px;
 }
@@ -1223,7 +1295,7 @@ button {
 .content .text p {
   font-family: "Zen Maru Gothic", serif;
   font-weight: 580;
-  font-size: 15px;
+  font-size: 25px;
   font-style: normal;
   margin-bottom: 10px;
 }
@@ -1285,7 +1357,7 @@ button {
   }
 }
 
-@media (min-width: 576px)and (max-width: 799px) {
+@media (min-width: 680px)and (max-width: 799px) {
 
   /* 最小尺寸576px，最大尺寸799px */
   .text {
@@ -1297,10 +1369,32 @@ button {
     /* 水平居中 */
     padding: 50px;
   }
+  .content .text h2 {
+    /* 中文字體 */
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 600;
+    font-size: 25px;
+    font-style: normal;
+    margin-bottom: 10px;
+  }
+  .content .text h3 {
+    /* border: 2px solid red; */
+    text-align: left;
+    margin-left: 0px;
+    font-size: 25px;
+  }  
+  .content .text p {
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 580;
+    font-size: 20px;
+    font-style: normal;
+    margin-bottom: 10px;
+  }
+  
 }
 
 /* 手機樣式 */
-@media (max-width: 575px) {
+@media (max-width: 679px) {
   .text {
     display: grid;
     max-width: 1200px;
@@ -1310,9 +1404,32 @@ button {
     /* 水平居中 */
     padding: 50px;
   }
+  .content .text h2 {
+    /* 中文字體 */
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 600;
+    font-size: 18px;
+    font-style: normal;
+    margin-bottom: 10px;
+  }
+  .content .text h3 {
+    /* border: 2px solid red; */
+    text-align: left;
+    margin-left: 0px;
+    font-size: 18px;
+  }  
+
+  .content .text p {
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 580;
+    font-size: 15px;
+    font-style: normal;
+    margin-bottom: 10px;
+  }
+
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   .text {
     display: grid;
     max-width: 1200px;
@@ -1327,14 +1444,14 @@ button {
     /* border: 2px solid red; */
     text-align: left;
     margin-left: 0px;
-    font-size: 10px;
+    font-size: 18px;
   }
 
   .content .text h2 {
     /* 中文字體 */
     font-family: "Zen Maru Gothic", serif;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 18px;
     font-style: normal;
     margin-bottom: 10px;
   }
@@ -1574,19 +1691,11 @@ footer {
 
 
 /* open water 網頁 */
-/* 整體佈局 */
-/* body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9; 
-}  */
-
 .product-container {
   display: flex;
   gap: 20px;
-  padding: 30px;
-  max-width: 1000px;
+  padding: 50px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -1677,7 +1786,7 @@ footer {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: 400;
-  font-size: 17px;
+  font-size: 25px;
   font-style: normal;
   margin-bottom: 13px;
 }
@@ -1695,7 +1804,7 @@ td {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: 500;
-  font-size: 17px;
+  font-size: 25px;
   font-style: normal;
   margin-bottom: 13px;
 }
@@ -1709,7 +1818,7 @@ td {
   color: white;
   border: none;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   border-radius: 5px;
   text-align: center;
@@ -1778,14 +1887,25 @@ td {
 
 
 /* open water注意事項 */
+/* 將父容器設定為 flex 排版 */
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* 水平分佈 */
+  gap: 20px; /* 元素之間的間距 */
+}
 
 .button-container {
   display: block;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 30px;
-  max-width: 1000px;
+  flex: 1 1 calc(33.33% - 20px); /* 在寬螢幕下平均分配三等分 */
+  max-width: calc(33.33% - 20px); /* 避免元素超出 */
+  /* flex-wrap: wrap; */
+  /* gap: 20px; */
+  padding: 50px;
+  max-width: 1300px;
   margin: 0 auto;
+  /* border: 2px solid red; */
+  text-align: center;
 }
 
 .button-container ul,
@@ -1794,11 +1914,20 @@ li,
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: 500;
-  font-size: 17px;
+  font-size: 25px;
   font-style: normal;
-  margin-bottom: 1px;
-
+  margin: 1px auto;
+  text-align: center;
 }
+.button-container ul {
+  /* 圓點內置並置中 */
+  list-style-position: inside;
+  text-align: center;
+  padding: 0;
+  margin: 0 auto;
+}
+
+
 
 /* 自訂按鈕樣式 */
 .custom-button {
@@ -1806,7 +1935,7 @@ li,
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 25px;
   font-style: normal;
   align-items: center;
   border: 3px solid #c56969;
@@ -1833,11 +1962,21 @@ li,
   /* padding: 2px; */
   max-width: 100%;
 }
+/* 窄螢幕時恢復單列樣式 */
+@media screen and (max-width: 1200px) {
+  .main-container {
+    flex-direction: column; /* 改為垂直排列 */
+  }
 
+  .button-container {
+    max-width: 100%; /* 滿版寬度 */
+    flex: 1 1 100%; /* 恢復為單列 */
+  }
+}
 
 /* booking網頁 */
 .container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 2rem auto;
   background: #fff;
   padding: 2rem;
@@ -1854,7 +1993,7 @@ h1 {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 40px;
   font-style: normal;
   margin-bottom: 40px;
 
@@ -1877,7 +2016,7 @@ label {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 26px;
   font-style: normal;
   margin-bottom: 10px;
   color: #333;
@@ -1893,7 +2032,7 @@ textarea {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 22px;
   font-style: normal;
   margin-bottom: 10px;
 }
@@ -1970,7 +2109,7 @@ textarea {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 25px;
   font-style: normal;
   /* margin-bottom: 10px; */
 
@@ -2000,7 +2139,7 @@ textarea {
 
 
 /* booking網頁 響應式Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .form-group {
     display: flex;
     flex-direction: column;
@@ -2050,7 +2189,7 @@ textarea {
   align-items: center;
   flex-wrap: wrap;
   /* 響應式設計時可換行 */
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   /* margin: 40px; */
   /* border: 2px solid red; */
@@ -2063,7 +2202,7 @@ textarea {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: 600;
-  font-size: 28px;
+  font-size: 35px;
   font-style: normal;
 
 }
@@ -2135,7 +2274,7 @@ textarea {
   text-align: left;
   border-bottom: 1px solid #ddd;
   padding: 10px 0;
-  font-size: 20px;
+  font-size: 27px;
 }
 
 .price-list li:hover {
@@ -2169,7 +2308,7 @@ textarea {
   font-family: "Zen Maru Gothic", serif;
   font-weight: 500;
   font-style: normal;
-  font-size: 15px;
+  font-size: 18px;
   color: #777;
   margin-top: 15px;
   line-height: 1.5;
@@ -2177,14 +2316,59 @@ textarea {
 }
 
 /* 響應式設計 */
-@media (max-width: 992px) {
+@media (max-width: 1280px){
+  .container-price {
+    max-width: 1000px;
+    margin: 0 auto;
+    /* margin: 40px; */
+    /* border: 2px solid red; */
+  }
+  .price-list {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px 5px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    text-align: center;
+    align-items: center;
+    margin: 50px 20px;
+  }  
+  
+}
+@media (max-width: 1100px) {
+  .price-list {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    text-align: center;
+    align-items: center;
+    margin: 50px 20px;
+  }  
+  .price-list h2 {
+    font-size: 30px;
+    font-style: normal;
+  }  
+  .price-list li {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    font-size: 23px;
+  }
+  
+
   .container-price {
     flex-direction: column;
     /* 小螢幕時垂直排列 */
   }
 
   .image-container img {
-    width: 60%;
+    width: 70%;
   }
 
   .pricing-section {
@@ -2205,7 +2389,7 @@ textarea {
   /* 啟用 Flex 排版 */
   justify-content: space-between;
   /* 讓兩個子容器均分空間 */
-  max-width: 800px;
+  max-width: 1200px;
   /* margin-left: 10px; */
   padding: 10px;
   /* border-left: 10px solid #c56969; */
@@ -2283,7 +2467,7 @@ textarea {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 25px;
   font-style: normal;
   margin-bottom: 10px;
 
@@ -2291,13 +2475,14 @@ textarea {
 
 .timeline-content h2 {
   margin: 0;
-  font-size: 18px;
+  font-size: 28px;
   color: #007BFF;
 }
 
 .timeline-content p {
   margin: 5px 0;
   color: #555;
+  font-size: 23px;
   line-height: 1.5;
 }
 
@@ -2305,7 +2490,7 @@ textarea {
 .details {
   display: none;
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 22px;
   color: #777;
 }
 
@@ -2343,7 +2528,7 @@ textarea {
 
 /* booking success預約成功 跳轉到receipt.html */
 .container-book-success {
-  max-width: 600px;
+  max-width: 800px;
   margin: 40px auto;
   background: #fff;
   padding: 2rem;
@@ -2368,7 +2553,7 @@ textarea {
   padding: 0.7rem 1.5rem;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
@@ -2390,6 +2575,7 @@ textarea {
 
 .details-book p {
   padding: 5px;
+  font-size: 25px;
 
 }
 
@@ -2397,43 +2583,62 @@ textarea {
 /* 沖繩潛水 */
 .container-oki {
   display: grid;
-  max-width: 900px;
+  max-width: 1300px;
   grid-column: 2;
   /* 把內容放在中間那一格 */
   margin: 0 auto;
   /* 水平居中 */
-  padding: 50px;
-  padding: 2rem;
+  padding: 10px;
+  /* padding: 2rem; */
+  /* border: 2px solid red; */
 }
 
-.content-oki {
+.content-oki-wait,
+.content-oki-map {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 50px auto;
+  margin: 0px auto;
   opacity: 0; 
   /* 預設為隱藏 */
   transform: translateY(50px);
   /* 加入位移效果 */
   transition: all 0.6s ease;
 }
-.content-oki.show {
+.content-oki-wait.show ,
+.content-oki-map.show {
   opacity: 1;/* 顯示內容 */
   transform: translateY(0);
 }
 
-
-.content-oki .oki-left {
-  width: 50%;
-  padding: 0 10px;
-  margin: 5px auto;
+.content-oki-wait{
+  display: flex;
+  /* width: 100%; */
+  /* padding: 10px ;
+  margin: 5px auto; */
+  justify-content: center; /* 子元素水平置中 */
+  align-items: center; /* 子元素垂直置中（可選） */
+  /* border: 2px solid red; */
+  gap: 20px; /* 左右區域的間距 */
 }
-
-.content-oki .oki-right p {
+ .oki-left {
+  width: 90%;
+  padding: 10px 20px;
+  margin: 0 auto;
+  /* border: 2px solid red; */
+  justify-content:center ;
+  align-items: center;
+}
+.oki-right {
+  width: 100%;
+  line-height: 1.7;
+  /* border: 2px solid #c56969; */
+}
+.content-oki-wait .oki-right p {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
-  font-weight: 500;
-  font-size: 17px;
+  font-weight: 600;
+  font-size: 30px;
   font-style: normal;
   margin-bottom: 10px;
 }
@@ -2441,8 +2646,8 @@ textarea {
 .oki-left p {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
-  font-weight: 500;
-  font-size: 17px;
+  font-weight: 600;
+  font-size: 30px;
   font-style: normal;
   margin-bottom: 10px;
 }
@@ -2452,15 +2657,9 @@ textarea {
   font-family: "Rubik Bubbles", system-ui;
   font-weight: 400;
   font-style: normal;
+  font-size: 45px;
+  margin-top: 25px;
 
-  font-size: 25px;
-  margin-top: 0;
-
-}
-
-.oki-right {
-  width: 60%;
-  line-height: 1.8;
 }
 
 /* 沖繩地圖 */
@@ -2484,9 +2683,9 @@ textarea {
   /* border: 2px solid red; */
 }
 
-.content-oki {
+.content-oki-map {
   /* border: 2px solid red; */
-  max-width: 900px;
+  max-width: 1200px;
 
   display: flex;
   align-items: center;
@@ -2499,14 +2698,14 @@ textarea {
   /* transition: all 0.6s ease; */
 }
 
-.content-oki .oki-left-2 {
+.content-oki-map .oki-left-2 {
   line-height: 1.8;
-  width: 50%;
+  width: 100%;
   padding: 0 10px;
   margin: 0 auto;
 }
 
-.content-oki {
+.content-oki-map {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: 500;
@@ -2518,9 +2717,9 @@ textarea {
 .oki-left-2 p {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
-  font-weight: 500;
-  font-size: 23px;
-  line-height: 1.8;
+  font-weight: 600;
+  font-size: 33px;
+  line-height: 1.9;
   font-style: normal;
   margin-bottom: 10px;
 }
@@ -2529,14 +2728,14 @@ textarea {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: 600;
-  font-size: 35px;
+  font-size: 50px;
   font-style: normal;
   margin-bottom: 15px;
   color:whitesmoke;
 }
 
 .oki-right-2 {
-  width: 60%;
+  width: 100%;
   line-height: 1.8;
 }
 
@@ -2552,7 +2751,7 @@ textarea {
     padding: 50px auto;
   }
   
-  .content-oki {
+  .content-oki-wiat {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -2564,7 +2763,7 @@ textarea {
     /* transition: all 0.6s ease; */
   }
   
-   .content-oki .oki-left {
+   .content-oki-wait .oki-left {
     width: 80%;
     /* padding: 0 10px; */
     text-align: left;
@@ -2596,13 +2795,13 @@ textarea {
     align-items: center;
     /* gap: 20px;  */
   }
-  .content-oki {
+  .content-oki-map {
     display: grid;
     grid-template-columns: 1fr; /* 讓每個區塊在小螢幕下佔一列 */
     gap: 20px; /* 兩個區塊之間有間距 */
 
   }
-  .content-oki .oki-left-2{
+  .content-oki-map .oki-left-2{
     width: 70%;
   }
   .oki-left-2, .oki-right-2 {
@@ -2623,7 +2822,15 @@ textarea {
   /* 中文字體 */
   font-family: "Zen Maru Gothic", serif;
   font-weight: 600;
-  font-size: 30px;
+  font-size:45px;
+  font-style: normal;
+  padding-bottom: 5px;
+}
+#title_oki {
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 600;
+  font-size: 60px;
   font-style: normal;
   padding-bottom: 5px;
 }
@@ -2633,7 +2840,7 @@ textarea {
   font-weight: 400;
   font-style: normal;
   margin: 15px;
-  font-size: 25px;
+  font-size: 36px;
 
 }
 .container-choose {
@@ -2642,7 +2849,7 @@ textarea {
   gap: 20px;
   padding: 50px;
   width: 100%;
-  margin: 0 auto;
+  margin: 30px auto;
   justify-content: center;
   /* background-color: #f8f9ff; */
 }
@@ -2651,7 +2858,7 @@ textarea {
   background: white;
   border-radius: 10px;
   padding: 30px;
-  width: 250px;
+  width: 350px;
   height: auto;
   text-align: center;
   box-shadow: 0 4px 6px 4px rgba(20, 10, 10, 0.05);
@@ -2662,12 +2869,17 @@ textarea {
   transform: translateY(-5px);
 }
 
-.icon-choose-1,
+.icon-choose-1{
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+
+}
 .icon-choose-2,
 .icon-choose-3,
 .icon-choose-4 {
-  width: 60px;
-  height: 60px;
+  width: 90px;
+  height: 90px;
   margin: 0 auto 20px;
 }
 .icon-choose-1:hover {
@@ -2684,14 +2896,14 @@ textarea {
 }
 
 .title_card_choose {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
   margin-bottom: 15px;
   color: #000;
 }
 
 .description_card_choose {
-  font-size: 14px;
+  font-size: 25px;
   color: #666;
   line-height: 1.5;
 }
