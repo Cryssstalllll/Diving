@@ -2967,4 +2967,78 @@ textarea {
   .card-choose {
       flex: 0 0 100%; 
   }
+  
+  #title_oki {
+    /* 中文字體 */
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 600;
+    font-size: 35px;
+    font-style: normal;
+    padding-bottom: 5px;
+  }
+  .oki-left h4 {
+    /* 英文泡泡字體 */
+    font-family: "Rubik Bubbles", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    margin-top: 25px;
+  
+  }
+
+  #title_choose{
+    /* 中文字體 */
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 600;
+    font-size:35px;
+    font-style: normal;
+    padding-bottom: 5px;
+  }
+  #title_choose+p{
+    /* 英文泡泡字體 */
+    font-family: "Rubik Bubbles", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    margin: 15px;
+    font-size: 25px;
+  }
+  .oki-left p {
+    /* 中文字體 */
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 600;
+    font-size: 22px;
+    font-style: normal;
+    margin-bottom: 10px;
+  }
+  .content-oki-wait .oki-right p {
+    /* 中文字體 */
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 500;
+    font-size: 20px;
+    font-style: normal;
+    margin-bottom: 10px;
+  }
+
+  /* map區 */
+  .oki-left-2 h4{
+    font-size: 35px;
+  }
+  .oki-left-2 p{
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .title_card_choose {
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #000;
+  }
+  
+  .description_card_choose {
+    font-size: 19px;
+    color: #666;
+    line-height: 1.5;
+  }
+  
 }
