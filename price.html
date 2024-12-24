@@ -86,14 +86,14 @@
                 <li>
                     <p class="bi bi-star-fill">
                         <span class="priceitem">
-                            <a href="./Open_Water.html">水肺潛水</a>
+                            <a href="./Open_Water.html#openwater-main-image">水肺潛水</a>
                         </span>
                     </p>
                     <span class="price">NT.1,600</span>
                 </li>
                 <li>
                     <p class="bi bi-star-fill">
-                        <span class="priceitem"><a href="./freediving.html">自由潛水</a>
+                        <span class="priceitem"><a href="./freediving.html#freediving-main-image">自由潛水</a>
                         </span>
                     </p>
                     <span class="price">NT.1,600</span>
@@ -199,8 +199,8 @@
                 <!-- <p>Subscribe to our newsletter to receive updates and special announcements.</p> -->
                 <form action="#" method="POST">
                     <div class="input-group">
-                        <input type="email" placeholder="*Email" required>
-                        <input type="text" placeholder="*姓名" required>    
+                        <input type="email" placeholder="*Email" value="@gmail.com" required>
+                        <input type="text" placeholder="*姓名" required>
                     </div>
                     <button type="submit">送出</button>
                 </form>
@@ -214,6 +214,24 @@
         </div>
     </footer>
 
+    <script>
+        //footer區塊
+        document.getElementById('newsletterForm').addEventListener('submit', function (event) {
+            const email = document.getElementById('email').value.trim();
+            const name = document.getElementById('name').value.trim();
+
+            // 檢查是否有填寫
+            if (!email || !name) {
+                event.preventDefault(); // 阻止表單提交
+                alert('請確保所有欄位都已填寫！');
+            } else {
+                event.preventDefault(); // 停止默認表單提交（如果需要進行進一步處理）
+                alert('訂閱成功！');
+            }
+
+        });
+
+    </script>
 </body>
 
 </html>

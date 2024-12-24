@@ -38,7 +38,7 @@
 
 <body>
     <div class="bubble-back">
-        <canvas id="bubbleCanvas"></canvas>  <!-- 放在最前面 -->
+        <canvas id="bubbleCanvas"></canvas> <!-- 放在最前面 -->
         <header class="l-header">
             <div class="l-header_inner">
                 <div class="d-header_left">
@@ -405,23 +405,17 @@
                     <li><a href="./booking.html#title_booking">Booking</a></li>
                 </ul>
             </div>
-            <!-- <div class="footer-section contact">
-                <h4>Contact</h4>
-                
-                <p>0928-061502</p>
-                <p> No. 15-6號, 漁港路, 綠島鄉台東縣951<br></p>
-            </div> -->
 
             <div class="footer-section newsletter">
                 <h4>Update News</h4>
                 <hr>
                 <!-- <p>Subscribe to our newsletter to receive updates and special announcements.</p> -->
-                <form action="#" method="POST">
+                <form id="newsletterForm" action="#" method="POST">
                     <div class="input-group">
-                        <input type="email" placeholder="*Email" required>
-                        <input type="text" placeholder="*姓名" required>
+                        <input id="email" type="email" placeholder="*Email" value="@gmail.com" required>
+                        <input  id="name"  type="text" placeholder="*姓名" required>
                     </div>
-                    <button type="submit" onclick="alert('報名成功！')">送出</button>
+                    <button type="submit">送出</button>
                 </form>
             </div>
 
@@ -435,7 +429,7 @@
     </footer>
 
     <script>
-        // 選取所有 .content 區塊
+        // 潛水服務：選取所有 .content 區塊
         const contents = document.querySelectorAll('.content');
 
         // 偵測滾動位置
@@ -596,7 +590,21 @@
             canvas.height = window.innerHeight;
         });
 
+        //footer區塊
+        document.getElementById('newsletterForm').addEventListener('submit', function (event) {
+            const email = document.getElementById('email').value.trim();
+            const name = document.getElementById('name').value.trim();
 
+            // 檢查是否有填寫
+            if (!email || !name) {
+                event.preventDefault(); // 阻止表單提交
+                alert('請確保所有欄位都已填寫！');
+                } else {
+                    event.preventDefault(); // 停止默認表單提交（如果需要進行進一步處理）
+                    alert('訂閱成功！');
+                }
+
+        });
     </script>
 
 </body>

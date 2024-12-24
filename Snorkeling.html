@@ -67,7 +67,8 @@
 
                 <!-- 小圖預覽區 -->
                 <div class="thumbnails">
-                    <img src="./img/水肺/水肺15.JPG" class="thumbnail active" onclick="changeImage(this)" data-large="image1.jpg">
+                    <img src="./img/水肺/水肺15.JPG" class="thumbnail active" onclick="changeImage(this)"
+                        data-large="image1.jpg">
                     <img src="./img/水肺/水肺20.JPG" class="thumbnail" onclick="changeImage(this)" data-large="image2.jpg">
                     <img src="./img/水肺/水肺26.JPG" class="thumbnail" onclick="changeImage(this)" data-large="image3.jpg">
                     <img src="./img/水肺/水肺35.JPG" class="thumbnail" onclick="changeImage(this)" data-large="image4.jpg">
@@ -80,8 +81,9 @@
                 <h2 id="title_openwater">浮潛<br></h2>
                 <h3>Snorkeling</h3>
                 <p>考到水肺證照，想好好參加旅遊潛水，來場FUN DIVE嗎? <br>
-                    快來報名岸潛享受綠島的世界級潛點吧<hr>
-                    </p>
+                    快來報名岸潛享受綠島的世界級潛點吧
+                    <hr>
+                </p>
                 <h2></h2>
 
                 <!-- 商品資訊表格 -->
@@ -101,10 +103,10 @@
                 </table>
 
                 <!-- 報名按鈕 -->
-                <button class="signup-button" onclick="location.href='./booking.html#title_booking'">點我報名  
+                <button class="signup-button" onclick="location.href='./booking.html#title_booking'">點我報名
                 </button>
                 <!-- <a href="./booking.html" class="signup-button">點我報名</a> -->
-                
+
 
             </div>
         </div>
@@ -121,11 +123,11 @@
 
             <div>
                 <p>
-                    <ul>視當日海況由教練決定以下潛水地點。
-                        <li>柴口潛水區</li>
-                        <li>大白沙潛水區</li>
-                        <li>將軍岩</li>
-                    </ul>
+                <ul>視當日海況由教練決定以下潛水地點。
+                    <li>柴口潛水區</li>
+                    <li>大白沙潛水區</li>
+                    <li>將軍岩</li>
+                </ul>
                 </p>
             </div>
         </div>
@@ -138,9 +140,9 @@
 
             <div>
                 <p>
-                   $1600元/兩支 <br>
-                   ＊兩人同行，每人可現金折抵500元。(限當場使用) <br>
-                   ＊四人同行，每人可現金折抵1000元。(限當場使用)               
+                    $1600元/兩支 <br>
+                    ＊兩人同行，每人可現金折抵500元。(限當場使用) <br>
+                    ＊四人同行，每人可現金折抵1000元。(限當場使用)
                 </p>
             </div>
         </div>
@@ -154,14 +156,14 @@
                 <p>
                     年齡需滿10歲以上，健康狀況良好。<br>
                     若有任何身體狀況，請先通過醫師的批准後，再進行潛水課程。 <br>
-                   <br>
-                    <ul> 需自備: 
-                        <li>泳衣及證件照一張（不限尺寸，電子檔亦可）</li>
-                        <li>在潛水前8小時千萬不能喝含有酒精的飲料</li>
-                        <li>水肺潛水後的24小時內禁止搭乘飛機</li>
-                        <li>有近視者可選擇配戴隱形眼鏡,店內也有提供有度數的面鏡</li>
-                    </ul>
-                    
+                    <br>
+                <ul> 需自備:
+                    <li>泳衣及證件照一張（不限尺寸，電子檔亦可）</li>
+                    <li>在潛水前8小時千萬不能喝含有酒精的飲料</li>
+                    <li>水肺潛水後的24小時內禁止搭乘飛機</li>
+                    <li>有近視者可選擇配戴隱形眼鏡,店內也有提供有度數的面鏡</li>
+                </ul>
+
                 </p>
             </div>
         </div>
@@ -179,7 +181,7 @@
     </section>
 
     <script>
-         function changeImage(clickedThumbnail) {
+        function changeImage(clickedThumbnail) {
             // 取得大圖的 img 元素
             const mainImage = document.getElementById('largeImage');
 
@@ -226,8 +228,8 @@
                 <hr>
                 <!-- <p>Subscribe to our newsletter to receive updates and special announcements.</p> -->
                 <form action="#" method="POST">
-                    <input type="email" placeholder="*Email" required>
-                    <input type="text" placeholder="*姓名" required>
+                    <input id="email" type="email" placeholder="*Email" value="@gmail.com" required>
+                    <input id="name" type="text" placeholder="*姓名" required>
                     <button type="submit">送出</button>
                 </form>
             </div>
@@ -240,7 +242,24 @@
         </div>
     </footer>
 
+    <script>
+        //footer區塊
+        document.getElementById('newsletterForm').addEventListener('submit', function (event) {
+            const email = document.getElementById('email').value.trim();
+            const name = document.getElementById('name').value.trim();
 
+            // 檢查是否有填寫
+            if (!email || !name) {
+                event.preventDefault(); // 阻止表單提交
+                alert('請確保所有欄位都已填寫！');
+            } else {
+                event.preventDefault(); // 停止默認表單提交（如果需要進行進一步處理）
+                alert('訂閱成功！');
+            }
+
+        });
+
+    </script>
 </body>
 
 </html>

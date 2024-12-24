@@ -82,7 +82,7 @@
                 <h2 id="title_freediving">自由潛水 <br></h2>
                 <h3>Free Diving</h3>
                 <p>綠島有許多推薦必玩自潛點，例如：十字架、藍洞、大香菇、教堂等，適合想要到處走走看看拍拍照的你<br>
-                    
+
                     <hr>
                 </p>
                 <h2></h2>
@@ -236,10 +236,10 @@
                 <!-- <p>Subscribe to our newsletter to receive updates and special announcements.</p> -->
                 <form action="#" method="POST">
                     <div class="input-group">
-                        <input type="email" placeholder="*Email" required>
-                        <input type="text" placeholder="*姓名" required>    
+                        <input id="email" type="email" placeholder="*Email" value="@gmail.com" required>
+                        <input id="name" type="text" placeholder="*姓名" required>
                     </div>
-                    <button type="submit">SIGN UP</button>
+                    <button type="submit">送出</button>
                 </form>
             </div>
 
@@ -250,6 +250,25 @@
             <a href="#">No. 15-6號, 漁港路, 綠島鄉台東縣951</a>
         </div>
     </footer>
+
+    <script>
+        //footer區塊
+        document.getElementById('newsletterForm').addEventListener('submit', function (event) {
+            const email = document.getElementById('email').value.trim();
+            const name = document.getElementById('name').value.trim();
+
+            // 檢查是否有填寫
+            if (!email || !name) {
+                event.preventDefault(); // 阻止表單提交
+                alert('請確保所有欄位都已填寫！');
+            } else {
+                event.preventDefault(); // 停止默認表單提交（如果需要進行進一步處理）
+                alert('訂閱成功！');
+            }
+
+        });
+
+    </script>
 </body>
 
 </html>
