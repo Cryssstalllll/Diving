@@ -80,6 +80,38 @@
             transform-origin: center;
             transform: rotateY(0deg)
         }
+
+        /* 自動輪播 */
+        .marquee-wrapper {
+            position: relative;
+            width: 100%;
+            /* 容器寬度 */
+            overflow: hidden;
+            /* 隱藏溢出的內容 */
+        }
+
+        .marquee {
+            display: flex;
+            /* 圖片橫向排列 */
+            will-change: transform;
+            /* 優化動畫性能 */
+        }
+
+        .marquee-item {
+            flex-shrink: 0;
+            /* 圖片不縮小 */
+            width: 300px;
+            height: auto;
+            /* 單張圖片寬度 */
+            margin-right: 10px;
+            /* 間距 */
+        }
+
+        .marquee img {
+            width: 100%;
+            /* 圖片填滿 */
+            height: auto;
+        }
     </style>
 </head>
 
@@ -109,6 +141,7 @@
             </nav>
         </div>
 
+        <!-- 白色波浪背景 -->
         <main id="content" class="site-content">
             <div id="primary" class="content-area-builder">
                 <div data-elementor-type="wp-page" data-elementor-id="14" class="elementor elementor-14">
@@ -147,14 +180,203 @@
         </main>
     </header>
 
-    <section>
-        <div class="product-container">
-            <!-- 左側輪播圖 -->
-            <div class="carousel">
-                <!-- 大圖顯示區 -->
-                <div class="main-image
 
+    <section>
+        <div class="container-oki mt-5">
+            <div class="content-oki">
+                <div class="oki-left">
+                    <h3 id="title_transport">沖繩 青之洞窟</h3>
+                    <h4>Okinawa</h4>
+                    <p>| 一座等你的島嶼 | </p>
+                </div>
+
+                <div class="oki-right">
+                    <p>
+                        #最新消息#24.4.25 <br>
+                        2024年的夏天，準備好跟我們一起在沖繩的海中暢遊了嗎～<br>
+                        最新行程報價已上線，可點下方 [查看價錢] 表單查看 <br>
+                        把煩惱都留在原地吧，前往一座距離不是太近太遠的島，沖繩！<br>
+                        一個人、一群人、還是一家人。這裡的大海總是清澈蔚藍。 在環島路上迷路、被踩點的美食療癒，擁抱太平洋的海風。 走吧，現在就出發吧，來去 Okinawa！
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- 自動輪播圖 -->
+    <section>
+        <div class="marquee-wrapper">
+            <div class="marquee" id="marquee">
+                <div class="marquee-item"><img src="./img/沖繩/沖繩1.jpg" alt="Image 1" /></div>
+                <div class="marquee-item"><img src="./img/沖繩/沖繩2.jpg" alt="Image 2" /></div>
+                <div class="marquee-item"><img src="./img/沖繩/沖繩3.jpg" alt="Image 3" /></div>
+                <div class="marquee-item"><img src="./img/沖繩/沖繩4.jpg" alt="Image 4" /></div>
+                <div class="marquee-item"><img src="./img/沖繩/沖繩5.jpg" alt="Image 5" /></div>
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+        <div class="container-oki-map">
+            <div class="content-oki">
+                <div class="oki-left-2">
+                    <h3></h3>
+                    <h4><strong> 來沖繩 Fun暑假</strong></h4>
+                    <p>沖繩面積大約是 0.06 個台灣 或 2 個香港。島嶼可分為北部、中部、南部和離島地區，從北到南有經典的觀光設施， 南部地區則是購物的主要區域與機場。
+                        從台灣到沖繩的飛行時間為 1 小時 30 分鐘，從香港到沖繩也僅需要 2 小時 30 分鐘。來到沖繩， 怎麼能不直奔清澈的大海？王子潛水沖繩店址位置座落於 中部 青の洞窟 / 青之洞窟 /
+                        藍洞 旁， 從那霸機場出發只需約莫一小時的車程，便能抵達這個奇幻的海底秘境。</p>
+                </div>
+
+                <div class="oki-right-2">
+                    <img src="./img/沖繩/沖縄県のシルエットイラスト-Photoroom.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 為何選擇我們？ -->
+    <section>
+        <div class="title text-center mt-5">
+            <div class="box">
+                <h3 id="title_choose">為何選擇我們？</h3>
+                <p>Why choose us?</p>
+            </div>
+        </div>
+        <div class="container-choose">
+            <div class="card-choose">
+                <div class="icon-choose-1">
+                    <img src="./img/沖繩/choose/scuba.png">
+                </div>
+                <h3 class="title_card_choose">循序漸進潛水教學</h3>
+                <p class="description_card_choose">不熟水性、耳朵難反壓等的客人跟我們潛水的成功率大UP </p>
+            </div>
+
+            <div class="card-choose">
+                <div class="icon-choose-2">
+                    <img src="./img/沖繩/choose/video.png">
+                </div>
+                <h3 class="title_card_choose">免費基本水下攝影</h3>
+                <p class="description_card_choose">活動後使用手機直插過相服務
+                    不需等待就可以儘情回味</p>
+            </div>
+
+            <div class="card-choose">
+                <div class="icon-choose-3">
+                    <img src="./img/沖繩/choose/snorkel.png">
+                </div>
+                <h3 class="title_card_choose">費用含日本潛水裝備</h3>
+                <p class="description_card_choose">所有費用包括潛水裝備租借
+                    ​所有裝備均是日本品牌如Bism</p>
+            </div>
+
+            <div class="card-choose">
+                <div class="icon-choose-4">
+                    <img src="./img/沖繩/choose/whale-2.png">
+                </div>
+                <h3 class="title_card_choose">保衛海洋的責任</h3>
+                <p class="description_card_choose">我們將部分收益支援CleanHub的海洋垃圾阻截計劃
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <!-- 回到最上層 -->
+            <a href="#">
+                <div class="top">
+                    <span class="top-text">TOP</span>
+                </div>
+            </a>
+            <div class="footer-section about">
+                <h4>Horizon Diving</h4>
+                <hr>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Diving</a></li>
+                    <li><a href="#">Transport</a></li>
+                    <li><a href="#">Price</a></li>
+                    <li><a href="#">Booking</a></li>
+                </ul>
+            </div>
+            <!-- <div class="footer-section contact">
+                <h4>Contact</h4>
+                
+                <p>0928-061502</p>
+                <p> No. 15-6號, 漁港路, 綠島鄉台東縣951<br></p>
+            </div> -->
+
+            <div class="footer-section newsletter">
+                <h4>Update News</h4>
+                <hr>
+                <!-- <p>Subscribe to our newsletter to receive updates and special announcements.</p> -->
+                <form action="#" method="POST">
+                    <div class="input-group">
+                        <input type="email" placeholder="*Email" required>
+                        <input type="text" placeholder="*姓名" required>
+                    </div>
+                    <button type="submit" onclick="alert('報名成功！')">送出</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© Blue Horizon Diving All Rights Reserved.</p>
+            <!-- <a href="#">0928-061502</a> -->
+            <a href="https://maps.app.goo.gl/ppNgYyaNE8VjXPbZA"> No. 15-6號, 漁港路, 綠島鄉台東縣951</a>
+        </div>
+    </footer>
+
+    <script>
+        //content-oki顯示文字跟圖片
+        // 選取所有 .content 區塊
+        const contents = document.querySelectorAll('.content-oki');
+
+        // 偵測滾動位置
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            contents.forEach(content => {
+                const contentTop = content.getBoundingClientRect().top;
+                if (contentTop < windowHeight - 100) {
+                    content.classList.add('show'); // 加入動畫類別
+                }
+            });
+        });
+
+
+        const marquee = document.getElementById('marquee');
+        const items = document.querySelectorAll('.marquee-item');
+        const totalItems = items.length;
+        const copyCount = 5; // 控制每組圖片的複製次數，確保圖片足夠以無縫輪播
+
+        // 複製圖片
+        for (let i = 0; i < copyCount; i++) {
+            for (let j = 0; j < totalItems; j++) {
+                const clone = items[j].cloneNode(true);
+                marquee.appendChild(clone); // 添加複製的元素
+            }
+        }
+
+        // 滾動圖片
+        let offset = 0;
+        const itemWidth = items[0].offsetWidth + 10; // 單張圖片的寬度（包含間距）
+
+        function slide() {
+            offset -= 1; // 每次向左移動 1px
+            if (Math.abs(offset) >= itemWidth * totalItems) {
+                // 當圖片完全滾動一圈後，重置 offset，達到無縫效果
+                offset = 0;
+            }
+            marquee.style.transform = `translateX(${offset}px)`; // 更新位置
+            requestAnimationFrame(slide); // 持續更新
+        }
+
+        slide(); // 啟動輪播
+
+    </script>
 
 </body>

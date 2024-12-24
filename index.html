@@ -37,35 +37,38 @@
 </head>
 
 <body>
-    <header class="l-header">
-        <div class="l-header_inner">
-            <div class="d-header_left">
-                <a href="./index.html">
-                    <img src="../img/背景圖/ Logo-4-Photoroom.png">
-                </a>
-            </div>
-            <nav class="l-header-nav">
-                <!-- 漢堡按鈕 -->
-                <!-- <button class="hamburger-btn" aria-label="Toggle navigation" onclick="toggleMenu()">
-                    ☰
-                </button> -->
-                <!-- 漢堡 -->
-                <!-- <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button> -->
-                <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+    <div class="bubble-back">
+        <canvas id="bubbleCanvas"></canvas>  <!-- 放在最前面 -->
+        <header class="l-header">
+            <div class="l-header_inner">
+                <div class="d-header_left">
+                    <a href="./index.html">
+                        <img src="./img/背景圖/ Logo-4-Photoroom.png">
+                    </a>
+                </div>
+                <nav class="l-header-nav">
+                    <!-- 漢堡按鈕 -->
+                    <!-- <button class="hamburger-btn" aria-label="Toggle navigation" onclick="toggleMenu()">
+                        ☰
+                    </button> -->
+                    <!-- 漢堡 -->
+                    <!-- <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button> -->
+                    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
                     <a href="./about_horizon.html#title_about" class="l-nav_link">ABOUT</a>
                     <a href="#title_news" class="l-nav_link">NEWS</a>
                     <a href="#title_diveserver" class="l-nav_link">DIVING</a>
                     <a href="#title_transport">TRANSPORT</a>
                     <a href="./price.html" class="l-nav_link">PRICE</a>
                     <a href="./booking.html#title_booking" class="l-nav_link">BOOKING</a>
-            </nav>
-        </div>
+                </nav>
+            </div>
 
-    </header>
+        </header>
+    </div>
 
     <main>
         <span></span>
@@ -81,66 +84,6 @@
                 </div>
             </div>
 
-            <!-- 潛水三區塊-->
-            <!-- <div class="row gap-2 mt-5">
-                <div class="col-1">
-                </div>
-                <div class="col-10">
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="card m-auto" id="latest_news1">
-                                <img class="img-fluid" src="../img/水肺/6.jpg">
-                                 <div class="card-header text-center">2025開班預約中</div> 
-                                <div class="card-body" style="background-color: white; padding: 20px;">
-                                    <p class="card-text ">2024-Aug-01</p>
-                                    <h5 class="card-title">2025開班預約中</h5>
-                                    <span class="card-text ">海的另一邊是自由！熱烈預約中～</span>
-                                    <a href="https://ww.google.com" class="stretched-link"></a>
-
-                                </div>
-                                 <div class="card-footer text-end no-border">
-                                </div> 
-                            </div>
-
-                        </div>
-                        <div class="col-4">
-                            <div class="card m-auto" id="latest_news2">
-                                <div class="card-header text-center">沖繩藍洞潛旅開團中</div>
-                                <div class="card-body">
-                                     <img class=img-fluid src=""> 
-                                    <h5 class="card-title"></h5>
-                                    <p class="card-text text-center">OW到AOW證照課程 <br>給想考潛水證照的你</p>
-                                </div>
-                                <div class="card-footer text-end">
-                                    <a href="https://ww.google.com" class="btn btn-primary stretched-link">點我看更多</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-4">
-                            <div class="card w-100 m-auto no-border">
-                                <div class="card-header text-center">薄荷島潛旅開團中</div>
-                                <div class="card-body">
-                                     <img class=img-fluid src=""> 
-                                     <h5 class="card-title">有證照</h5> 
-                                    <p class="card-text">給已經有潛水證照 想探索綠島及國外潛水
-                                        綠島亞特蘭提斯 沖繩藍洞</p>
-                                </div>
-                                <div class="card-footer text-end">
-                                    <a href="https://ww.google.com" class="btn btn-primary stretched-link">點我看更多</a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-1">
-
-                </div>
-            </div>  -->
-
             <!-- 最新消息 -->
             <div class="grid-container">
                 <div class="marquee-wrapper">
@@ -148,7 +91,7 @@
                         <div class="marquee-item">
                             <div class="card">
                                 <div class="card-image">
-                                    <img src="../img/最新消息/2-2.png">
+                                    <img src="./img/最新消息/2-2.png">
                                 </div>
                                 <div class="card-content">
                                     <h2>OKINAWA</h2>
@@ -158,7 +101,7 @@
                                 <!-- 加入雲朵 -->
                                 <div>
                                     <div class="cloud">
-                                        <img class="ld ld-move-rtl" src="../img/背景圖/魚2.png">
+                                        <img class="ld ld-move-rtl" src="./img/背景圖/魚2.png">
                                     </div>
                                 </div>
                             </div>
@@ -166,7 +109,7 @@
                         <div class="marquee-item">
                             <div class="card">
                                 <div class="card-image">
-                                    <img src="../img/最新消息/3.png">
+                                    <img src="./img/最新消息/3.png">
                                 </div>
                                 <div class="card-content">
                                     <h2>BOHOL</h2>
@@ -175,7 +118,7 @@
                                 <!-- 加入雲朵 -->
                                 <div>
                                     <div class="cloud">
-                                        <img class="ld ld-move-rtl" src="../img/背景圖/魚2.png">
+                                        <img class="ld ld-move-rtl" src="./img/背景圖/魚2.png">
 
                                     </div>
                                 </div>
@@ -184,7 +127,7 @@
                         <div class="marquee-item">
                             <div class="card">
                                 <div class="card-image">
-                                    <img src="../img/最新消息/4.png">
+                                    <img src="./img/最新消息/4.png">
                                 </div>
                                 <div class="card-content">
                                     <h2>WE'RE</h2>
@@ -193,7 +136,7 @@
                                 <!-- 加入雲朵 -->
                                 <div>
                                     <div class="cloud">
-                                        <img class="ld ld-move-rtl" src="../img/背景圖/魚2.png">
+                                        <img class="ld ld-move-rtl" src="./img/背景圖/魚2.png">
 
                                     </div>
                                 </div>
@@ -202,7 +145,7 @@
                         <div class="marquee-item">
                             <div class="card">
                                 <div class="card-image">
-                                    <img src="../img/最新消息/1-2.png">
+                                    <img src="./img/最新消息/1-2.png">
                                 </div>
                                 <div class="card-content">
                                     <h2>FREE</h2>
@@ -211,7 +154,7 @@
                                 <!-- 加入雲朵 -->
                                 <div>
                                     <div class="cloud">
-                                        <img class="ld ld-move-rtl" src="../img/背景圖/魚2.png">
+                                        <img class="ld ld-move-rtl" src="./img/背景圖/魚2.png">
 
                                     </div>
                                 </div>
@@ -222,88 +165,6 @@
             </div>
 
         </section>
-
-        <!-- <section>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-5 me-3" id="snork">
-                        <div class="d-flex align-items-center">
-                             左側描述文字 -->
-        <!-- <div class="p-2 text-start">
-                                <h4 class="text-white text-center">浮潛</h4>
-                                <p class="text-white p-3">專業教練陪同指導，全中文課程安心前往藍洞朝聖， 還可餵食熱帶魚體驗和水中攝影留下美好的親子回憶，
-                                    就算不諳水性・不會游泳，也可一起探索同樂。</p>
-                                <a href="#" class="btn btn-primary">點我進入</a>
-                            </div> -->
-        <!-- 右側圖片 
-                            <div class="p-2">
-                                <img src="../img/自由潛水/snork.jpg" class="img-fluid object-fit-cover">
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-5" id="no_lic_scuba">
-                        <div class="d-flex align-items-center">
-                            < 左側描述文字 
-                            <div class="p-2">
-                                <h4 class="text-white text-center">體驗潛水</h4>
-                                <p class="text-white p-3">深度只有約 6-8 米的藍洞不需要潛水證照就可參加，體驗無重力呼吸・
-                                    近距離接觸魚群的潛水獨有魅力！全程專業中文教練帶領超放心。</p>
-                                <a href="#" class="btn btn-primary">點我進入</a>
-                            </div>
-                             右側圖片 
-                            <div class="p-2">
-                                <img src="../img/潛水服務/體驗潛水1.jpg" class="img-fluid object-fit-cover">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-1"></div>
-                </div>
-            </div>
-        </section> -->
-
-        <!-- <section> -->
-        <!-- <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-5 me-3" id="scuba">
-                        <div class="d-flex align-items-center">
-                             左側描述文字 
-                            <div class="p-2 text-start">
-                                <h4 class="text-white text-center">水肺潛水</h4>
-                                <p class="text-white p-3">已完成潛水訓練或持有潛水證照（如 PADI Open
-                                    Water）的潛水愛好者。讓你夠在水中自由自在移動並探索令人驚艷的海底世界。訓練期間，最大潛水深度為18公尺。</p>
-                                <a href="#" class="btn btn-primary">點我進入</a>
-                            </div>
-                            
-                            <div class="p-2">
-                                <img src="../img/水肺/3.jpg" width=700px class="img-fluid object-fit-cover">
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-5" id="free_dive">
-                        <div class="d-flex align-items-center">
-                            
-                            <div class="p-2">
-                                <h4 class="text-white text-center">自由潛水</h4>
-                                <p class="text-white p-3">
-                                    不使用氣瓶潛水裝備的潛水方式。使用全身放鬆的閉氣，下潛欣賞美麗的海底景觀、海洋生物和珊瑚礁。養基本的靜態閉氣、動態平潛、攀繩下潛以及恆重下潛知識與技巧。</p>
-                                <a href="#" class="btn btn-primary">點我進入</a>
-                            </div>
-                            
-                            <div class="p-2">
-                                <img src="../img/自由潛水/1.jpg" width=700px class="img-fluid object-fit-cover">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-1"></div>
-                </div>
-            </div> -->
-        <!-- </section> -->
 
         <!-- 潛水服務 -->
         <section>
@@ -318,7 +179,7 @@
             <div class="container-dive">
                 <div class="content">
                     <div class="image">
-                        <a href="./Snorkeling.html"><img src="../img/小琉球浮潛體驗報名16-5.webp"></a>
+                        <a href="./Snorkeling.html"><img src="./img/小琉球浮潛體驗報名16-5.webp"></a>
                     </div>
                     <div class="text">
                         <h2>浮潛 <br></h2>
@@ -343,7 +204,7 @@
                 <div class="content">
                     <div class="image">
                         <a href="./Open_Water.html#title_openwater">
-                            <img src="../img/水肺/水肺12.JPG"></a>
+                            <img src="./img/水肺/水肺12.JPG"></a>
                     </div>
                     <div class="text">
                         <h2>水肺潛水 <br></h2>
@@ -355,7 +216,7 @@
                 <div class="content">
                     <div class="image">
                         <a href="./freediving.html#title_freediving">
-                            <img src="../img/自由潛水/6.JPG">
+                            <img src="./img/自由潛水/6.JPG">
                         </a>
                     </div>
                     <div class="text">
@@ -415,7 +276,7 @@
 
                     <div class="timeline-item" onclick="toggleDetails(this)">
                         <div class="timeline-icon">
-                            <img src="../img/背景圖/Plane.png">
+                            <img src="./img/背景圖/Plane.png">
                         </div>
                         <div class="timeline-content">
                             <h2><strong>搭乘德安航空</strong></h2>
@@ -432,7 +293,7 @@
                     </div>
                     <div class="timeline-item" onclick="toggleDetails(this)">
                         <div class="timeline-icon">
-                            <img src="../img/背景圖/機車.png">
+                            <img src="./img/背景圖/機車.png">
                         </div>
                         <div class="timeline-content">
                             <h2><strong>抵達逐藍潛水</strong></h2>
@@ -471,7 +332,7 @@
 
                     <div class="timeline-item" onclick="toggleDetails(this)">
                         <div class="timeline-icon">
-                            <img src="../img/背景圖/ferry.png">
+                            <img src="./img/背景圖/ferry.png">
                         </div>
                         <div class="timeline-content">
                             <h2><strong>搭乘輪船</strong></h2>
@@ -489,7 +350,7 @@
                     </div>
                     <div class="timeline-item" onclick="toggleDetails(this)">
                         <div class="timeline-icon">
-                            <img src="../img/背景圖/機車.png">
+                            <img src="./img/背景圖/機車.png">
                         </div>
                         <div class="timeline-content">
                             <h2><strong>抵達逐藍潛水</strong></h2>
@@ -641,6 +502,101 @@
             const navLinks = document.getElementById("navLinks");
             navLinks.classList.toggle("active");
         }
+
+        // 泡泡背景
+        const canvas = document.getElementById('bubbleCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // 常數配置
+        const BUBBLE_COUNT = 5; // 泡泡數量
+        const MAX_RADIUS = 30;   // 最大半徑
+        const MIN_RADIUS = 8;   // 最小半徑
+
+        const bubbles = [];
+        let animationId; // 儲存動畫的 ID
+        let isPaused = false; // 是否停止動畫
+
+        // 創建泡泡物件
+        function createBubble() {
+            return {
+                x: Math.random() * canvas.width,
+                y: canvas.height + Math.random() * 100,
+                radius: Math.random() * (MAX_RADIUS - MIN_RADIUS) + MIN_RADIUS,
+                speed: Math.random() * 0.5 + 1,
+                opacity: Math.random() * 0.1 + 0.1 // 基本透明度
+            };
+        }
+
+        // 初始化泡泡
+        for (let i = 0; i < BUBBLE_COUNT; i++) {
+            bubbles.push(createBubble());
+        }
+
+        // 繪製晶瑩剔透泡泡
+        function drawBubble(bubble) {
+            // 繪製泡泡的外框
+            ctx.beginPath();
+            ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 255, 255, ${bubble.opacity * 0.7})`; // 淡白色填充
+            ctx.fill();
+
+            // 創建透明內部效果
+            ctx.globalCompositeOperation = "destination-out"; // 把中間挖空
+            ctx.beginPath();
+            ctx.arc(bubble.x, bubble.y, bubble.radius * 0.8, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+            ctx.fill();
+
+            // 恢復正常繪圖模式
+            ctx.globalCompositeOperation = "source-over";
+        }
+
+        // 更新畫面
+        function drawBubbles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            bubbles.forEach((bubble, index) => {
+                bubble.y -= bubble.speed; // 泡泡向上移動
+                if (bubble.y < -bubble.radius) {
+                    bubbles[index] = createBubble(); // 重新生成泡泡
+                }
+                drawBubble(bubble); // 繪製泡泡
+            });
+
+            //   requestAnimationFrame(drawBubbles);
+            animationId = requestAnimationFrame(drawBubbles); // 儲存動畫 ID
+        }
+
+
+
+
+        // 啟動或停止動畫
+        function toggleAnimation() {
+            if (isPaused) {
+                isPaused = false;
+                drawBubbles(); // 恢復動畫
+            } else {
+                isPaused = true;
+                cancelAnimationFrame(animationId); // 停止動畫
+            }
+        }
+
+        // 事件監聽：點擊背景切換動畫
+        canvas.addEventListener('click', toggleAnimation);
+
+        // 啟動動畫
+        drawBubbles();
+
+        // 視窗調整時更新畫布大小
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+
     </script>
 
 </body>

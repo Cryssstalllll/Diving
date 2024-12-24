@@ -5,6 +5,23 @@
 
 
 /* 導覽頁 */
+  /* 泡泡背景 */
+#bubbleCanvas {
+  position: absolute;
+  /* 絕對定位，覆蓋容器 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .d-header_left img {
   width: 140px;
   position: absolute;
@@ -663,7 +680,7 @@ h4 {
 }
 
 
-/* about 潛水教練 */
+/* about 關於逐藍 */
 /******* Fonts Import Start **********/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 /********* Fonts Face CSS End **********/
@@ -737,7 +754,8 @@ h4 {
   /* width: 85%; */
   width: 100%;
   /* 讓圖片的寬度根據容器寬度調整 */
-  /* max-width: 800px; */  /* 設定最大寬度，防止超出容器 */
+  /* max-width: 800px; */
+  /* 設定最大寬度，防止超出容器 */
   max-width: 100%;
   /* min-width: 400px; */
   /* 設定最小寬度，防止圖片過小 */
@@ -825,6 +843,8 @@ h4 {
   }
 }
 
+
+/* about 團隊成員 潛水教練 */
 * {
   margin: 0px;
   padding: 0px;
@@ -2370,4 +2390,337 @@ textarea {
 .details-book p {
   padding: 5px;
 
+}
+
+
+/* 沖繩潛水 */
+.container-oki {
+  display: grid;
+  max-width: 900px;
+  grid-column: 2;
+  /* 把內容放在中間那一格 */
+  margin: 0 auto;
+  /* 水平居中 */
+  padding: 50px;
+  padding: 2rem;
+}
+
+.content-oki {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px auto;
+  opacity: 0; 
+  /* 預設為隱藏 */
+  transform: translateY(50px);
+  /* 加入位移效果 */
+  transition: all 0.6s ease;
+}
+.content-oki.show {
+  opacity: 1;/* 顯示內容 */
+  transform: translateY(0);
+}
+
+
+.content-oki .oki-left {
+  width: 50%;
+  padding: 0 10px;
+  margin: 5px auto;
+}
+
+.content-oki .oki-right p {
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 500;
+  font-size: 17px;
+  font-style: normal;
+  margin-bottom: 10px;
+}
+
+.oki-left p {
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 500;
+  font-size: 17px;
+  font-style: normal;
+  margin-bottom: 10px;
+}
+
+.oki-left h4 {
+  /* 英文泡泡字體 */
+  font-family: "Rubik Bubbles", system-ui;
+  font-weight: 400;
+  font-style: normal;
+
+  font-size: 25px;
+  margin-top: 0;
+
+}
+
+.oki-right {
+  width: 60%;
+  line-height: 1.8;
+}
+
+/* 沖繩地圖 */
+.container-oki-map {
+  display: grid;
+  position: static;
+  height: auto;
+  width: 100%;
+  min-height: auto;
+  /* grid-template-rows: repeat(2, min-content) 1fr; */
+  /* grid-template-columns: 100%; */
+  /* height: 100vh; */
+  grid-column: 2;
+  /* 把內容放在中間那一格 */
+  margin: 0 auto;
+  /* 水平居中 */
+  padding: 50px;
+  background-color: #8dbef2;
+  color: rgb(47, 99, 230);
+  align-items: center;
+  /* border: 2px solid red; */
+}
+
+.content-oki {
+  /* border: 2px solid red; */
+  max-width: 900px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px auto;
+  /* opacity: 0; */
+  /* 預設為隱藏 */
+  /* transform: translateY(50px); */
+  /* 加入位移效果 */
+  /* transition: all 0.6s ease; */
+}
+
+.content-oki .oki-left-2 {
+  line-height: 1.8;
+  width: 50%;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.content-oki {
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 500;
+  font-size: 17px;
+  font-style: normal;
+  margin-bottom: 10px;
+}
+
+.oki-left-2 p {
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 1.8;
+  font-style: normal;
+  margin-bottom: 10px;
+}
+
+.oki-left-2 h4 {
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 600;
+  font-size: 35px;
+  font-style: normal;
+  margin-bottom: 15px;
+  color:whitesmoke;
+}
+
+.oki-right-2 {
+  width: 60%;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  /* 青之洞窟區塊 */
+  .container-oki {
+    display: grid;
+    max-width: 900px;
+    grid-column: 2;
+    /* 把內容放在中間那一格 */
+    margin: 0 auto;
+    /* 水平居中 */
+    padding: 50px auto;
+  }
+  
+  .content-oki {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px auto;
+    /* opacity: 0; */
+    /* 預設為隱藏 */
+    /* transform: translateY(50px); */
+    /* 加入位移效果 */
+    /* transition: all 0.6s ease; */
+  }
+  
+   .content-oki .oki-left {
+    width: 80%;
+    /* padding: 0 10px; */
+    text-align: left;
+    
+  }
+  .oki-left h3, .oki-left h4, .oki-left p {
+    text-align: left;
+  }
+  
+  .oki-right {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  /* 沖繩地圖區塊 */
+  .container-oki-map {
+    display: grid;
+    position: static;
+    height: auto;
+    width: 100%;
+    /* grid-column: 1; */
+    /* 把內容放在中間那一格 */
+    margin: 0 auto;
+    /* 水平居中 */
+    padding: 10px;
+    background-color: #8dbef2;
+    color: rgb(41, 82, 185);
+    grid-template-columns: 1fr; /* 一列 */
+    align-items: center;
+    /* gap: 20px;  */
+  }
+  .content-oki {
+    display: grid;
+    grid-template-columns: 1fr; /* 讓每個區塊在小螢幕下佔一列 */
+    gap: 20px; /* 兩個區塊之間有間距 */
+
+  }
+  .content-oki .oki-left-2{
+    width: 70%;
+  }
+  .oki-left-2, .oki-right-2 {
+    width: 100%;
+  }
+
+
+  .oki-right-2 img {
+    width: 100%; /* 圖片填滿容器 */
+    height: auto;
+  }
+  
+}
+
+
+/* 為何選擇我們 */
+#title_choose{
+  /* 中文字體 */
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 600;
+  font-size: 30px;
+  font-style: normal;
+  padding-bottom: 5px;
+}
+#title_choose+p{
+  /* 英文泡泡字體 */
+  font-family: "Rubik Bubbles", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  margin: 15px;
+  font-size: 25px;
+
+}
+.container-choose {
+  display: flex;
+  flex-wrap: wrap; /* 允許卡片自動換行 */
+  gap: 20px;
+  padding: 50px;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  /* background-color: #f8f9ff; */
+}
+
+.card-choose {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  width: 250px;
+  height: auto;
+  text-align: center;
+  box-shadow: 0 4px 6px 4px rgba(20, 10, 10, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.card-choose:hover {
+  transform: translateY(-5px);
+}
+
+.icon-choose-1,
+.icon-choose-2,
+.icon-choose-3,
+.icon-choose-4 {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+}
+.icon-choose-1:hover {
+ content: url(../img/沖繩/choose/scuba-2.png);
+}
+.icon-choose-2:hover {
+ content: url(../img/沖繩/choose/camera.png);
+}
+.icon-choose-3:hover {
+ content: url(../img/沖繩/choose/snorkel-2.png);
+}
+.icon-choose-4:hover {
+ content: url(../img/沖繩/choose/whale.png);
+}
+
+.title_card_choose {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.description_card_choose {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* 響應式設計 */
+@media (max-width: 1160px){
+  .container-choose {
+    justify-content: space-between; /* 每行平分空間 */
+    /* gap: 10px; */
+  }
+.card-choose {
+  flex: 0 0 calc(50% - 16px);
+    
+  }
+
+}
+@media (max-width: 768px) {
+  .container-choose {
+      justify-content: space-between; /* 每行平分空間 */
+  }
+  .card-choose {
+      flex: 0 0 calc(50% - 16px); /* 一行兩張卡片（含間距） */
+  }
+}
+
+@media (max-width: 576px) {
+  .container-choose {
+      justify-content: space-between; /* 每行平分空間 */
+  }
+  .card-choose {
+      flex: 0 0 100%; 
+  }
 }
